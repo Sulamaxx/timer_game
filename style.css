@@ -12,17 +12,21 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #43b87d;
+   
 }
 
 .office-building {
     display: flex;
+      
 }
 
 .room {
     position: relative;
     width: 1200px;
     height: 800px;
-    background-color: rgb(108, 188, 235);
+    background-image: url("resources/tile.jpg");
+    background-position: center;
+    background-repeat: repeat;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 20px;
 }
@@ -60,6 +64,7 @@ body {
 
 .east-wall {
     right: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .north-wall {
@@ -97,12 +102,37 @@ body {
   left: 15%;
 }
 
+.desk1 {
+  position: absolute;
+  background-image: url("resources/3.PNG");
+  background-size: cover;
+  background-position: center;
+  transform: rotate(90deg);
+  width: 120px;
+  height: 120px;
+  background-color: #333;
+  bottom: 330px;
+  left: 70%;
+}
+
+.tv {
+  position: absolute;
+  width: 70px;
+  height: 50px;
+  background-image: url("resources/4.PNG");
+  background-size: cover;
+  background-position: center;
+  top: 15px;
+  left: 22%;
+}
+
 .item {
   position: absolute;
   width: 200px;
   height: 50px;
   background-image: url("resources/2.PNG");
   background-size: cover;
+  /* background-position: center; */
 }
 
 .first-item {
@@ -235,5 +265,9 @@ body {
   }
   .desk{
     left: -0.1%;
+  }
+  .desk1{
+    left: 65%;
+    bottom: 200px;
   }
 }
