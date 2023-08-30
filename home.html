@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Office Room Plan</title>
-</head>
+  </head>
 
-<body onload="generate();">
+  <body onload="generate();" onkeydown="move(event);" onkeyup="stop(event)">
+    
     <div class="bodyDiv">
-        <div class="plantsArea" id="plantsArea">
 
+      <div class="plantsArea" id="plantsArea"></div>
+      <div class="office-building">
+
+        <div class="line"></div>
+
+        <div class="office-room room">
+          <div class="wall middle-wall"></div>
+          <div class="wall east-wall"></div>
+          <div class="wall west-wall"></div>
+
+          <div class="wall north-wall"></div>
+          <div class="wall south-wall"></div>
+
+          <div class="door"></div>
+
+          <div class="desk"></div>
+          <div class="desk1"></div>
+
+          <div class="tv"></div>
+
+          <div class="item first-item"></div>
+          <div class="item second-item"></div>
+          <div class="item third-item"></div>
+          <div class="item forth-item"></div>
+
+          <!-- <div class="computer"></div> -->
         </div>
-        <div class="office-building">
-            <div class="office-room room">
-                <div class="wall middle-wall"></div>
-                <div class="wall north-wall"></div>
-                <div class="wall east-wall"></div>
-                <div class="wall south-wall"></div>
-                <div class="wall west-wall"></div>
-                <div class="door"></div>
-                <div class="desk"></div>
-                <div class="desk1"></div>
-                <div class="tv"></div>
-                <div class="item first-item"></div>
-                <div class="item second-item"></div>
-                <div class="item third-item"></div>
-                <div class="item forth-item"></div>
-            </div>
-        </div>
+
+      </div>
+      <div class="playerDiv" id="playerDiv"></div>
+
     </div>
 
-    <script src="script.js"></script>
-</body>
+    
 
+    <script src="script.js"></script>
+  </body>
 </html>
