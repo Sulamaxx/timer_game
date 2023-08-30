@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .playerDiv {
     margin: 0px;
     height: 80px;
@@ -5,6 +6,16 @@
     background-image: url("./assets/player/player.png");
 }
 
+=======
+.player {
+  height: 80px;
+}
+
+.player_div {
+  /* background-color: red; */
+}
+
+>>>>>>> Stashed changes
 body {
     margin: 0;
     display: flex;
@@ -36,9 +47,15 @@ body {
 
 .north-wall,
 .south-wall {
+<<<<<<< Updated upstream
     width: 100%;
     height: 15px;
     background-image: url("resources/wall0.png");
+=======
+  width: 100%;
+  height: 15px;
+  background-image: url("resources/wall0.png");
+>>>>>>> Stashed changes
 }
 
 .east-wall,
@@ -85,6 +102,7 @@ body {
 }
 
 .desk {
+<<<<<<< Updated upstream
     position: absolute;
     width: 150px;
     height: 100px;
@@ -109,7 +127,50 @@ body {
     background-color: #0008ff;
     bottom: 40px;
     left: 40px;
+=======
+  position: absolute;
+  background-image: url("resources/1.PNG");
+  background-size: cover;
+  background-position: center;
+  transform: rotate(90deg);
+  width: 250px;
+  height: 150px;
+  background-color: #333;
+  bottom: 330px;
+  left: 15%;
 }
+
+.item {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  background-image: url("resources/2.PNG");
+  background-size: cover;
+}
+
+.first-item {
+  bottom: 90px;
+  left: 39.6%;
+  transform: rotate(90deg);
+>>>>>>> Stashed changes
+}
+.second-item {
+  bottom: 660px;
+  left: -5%;
+  transform: rotate(-90deg);
+}
+.third-item {
+  top: 15px;
+  left: 82.1%;
+  transform: rotate(0deg);
+}
+.forth-item {
+  bottom: 500px;
+  left: 45%;
+  transform: rotate(-90deg);
+}
+
+
 
 
 /* Conference Room */
@@ -166,6 +227,7 @@ body {
 /* Additional responsive styles */
 
 @media (max-width: 1200px) {
+<<<<<<< Updated upstream
     .room {
         width: 700px;
     }
@@ -190,3 +252,59 @@ body {
         left: 90%;
     }
 }
+=======
+  .room {
+    width: 700px;
+  }
+  .south-wall {
+    width: 88%;
+  }
+  .door {
+    width: 69px;
+    left: 93%;
+  }
+  .first-item {
+    left: 32.3%;
+  }
+  .second-item {
+    left: -8.7%;
+  }
+  .third-item {
+    left: 69.3%;
+  }
+  .forth-item {
+    left: 41.4%;
+  }
+  .desk{
+    left: 8%;
+  }
+}
+
+@media (max-width: 768px) {
+  .room {
+    width: 400px;
+  }
+  .south-wall {
+    width: 85%;
+  }
+  .door {
+    width: 50px;
+    left: 90%;
+  }
+  .first-item {
+    left: 18.9%;
+  }
+  .second-item {
+    left: -15.1%;
+  }
+  .third-item {
+    left: 46.2%;
+  }
+  .forth-item {
+    left: 34.9%;
+  }
+  .desk{
+    left: -0.1%;
+  }
+}
+>>>>>>> Stashed changes
