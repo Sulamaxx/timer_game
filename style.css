@@ -1,7 +1,7 @@
 .playerDiv {
     margin: 0px;
-    height: 80px;
-    width: 80px;
+    height: 50px;
+    width: 50px;
     background-image: url("./assets/player/player.png");
 }
 
@@ -21,11 +21,51 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("assets\plants\tree1.png");
+    /* background-image: url("assets\plants\tree1.png"); */
 }
 
-*/ .office-building {
+.plantsArea {
+    width: 100%;
+    margin: 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-image: url("./assets/plants/tree1.png"); */
+    position: absolute;
+}
+
+.leftTree {
+    width: 132px;
+    height: 103px;
+    position: absolute;
+    margin-top: 200px;
+}
+
+.rightTree {
+    width: 132px;
+    height: 103px;
+    position: absolute;
+    margin-top: 200px;
+}
+
+.topTree {
+    width: 132px;
+    height: 103px;
+    position: absolute;
+    margin-top: 200px;
+}
+
+.bottopTree {
+    width: 132px;
+    height: 103px;
+    position: absolute;
+    margin-top: 200px;
+}
+
+.office-building {
+    display: flex;
+    margin: 100px;
 }
 
 .room {
@@ -246,6 +286,18 @@ body {
     }
     .desk {
         left: 8%;
+    }
+    .leftTree {
+        margin-left: -100%;
+    }
+    .rightTree {
+        margin-left: 95%;
+    }
+    .topTree {
+        margin-top: -90%;
+    }
+    .bottopTree {
+        margin-top: 90%;
     }
 }
 
