@@ -11,13 +11,21 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #43b87d;
-   
+    background-color: #5f9234;
 }
 
-.office-building {
+.bodyDiv {
+    width: 100%;
+    margin: 0;
     display: flex;
-      
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("assets\plants\tree1.png");
+}
+
+*/ .office-building {
+    display: flex;
 }
 
 .room {
@@ -90,73 +98,74 @@ body {
 }
 
 .desk {
-  position: absolute;
-  background-image: url("resources/1.PNG");
-  background-size: cover;
-  background-position: center;
-  transform: rotate(90deg);
-  width: 250px;
-  height: 150px;
-  background-color: #333;
-  bottom: 330px;
-  left: 15%;
+    position: absolute;
+    background-image: url("resources/1.PNG");
+    background-size: cover;
+    background-position: center;
+    transform: rotate(90deg);
+    width: 250px;
+    height: 150px;
+    background-color: #333;
+    bottom: 330px;
+    left: 15%;
 }
 
 .desk1 {
-  position: absolute;
-  background-image: url("resources/3.PNG");
-  background-size: cover;
-  background-position: center;
-  transform: rotate(90deg);
-  width: 120px;
-  height: 120px;
-  background-color: #333;
-  bottom: 330px;
-  left: 70%;
+    position: absolute;
+    background-image: url("resources/3.PNG");
+    background-size: cover;
+    background-position: center;
+    transform: rotate(90deg);
+    width: 120px;
+    height: 120px;
+    background-color: #333;
+    bottom: 330px;
+    left: 70%;
 }
 
 .tv {
-  position: absolute;
-  width: 70px;
-  height: 50px;
-  background-image: url("resources/4.PNG");
-  background-size: cover;
-  background-position: center;
-  top: 15px;
-  left: 22%;
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background-image: url("resources/4.PNG");
+    background-size: cover;
+    background-position: center;
+    top: 15px;
+    left: 22%;
 }
 
 .item {
-  position: absolute;
-  width: 200px;
-  height: 50px;
-  background-image: url("resources/2.PNG");
-  background-size: cover;
-  /* background-position: center; */
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    background-image: url("resources/2.PNG");
+    background-size: cover;
+    /* background-position: center; */
 }
 
 .first-item {
-  bottom: 90px;
-  left: 39.6%;
-  transform: rotate(90deg);
+    bottom: 90px;
+    left: 39.6%;
+    transform: rotate(90deg);
 }
+
 .second-item {
-  bottom: 660px;
-  left: -5%;
-  transform: rotate(-90deg);
+    bottom: 660px;
+    left: -5%;
+    transform: rotate(-90deg);
 }
+
 .third-item {
-  top: 15px;
-  left: 82.1%;
-  transform: rotate(0deg);
+    top: 15px;
+    left: 82.1%;
+    transform: rotate(0deg);
 }
+
 .forth-item {
-  bottom: 500px;
-  left: 45%;
-  transform: rotate(-90deg);
+    bottom: 500px;
+    left: 45%;
+    transform: rotate(-90deg);
 }
-
-
 
 
 /* Conference Room */
@@ -213,61 +222,61 @@ body {
 /* Additional responsive styles */
 
 @media (max-width: 1200px) {
-  .room {
-    width: 700px;
-  }
-  .south-wall {
-    width: 88%;
-  }
-  .door {
-    width: 69px;
-    left: 93%;
-  }
-  .first-item {
-    left: 32.3%;
-  }
-  .second-item {
-    left: -8.7%;
-  }
-  .third-item {
-    left: 69.3%;
-  }
-  .forth-item {
-    left: 41.4%;
-  }
-  .desk{
-    left: 8%;
-  }
+    .room {
+        width: 700px;
+    }
+    .south-wall {
+        width: 88%;
+    }
+    .door {
+        width: 69px;
+        left: 93%;
+    }
+    .first-item {
+        left: 32.3%;
+    }
+    .second-item {
+        left: -8.7%;
+    }
+    .third-item {
+        left: 69.3%;
+    }
+    .forth-item {
+        left: 41.4%;
+    }
+    .desk {
+        left: 8%;
+    }
 }
 
 @media (max-width: 768px) {
-  .room {
-    width: 400px;
-  }
-  .south-wall {
-    width: 85%;
-  }
-  .door {
-    width: 50px;
-    left: 90%;
-  }
-  .first-item {
-    left: 18.9%;
-  }
-  .second-item {
-    left: -15.1%;
-  }
-  .third-item {
-    left: 46.2%;
-  }
-  .forth-item {
-    left: 34.9%;
-  }
-  .desk{
-    left: -0.1%;
-  }
-  .desk1{
-    left: 65%;
-    bottom: 200px;
-  }
+    .room {
+        width: 400px;
+    }
+    .south-wall {
+        width: 85%;
+    }
+    .door {
+        width: 50px;
+        left: 90%;
+    }
+    .first-item {
+        left: 18.9%;
+    }
+    .second-item {
+        left: -15.1%;
+    }
+    .third-item {
+        left: 46.2%;
+    }
+    .forth-item {
+        left: 34.9%;
+    }
+    .desk {
+        left: -0.1%;
+    }
+    .desk1 {
+        left: 65%;
+        bottom: 200px;
+    }
 }
