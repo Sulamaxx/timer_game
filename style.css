@@ -1,230 +1,263 @@
 body {
-    margin: 0;
-    display: flex;
-    min-height: 100vh;
-    background-color: #5f9234;
-    overflow: hidden;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  background-color: #5f9234;
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .bodyDiv {
-    margin: 0;
-    width: 100%;
-    display: flex;
-    min-height: 100vh;
-    background-color: #5f9234;
-    position: relative;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  background-color: #5f9234;
+  position: relative;
 }
 
 .treesArea {
-    margin: 0;
-    min-width: 2360px;
-    min-height: 1812px;
-    display: flex;
-    background-image: url("./assets/plants/tree.png");
-    position: absolute;
+  margin: 0;
+  min-width: 2360px;
+  min-height: 1812px;
+  display: flex;
+  background-image: url("./assets/plants/tree.png");
+  position: absolute;
 }
 
 .groundArea1 {
-    margin-left: 264px;
-    margin-top: 206px;
-    width: 1850px;
-    height: 1440px;
-    background-color: #5f9234;
-    position: absolute;
+  margin-left: 264px;
+  margin-top: 206px;
+  width: 1850px;
+  height: 1440px;
+  background-color: #5f9234;
+  position: absolute;
 }
 
 .topFence {
-    margin-left: 264px;
-    margin-top: 206px;
-    width: 1850px;
-    height: 113px;
-    position: absolute;
-    background-image: url("./resources/fenceface.png");
+  margin-left: 264px;
+  margin-top: 206px;
+  width: 1850px;
+  height: 113px;
+  position: absolute;
+  background-image: url("./resources/fenceface.png");
 }
 
 .leftFence {
-    margin-left: 264px;
-    margin-top: 206px;
-    width: 28px;
-    height: 1440px;
-    position: absolute;
-    background-image: url("./resources/fanceside.png");
+  margin-left: 264px;
+  margin-top: 206px;
+  width: 28px;
+  height: 1440px;
+  position: absolute;
+  background-image: url("./resources/fanceside.png");
 }
 
 .rightFence {
-    margin-left: 2086px;
-    margin-top: 206px;
-    width: 28px;
-    height: 1440px;
-    position: absolute;
-    background-image: url("./resources/fanceside.png");
+  margin-left: 2086px;
+  margin-top: 206px;
+  width: 28px;
+  height: 1440px;
+  position: absolute;
+  background-image: url("./resources/fanceside.png");
 }
 
 .bottomFence {
-    margin-left: 264px;
-    margin-top: 1532px;
-    width: 1850px;
-    height: 113px;
-    position: absolute;
-    background-image: url("./resources/fenceface.png");
+  margin-left: 264px;
+  margin-top: 1532px;
+  width: 1850px;
+  height: 113px;
+  position: absolute;
+  background-image: url("./resources/fenceface.png");
 }
 
 .officeBuildingGround {
-    margin-left: 200px;
-    margin-top: 200px;
-    width: 1400px;
-    height: 1000px;
-    position: absolute;
-    background-color: #586051;
+  margin-left: 200px;
+  margin-top: 200px;
+  width: 1400px;
+  height: 1000px;
+  position: absolute;
+  background-color: #586051;
 }
 
 .officeFloor {
-    margin-top: 100px;
-    width: 1400px;
-    height: 900px;
-    position: absolute;
-    background-image: url("./resources/tile.jpg");
+  margin-top: 100px;
+  width: 1400px;
+  height: 900px;
+  position: absolute;
+  background-image: url("./resources/tile.jpg");
 }
 
 .topWall {
-    margin-left: 60px;
-    width: 1280px;
-    height: 100px;
-    position: absolute;
-    background-image: url("./resources/wall.png");
+  margin-left: 60px;
+  width: 1280px;
+  height: 100px;
+  position: absolute;
+  background-image: url("./resources/wall.png");
 }
 
 .leftWall {
-    width: 60px;
-    height: 900px;
-    position: absolute;
-    background-image: url("./resources/wallsideline.png");
+  width: 60px;
+  height: 900px;
+  position: absolute;
+  background-image: url("./resources/wallsideline.png");
 }
 
 .rightWall {
-    margin-left: 1340px;
-    width: 60px;
-    height: 900px;
-    position: absolute;
-    background-image: url("./resources/wallsideline.png");
+  margin-left: 1340px;
+  width: 60px;
+  height: 900px;
+  position: absolute;
+  background-image: url("./resources/wallsideline.png");
 }
 
 .bottomWall {
-    margin-left: 464px;
-    margin-top: 1306px;
-    display: flex;
-    width: 1400px;
-    height: 100px;
-    position: absolute;
+  margin-left: 464px;
+  margin-top: 1306px;
+  display: flex;
+  width: 1400px;
+  height: 100px;
+  position: absolute;
 }
 
 .bottomWallLeftSide {
-    display: flex;
-    height: 100px;
-    width: 650px;
+  display: flex;
+  height: 100px;
+  width: 650px;
 }
 
 .bottomWallMiddle {
-    display: flex;
-    height: 100px;
-    width: 99px;
+  display: flex;
+  height: 100px;
+  width: 99px;
 }
 
 .bottomWallRightSide {
-    display: flex;
-    height: 100px;
-    width: 650px;
+  display: flex;
+  height: 100px;
+  width: 650px;
 }
 
 .wallSide {
-    height: 100px;
-    width: 60px;
-    background-image: url("./resources/wallside.png");
+  height: 100px;
+  width: 60px;
+  background-image: url("./resources/wallside.png");
 }
 
 .wall {
-    height: 100px;
-    width: 505px;
-    background-image: url("./resources/wall.png");
+  height: 100px;
+  width: 505px;
+  background-image: url("./resources/wall.png");
 }
 
 .frontdoorLeft {
-    height: 100px;
-    width: 85px;
-    background-image: url("./resources/frontdoorleft.png");
+  height: 100px;
+  width: 85px;
+  background-image: url("./resources/frontdoorleft.png");
 }
 
 .frontdoor {
-    height: 100px;
-    width: 99px;
-    background-image: url("./resources/frontdoor.png");
+  height: 100px;
+  width: 99px;
+  background-image: url("./resources/frontdoor.png");
 }
 
 .frontdoorRight {
-    height: 100px;
-    width: 85px;
-    background-image: url("./resources/frontdoorright.png");
+  height: 100px;
+  width: 85px;
+  background-image: url("./resources/frontdoorright.png");
 }
 
 .playerDiv {
-    margin-left: 1135px;
-    margin-top: 1427px;
-    height: 50px;
-    width: 50px;
-    background-image: url("./assets/player/player.png");
-    position: absolute;
-    background-color: black;
+  margin-left: 1135px;
+  margin-top: 1427px;
+  height: 50px;
+  width: 50px;
+  background-image: url("./assets/player/player.png");
+  position: absolute;
+  background-color: black;
 }
-
 
 /* index page */
 
 .indexBody {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  user-select: none;
 }
 
 .container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
 }
 
+.homePageHeadingDiv{
+  text-align: center;
+  padding: 30px;
+  position: absolute;
+  top: 110px;
+}
+
+.startButton{
+  margin-top: 100px;
+}
+
+
 h1 {
-    font-size: 2.5em;
-    margin: 0;
-    color: #333;
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2.5em;
+  margin: 0;
+  color: #3d3b3b;
 }
 
 p {
-    font-size: 1.2em;
-    color: #666;
-    margin-top: 10px;
+  font-size: 1.2em;
+  color: #666;
+  margin-top: 10px;
+  font-style: italic;
 }
 
 button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #2980b9;
+  background-color: #2980b9;
 }
+
+.homePageImgDiv {
+  height: 100vh;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .homePageImg {
+    height: 100vh;
+  }
+
+  .container {
+    width: 80%;
+  }
+}
+
+
+
