@@ -1,5 +1,9 @@
 var playerDiv = document.getElementById("playerDiv");
 var plantsArea = document.getElementById("plantsArea");
+var topFence = document.getElementById("topFence");
+var leftFence = document.getElementById("leftFence");
+var rightFence = document.getElementById("rightFence");
+var bottomFence = document.getElementById("bottomFence");
 
 var walkRightAnimationId = 0;
 var walkLeftAnimationId = 0;
@@ -15,7 +19,7 @@ function move(event) {
             walkLeftAnimationId = "None";
             walkUpAnimationId = "None";
             walkDownAnimationId = "None";
-            walkRightAnimationId = setInterval(walkRight, 150);
+            walkRightAnimationId = setInterval(walkRight, 1);
         }
 
     } else if (keycode == 37 || keycode == 65) {
@@ -26,7 +30,7 @@ function move(event) {
             walkUpAnimationId = "None";
             walkDownAnimationId = "None";
 
-            walkLeftAnimationId = setInterval(walkLeft, 150);
+            walkLeftAnimationId = setInterval(walkLeft, 1);
 
         }
 
@@ -38,7 +42,7 @@ function move(event) {
             walkLeftAnimationId = "None";
             walkDownAnimationId = "None";
 
-            walkUpAnimationId = setInterval(walkUp, 150);
+            walkUpAnimationId = setInterval(walkUp, 1);
         }
 
     } else if (keycode == 40 || keycode == 83) {
@@ -48,11 +52,36 @@ function move(event) {
             walkLeftAnimationId = "None";
             walkUpAnimationId = "None";
 
-            walkDownAnimationId = setInterval(walkDown, 150);
+            walkDownAnimationId = setInterval(walkDown, 1);
         }
+
+    } else if (keycode == 13) {
+
+        showPlayerLocation();
 
     }
 
+
+}
+
+var playerFocusId = 0;
+var playerFocusNumber = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    playerFocusId = setInterval(focusPlayer, 1);
+
+});
+
+function focusPlayer() {
+
+    playerDiv.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'center' });
+
+    if (playerFocusNumber > 0) {
+
+        clearInterval(playerFocusId);
+
+    }
 
 }
 
@@ -63,13 +92,24 @@ function walkRight() {
     var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
-    playerDivMarginLeft += 20;
-    playerImagePositionX -= 50;
+    var rightFenceComputedStyle = window.getComputedStyle(rightFence);
+    var rightFenceMarginLeft = parseFloat(rightFenceComputedStyle.marginLeft);
 
-    playerDiv.style.marginLeft = playerDivMarginLeft + "px";
+    var playerTouchingPoint = playerDivMarginLeft + 50;
+    var fanceTouchingPoint = rightFenceMarginLeft;
 
-    playerDiv.style.backgroundPositionY = "-50px";
-    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+    if (fanceTouchingPoint != playerTouchingPoint) {
+
+        playerDivMarginLeft += 1;
+        playerImagePositionX -= 50;
+
+        playerDiv.style.marginLeft = playerDivMarginLeft + "px";
+
+        playerDiv.style.backgroundPositionY = "-50px";
+        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+    }
+
 
 }
 
@@ -80,13 +120,23 @@ function walkLeft() {
     var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
-    playerDivMarginLeft -= 20;
-    playerImagePositionX -= 50;
+    var leftFenceComputedStyle = window.getComputedStyle(leftFence);
+    var leftFenceMarginLeft = parseFloat(leftFenceComputedStyle.marginLeft);
 
-    playerDiv.style.marginLeft = playerDivMarginLeft + "px";
+    var playerTouchingPoint = playerDivMarginLeft;
+    var fanceTouchingPoint = leftFenceMarginLeft + 28;
 
-    playerDiv.style.backgroundPositionY = "-100px";
-    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+    if (fanceTouchingPoint != playerTouchingPoint) {
+
+        playerDivMarginLeft -= 1;
+        playerImagePositionX -= 50;
+
+        playerDiv.style.marginLeft = playerDivMarginLeft + "px";
+
+        playerDiv.style.backgroundPositionY = "-100px";
+        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+    }
 
 }
 
@@ -97,13 +147,23 @@ function walkUp() {
     var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
-    playerDivMarginTop -= 20;
-    playerImagePositionX -= 50;
+    var topFenceComputedStyle = window.getComputedStyle(topFence);
+    var topFenceMarginTop = parseFloat(topFenceComputedStyle.marginTop);
 
-    playerDiv.style.marginTop = playerDivMarginTop + "px";
+    var playerTouchingPoint = playerDivMarginTop;
+    var fanceTouchingPoint = topFenceMarginTop + 110;
 
-    playerDiv.style.backgroundPositionY = "-200px";
-    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+    if (fanceTouchingPoint != playerTouchingPoint) {
+
+        playerDivMarginTop -= 1;
+        playerImagePositionX -= 50;
+
+        playerDiv.style.marginTop = playerDivMarginTop + "px";
+
+        playerDiv.style.backgroundPositionY = "-200px";
+        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+    }
 
 }
 
@@ -114,13 +174,23 @@ function walkDown() {
     var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
-    playerDivMarginTop += 20;
-    playerImagePositionX -= 50;
+    var bottomFenceComputedStyle = window.getComputedStyle(bottomFence);
+    var bottomFenceMarginTop = parseFloat(bottomFenceComputedStyle.marginTop);
 
-    playerDiv.style.marginTop = playerDivMarginTop + "px";
+    var playerTouchingPoint = playerDivMarginTop;
+    var fanceTouchingPoint = bottomFenceMarginTop;
 
-    playerDiv.style.backgroundPositionY = "-150px";
-    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+    if (fanceTouchingPoint != playerTouchingPoint) {
+
+        playerDivMarginTop += 1;
+        playerImagePositionX -= 50;
+
+        playerDiv.style.marginTop = playerDivMarginTop + "px";
+
+        playerDiv.style.backgroundPositionY = "-150px";
+        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+    }
+
 
 }
 
@@ -163,132 +233,13 @@ function walkDownStop() {
     playerDiv.style.backgroundPositionX = "50px";
 }
 
-//////////////////////////////////////////////////////
-function generate() {
-    generateTrees();
-}
+function showPlayerLocation() {
 
+    var playerDivComputedStyle = window.getComputedStyle(playerDiv);
 
-function generateTrees() {
+    var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
+    var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
 
-    var treeId = 1;
-    var leftHundrethPlace = -7;
-
-    for (var i = 0; i < 10; i++) {
-
-        var tree = document.createElement("div");
-        tree.className = "leftTree";
-        tree.id = "tree" + treeId;
-        treeId = treeId + 1;
-        var imageNumber = Math.floor(Math.random() * 2) + 1;
-        tree.style.backgroundImage = 'url("./assets/plants/tree' + imageNumber + '.png ")';
-
-        plantsArea.appendChild(tree);
-
-        var rdn = Math.floor(Math.random() * 51);
-
-        if (rdn < 10) {
-            rdn = rdn + "0";
-        }
-
-        tree.style.marginLeft = "-95%";
-        tree.style.marginTop = leftHundrethPlace + "" + rdn + "px";
-
-        var leftHundrethPlaceAddValue = Math.floor(Math.random() * 2) + 1;
-        leftHundrethPlace = leftHundrethPlace + leftHundrethPlaceAddValue;
-
-    }
-
-    var rightHundrethPlace = -7;
-
-    for (var i = 0; i < 10; i++) {
-
-        var tree = document.createElement("div");
-        tree.className = "rightTree";
-        tree.id = "tree" + treeId;
-        treeId = treeId + 1;
-        var imageNumber = Math.floor(Math.random() * 2) + 1;
-        tree.style.backgroundImage = 'url("./assets/plants/tree' + imageNumber + '.png ")';
-
-        plantsArea.appendChild(tree);
-
-        var rdn = Math.floor(Math.random() * 51);
-
-        if (rdn < 10) {
-            rdn = rdn + "0";
-        }
-
-        tree.style.marginLeft = "90%";
-        tree.style.marginTop = rightHundrethPlace + "" + rdn + "px";
-
-        var rightHundrethPlaceAddValue = Math.floor(Math.random() * 2) + 1;
-        rightHundrethPlace = rightHundrethPlace + rightHundrethPlaceAddValue;
-
-    }
-
-    var topHundrethPlace = -7;
-
-    for (var i = 0; i < 10; i++) {
-
-        var tree = document.createElement("div");
-        tree.className = "topTree";
-        tree.id = "tree" + treeId;
-        treeId = treeId + 1;
-        var imageNumber = Math.floor(Math.random() * 2) + 1;
-        tree.style.backgroundImage = 'url("./assets/plants/tree' + imageNumber + '.png ")';
-
-        plantsArea.appendChild(tree);
-
-        var rdn = Math.floor(Math.random() * 51);
-
-        if (rdn < 10) {
-            rdn = rdn + "0";
-        }
-        var currentMarginLeftPercentage = -95;
-
-        currentMarginLeftPercentage = currentMarginLeftPercentage + i * 20;
-
-        tree.style.marginLeft = currentMarginLeftPercentage + "%";
-        tree.style.marginTop = "-60%";
-
-        var topHundrethPlaceAddValue = Math.floor(Math.random() * 2) + 1;
-        topHundrethPlace = topHundrethPlace + topHundrethPlaceAddValue;
-
-    }
-
-    var bottomHundrethPlace = -7;
-
-    for (var i = 0; i < 10; i++) {
-
-        var tree = document.createElement("div");
-        tree.className = "bottopTree";
-        tree.id = "tree" + treeId;
-        treeId = treeId + 1;
-        var imageNumber = Math.floor(Math.random() * 2) + 1;
-        tree.style.backgroundImage = 'url("./assets/plants/tree' + imageNumber + '.png ")';
-
-        plantsArea.appendChild(tree);
-
-        var rdn = Math.floor(Math.random() * 51);
-
-        if (rdn < 10) {
-            rdn = rdn + "0";
-        }
-        var currentMarginLeftPercentage = -95;
-
-        currentMarginLeftPercentage = currentMarginLeftPercentage + i * 20;
-
-        if (i == 9) {
-            currentMarginLeftPercentage = 95;
-        }
-
-        tree.style.marginLeft = currentMarginLeftPercentage + "%";
-        tree.style.marginTop = "60%";
-
-        var bottomHundrethPlaceAddValue = Math.floor(Math.random() * 2) + 1;
-        bottomHundrethPlace = bottomHundrethPlace + bottomHundrethPlaceAddValue;
-
-    }
-
+    alert("MarginLeft" + playerDivMarginLeft + "MarginTop" + playerDivMarginTop);
 
 }

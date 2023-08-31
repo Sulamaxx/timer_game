@@ -1,352 +1,130 @@
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    background-color: #5f9234;
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.bodyDiv {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    background-color: #5f9234;
+    position: relative;
+}
+
+.treesArea {
+    margin: 0;
+    min-width: 2360px;
+    min-height: 1812px;
+    display: flex;
+    background-image: url("./assets/plants/tree.png");
+    position: absolute;
+}
+
+.groundArea1 {
+    margin-left: 264px;
+    margin-top: 206px;
+    width: 1850px;
+    height: 1440px;
+    background-color: #5f9234;
+    position: absolute;
+}
+
+.topFence {
+    margin-left: 264px;
+    margin-top: 206px;
+    width: 1850px;
+    height: 113px;
+    position: absolute;
+    background-image: url("./resources/fenceface.png");
+}
+
+.leftFence {
+    margin-left: 264px;
+    margin-top: 206px;
+    width: 28px;
+    height: 1440px;
+    position: absolute;
+    background-image: url("./resources/fanceside.png");
+}
+
+.rightFence {
+    margin-left: 2086px;
+    margin-top: 206px;
+    width: 28px;
+    height: 1440px;
+    position: absolute;
+    background-image: url("./resources/fanceside.png");
+}
+
+.bottomFence {
+    margin-left: 264px;
+    margin-top: 1532px;
+    width: 1850px;
+    height: 113px;
+    position: absolute;
+    background-image: url("./resources/fenceface.png");
+}
+
+.officeBuildingGround {
+    margin-left: 200px;
+    margin-top: 200px;
+    width: 1400px;
+    height: 1000px;
+    position: absolute;
+    background-color: #586051;
+}
+
+.officeFloor {
+    margin-top: 100px;
+    width: 1400px;
+    height: 900px;
+    position: absolute;
+    background-image: url("./resources/tile.jpg");
+}
+
+.topWall {
+    margin-left: 60px;
+    width: 1280px;
+    height: 100px;
+    position: absolute;
+    background-image: url("./resources/wall.png");
+}
+
+.leftWall {
+    width: 60px;
+    height: 900px;
+    position: absolute;
+    background-image: url("./resources/wallsideline.png");
+}
+
+.rightWall {
+    margin-left: 1340px;
+    width: 60px;
+    height: 900px;
+    position: absolute;
+    background-image: url("./resources/wallsideline.png");
+}
+
+.bottomWall {
+    display: flex;
+    width: 1400px;
+    height: 100px;
+    position: absolute;
+}
+
 .playerDiv {
-    margin: 0px;
+    margin-left: 1680px;
+    margin-top: 1340px;
     height: 50px;
     width: 50px;
     background-image: url("./assets/player/player.png");
     position: absolute;
-}
-
-body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #5f9234;
-}
-
-.bodyDiv {
-    width: 100%;
-    margin: 0;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    /* background-image: url("assets\plants\tree1.png"); */
-}
-
-.plantsArea {
-    width: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    /* background-image: url("./assets/plants/tree1.png"); */
-    position: absolute;
-}
-
-.leftTree {
-    width: 132px;
-    height: 103px;
-    position: absolute;
-    margin-top: 200px;
-}
-
-.rightTree {
-    width: 132px;
-    height: 103px;
-    position: absolute;
-    margin-top: 200px;
-}
-
-.topTree {
-    width: 132px;
-    height: 103px;
-    position: absolute;
-    margin-top: 200px;
-}
-
-.bottopTree {
-    width: 132px;
-    height: 103px;
-    position: absolute;
-    margin-top: 200px;
-}
-
-.office-building {
-    display: flex;
-    margin: 100px;
-}
-.line{
-  position: absolute;
-    width: 1200px;
-    height: 10px;
-    background-color: #131212;
-    margin-top: -35px;
-}
-
-  .room {
-    position: relative;
-    width: 1200px;
-    height: 800px;
-    background-image: url("resources/tile.jpg");
-    background-position: center;
-    background-repeat: repeat;
-}
-
-.wall {
-  position: absolute;
-  background-image: url("resources/wall.png");
-  background-repeat: repeat;
-}
-
-.north-wall,
-.south-wall {
-  width: 100%;
-  height: 25px;
-  background-image: url("resources/wall0.png");
-}
-
-.east-wall,
-.west-wall,
-.middle-wall {
-  height: 98%;
-  width: 15px;
-}
-
-.west-wall {
-  left: 0;
-  box-shadow: -10px -35px #131212;
-}
-
-.middle-wall {
-  left: 50%;
-  height: 85%;
-  bottom: 0;
-  -webkit-box-reflect: right;
-  border-right: #131212 solid 5px;
-}
-
-.east-wall {
-  right: 0;
-  box-shadow: 10px -35px #131212;
-  height: 100%;
-}
-
-.north-wall {
-  top: 0;
-  -webkit-box-reflect: above;
-}
-
-.south-wall {
-  bottom: 0;
-  width: 90%;
-  height: 50px;
-  border-top: #131212 solid 10px;
-}
-
-
-/* ... Rest of the .wall styles ... */
-
-.door {
-  position: absolute;
-  width: 105px;
-  height: 10px;
-  background-color: #131212;
-  bottom: 50px;
-  left: 94.4%;
-  transform: translateX(-50%);
-}
-
-.desk {
-  position: absolute;
-  background-image: url("resources/1.PNG");
-  background-size: cover;
-  background-position: center;
-  transform: rotate(90deg);
-  width: 250px;
-  height: 150px;
-  background-color: #333;
-  bottom: 330px;
-  left: 15%;
-}
-
-.desk1 {
-  position: absolute;
-  background-image: url("resources/3.PNG");
-  background-size: cover;
-  background-position: center;
-  transform: rotate(90deg);
-  width: 120px;
-  height: 120px;
-  background-color: #333;
-  bottom: 330px;
-  left: 72%;
-}
-
-.tv {
-  position: absolute;
-  width: 70px;
-  height: 50px;
-  background-image: url("resources/4.PNG");
-  background-size: cover;
-  background-position: center;
-  top: -12px;
-  left: 22%;
-}
-
-.item {
-  position: absolute;
-  width: 200px;
-  height: 50px;
-  background-image: url("resources/2.PNG");
-  background-size: cover;
-}
-
-.first-item {
-  bottom: 134px;
-  left: 40.75%;
-  transform: rotate(90deg);
-}
-
-.second-item {
-  bottom: 650px;
-  left: -6%;
-  transform: rotate(-90deg);
-}
-
-.third-item {
-  top: -12px;
-  left: 82.1%;
-  transform: rotate(0deg);
-}
-
-.forth-item {
-  bottom: 500px;
-  left: 45.9%;
-  transform: rotate(-90deg);
-}
-
-
-/* Conference Room */
-
-.conference-room .conference-table {
-    position: absolute;
-    width: 250px;
-    height: 150px;
-    background-color: #bbb;
-    bottom: 25px;
-    left: 25px;
-}
-
-.conference-room .chairs {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: #666;
-    bottom: 20px;
-    left: 100px;
-}
-
-.conference-room .projector {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-color: #222;
-    bottom: 130px;
-    left: 220px;
-}
-
-
-/* Break Room */
-
-.break-room .tables {
-    position: absolute;
-    width: 200px;
-    height: 100px;
-    background-color: #ddd;
-    bottom: 20px;
-    left: 40px;
-}
-
-.break-room .vending-machine {
-    position: absolute;
-    width: 80px;
-    height: 120px;
-    background-color: #ccc;
-    bottom: 20px;
-    left: 260px;
-}
-
-
-/* Additional responsive styles */
-
-@media (max-width: 1200px) {
-  .room,
-  .line {
-      width: 700px;
-  }
-  .south-wall {
-      width: 88%;
-  }
-  .door {
-      width: 69px;
-      left: 93%;
-  }
-  .first-item {
-      left: 34%;
-  }
-  .second-item {
-      left: -10.5%;
-  }
-  .third-item {
-      left: 69.3%;
-  }
-  .forth-item {
-      left: 43%;
-  }
-  .desk {
-      left: 8%;
-  }
-.leftTree {
-      margin-left: -100%;
-  }
-  .rightTree {
-      margin-left: 95%;
-  }
-  .topTree {
-      margin-top: -90%;
-  }
-  .bottopTree {
-      margin-top: 90%;
-  }
-}
-
-@media (max-width: 768px) {
-  .room,
-  .line {
-      width: 400px;
-  }
-  .south-wall {
-      width: 85%;
-  }
-  .door {
-      width: 50px;
-      left: 90%;
-  }
-  .first-item {
-      left: 22%;
-  }
-  .second-item {
-      left: -18%;
-  }
-  .third-item {
-      left: 46.2%;
-  }
-  .forth-item {
-      left: 38%;
-  }
-  .desk {
-      left: 4%;
-      width: 220px;
-  height: 140px;
-  }
-  .desk1 {
-      left: 71.5%;
-      bottom: 200px;
-      width: 95px;
-      height: 95px;
-  }
 }
