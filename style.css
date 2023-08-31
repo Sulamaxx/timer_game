@@ -114,15 +114,35 @@ body::-webkit-scrollbar {
 }
 
 .bottomWall {
+    margin-left: 464px;
+    margin-top: 1306px;
     display: flex;
     width: 1400px;
     height: 100px;
     position: absolute;
 }
 
+.wallSide {
+    height: 100px;
+    width: 60px;
+    background-image: url("./resources/wallside.png");
+}
+
+.wall {
+    height: 100px;
+    width: 505px;
+    background-image: url("./resources/wall.png");
+}
+
+.frontdoor {
+    height: 100px;
+    width: 270px;
+    background-image: url("./resources/frontdoor.png");
+}
+
 .playerDiv {
-    margin-left: 1680px;
-    margin-top: 1340px;
+    margin-left: 1135px;
+    margin-top: 1427px;
     height: 50px;
     width: 50px;
     background-image: url("./assets/player/player.png");
