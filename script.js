@@ -67,7 +67,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -97,17 +97,17 @@ function walkRight() {
     var rightFenceComputedStyle = window.getComputedStyle(rightFence);
     var rightFenceMarginLeft = parseFloat(rightFenceComputedStyle.marginLeft);
 
-    var playerFenceTouchingPoint = playerDivMarginLeft + 50;
+    var playerDivRightSideMargin = playerDivMarginLeft + 50;
     var fanceTouchingPoint = rightFenceMarginLeft;
 
+    if (fanceTouchingPoint == playerDivRightSideMargin) {
 
-
-    if (fanceTouchingPoint == playerFenceTouchingPoint) {
-
-    } else if (playerFenceTouchingPoint == 470 && playerDivMarginTop > 355 && playerDivMarginTop < 1405) {
+    } else if (playerDivRightSideMargin == 465 && playerDivMarginTop > 355 && playerDivMarginTop < 1405) {
         // Right OutSide
-    } else if (playerFenceTouchingPoint == 1808 && playerDivMarginTop > 358 && playerDivMarginTop < 1404) {
+    } else if (playerDivRightSideMargin == 1808 && playerDivMarginTop > 358 && playerDivMarginTop < 1404) {
         // Right InSide
+    } else if (playerDivMarginLeft == 1172 && playerDivMarginTop > 1353 && playerDivMarginTop < 1406) {
+        // Door Right Side Sideblock
     } else {
 
         playerDivMarginLeft += 1;
@@ -128,18 +128,16 @@ function walkLeft() {
     var leftFenceComputedStyle = window.getComputedStyle(leftFence);
     var leftFenceMarginLeft = parseFloat(leftFenceComputedStyle.marginLeft);
 
-    var playerFenceTouchingPoint = playerDivMarginLeft;
     var fanceTouchingPoint = leftFenceMarginLeft + 28;
 
-    var playerLeftWallTouchingXPoint = playerDivMarginLeft;
+    if (playerDivMarginLeft == fanceTouchingPoint) {
 
-
-    if (playerFenceTouchingPoint == fanceTouchingPoint) {
-
-    } else if (playerLeftWallTouchingXPoint == 524 && playerDivMarginTop > 358 && playerDivMarginTop < 1404) {
+    } else if (playerDivMarginLeft == 524 && playerDivMarginTop > 358 && playerDivMarginTop < 1404) {
         // Left InSide
-    } else if (playerFenceTouchingPoint == 1862 && playerDivMarginTop > 355 && playerDivMarginTop < 1405) {
+    } else if (playerDivMarginLeft == 1862 && playerDivMarginTop > 355 && playerDivMarginTop < 1405) {
         // Left OutSide
+    } else if (playerDivMarginLeft == 1106 && playerDivMarginTop > 1353 && playerDivMarginTop < 1406) {
+        // Door Left Side Sideblock
     } else {
 
         playerDivMarginLeft -= 1;
@@ -161,16 +159,15 @@ function walkUp() {
     var topFenceComputedStyle = window.getComputedStyle(topFence);
     var topFenceMarginTop = parseFloat(topFenceComputedStyle.marginTop);
 
-    var playerFenceTouchingPoint = playerDivMarginTop;
     var fanceTouchingPoint = topFenceMarginTop + 110;
 
-    if (fanceTouchingPoint == playerFenceTouchingPoint) {
+    if (fanceTouchingPoint == playerDivMarginTop) {
 
-    } else if (playerFenceTouchingPoint == 1406 && 419 < playerDivMarginLeft && playerDivMarginLeft < 1102) {
+    } else if (playerDivMarginTop == 1406 && 419 < playerDivMarginLeft && playerDivMarginLeft < 1106) {
         // Door Left Side OutSide
-    } else if (playerFenceTouchingPoint == 1406 && 1174 < playerDivMarginLeft && playerDivMarginLeft < 1862) {
+    } else if (playerDivMarginTop == 1406 && 1172 < playerDivMarginLeft && playerDivMarginLeft < 1862) {
         // Door Right Side OutSide
-    } else if (playerFenceTouchingPoint == 456 && 523 < playerDivMarginLeft && playerDivMarginLeft < 1809) {
+    } else if (playerDivMarginTop == 456 && 523 < playerDivMarginLeft && playerDivMarginLeft < 1809) {
         //  Top Inside
     } else {
 
@@ -192,16 +189,15 @@ function walkDown() {
     var bottomFenceComputedStyle = window.getComputedStyle(bottomFence);
     var bottomFenceMarginTop = parseFloat(bottomFenceComputedStyle.marginTop);
 
-    var playerFenceTouchingPoint = playerDivMarginTop;
     var fanceTouchingPoint = bottomFenceMarginTop;
 
-    if (fanceTouchingPoint == playerFenceTouchingPoint) {
+    if (fanceTouchingPoint == playerDivMarginTop) {
 
-    } else if (playerFenceTouchingPoint == 1353 && 523 < playerDivMarginLeft && playerDivMarginLeft < 1102) {
+    } else if (playerDivMarginTop == 1353 && 523 < playerDivMarginLeft && playerDivMarginLeft < 1106) {
         // Door Left Side Inside
-    } else if (playerFenceTouchingPoint == 1353 && 1174 < playerDivMarginLeft && playerDivMarginLeft < 1809) {
+    } else if (playerDivMarginTop == 1353 && 1172 < playerDivMarginLeft && playerDivMarginLeft < 1809) {
         // Door right Side Inside
-    } else if (playerFenceTouchingPoint == 356 && 420 < playerDivMarginLeft && playerDivMarginLeft < 1862) {
+    } else if (playerDivMarginTop == 356 && 420 < playerDivMarginLeft && playerDivMarginLeft < 1862) {
         // Top OutSide 
     } else {
 
@@ -257,12 +253,8 @@ function walkDownStop() {
 
 function showPlayerLocation() {
 
-    var bottomWallLeftSideComputedStyle = window.getComputedStyle(bottomWall);
-    var bottomWallLeftSideMarginTop = parseFloat(bottomWallLeftSideComputedStyle.marginTop);
-    var bottomWallRightSideComputedStyle = window.getComputedStyle(bottomWallRightSide);
-    var bottomWallRightSideMarginTop = parseFloat(bottomWallRightSideComputedStyle.marginTop);
 
-    alert("bottomWallLeftSideMarginTop:" + playerDivMarginLeft + "playerDivMarginLeft:" + playerDivMarginTop);
+    alert("playerDivMarginLeft: " + playerDivMarginLeft + "-playerDivMarginTop: " + playerDivMarginTop);
 
 }
 
