@@ -347,3 +347,77 @@ button:hover {
         width: 80%;
     }
 }
+
+.coin {
+    margin-left: 1135px;
+    margin-top: 1427px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-repeat: no-repeat;
+    animation: rotateCoin 2s infinite;
+    background-position: center;
+}
+
+@keyframes rotateCoin {
+    5% {
+        background-image: url("./assets/coin/coin0.png");
+    }
+    10% {
+        background-image: url("./assets/coin/coin1.png");
+    }
+    15% {
+        background-image: url("./assets/coin/coin2.png");
+    }
+    20% {
+        background-image: url("./assets/coin/coin3.png");
+    }
+    25% {
+        background-image: url("./assets/coin/coin4.png");
+    }
+    30% {
+        background-image: url("./assets/coin/coin5.png");
+    }
+    35% {
+        background-image: url("./assets/coin/coin6.png");
+    }
+    40% {
+        background-image: url("./assets/coin/coin7.png");
+    }
+    45% {
+        background-image: url("./assets/coin/coin8.png");
+    }
+    50% {
+        background-image: url("./assets/coin/coin9.png");
+    }
+    55% {
+        background-image: url("./assets/coin/coin0.png");
+    }
+    60% {
+        background-image: url("./assets/coin/coin1.png");
+    }
+    65% {
+        background-image: url("./assets/coin/coin2.png");
+    }
+    70% {
+        background-image: url("./assets/coin/coin3.png");
+    }
+    75% {
+        background-image: url("./assets/coin/coin4.png");
+    }
+    80% {
+        background-image: url("./assets/coin/coin5.png");
+    }
+    85% {
+        background-image: url("./assets/coin/coin6.png");
+    }
+    90% {
+        background-image: url("./assets/coin/coin7.png");
+    }
+    95% {
+        background-image: url("./assets/coin/coin8.png");
+    }
+    100% {
+        background-image: url("./assets/coin/coin9.png");
+    }
+}
