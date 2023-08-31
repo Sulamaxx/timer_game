@@ -256,3 +256,26 @@ function showPlayerLocation() {
     alert("bottomWallLeftSideMarginTop:" + bottomWallLeftSideMarginTop + "bottomWallRightSideMarginTop:" + bottomWallRightSideMarginTop);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// index Page
+const startButton = document.getElementById('startButton');
+
+startButton.addEventListener('click', () => {
+       alert('Game is starting!');
+});
+
+
+
+
+
