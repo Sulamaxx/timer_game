@@ -1,51 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Office Room Plan</title>
-  </head>
+</head>
 
-  <body onkeydown="move(event);" onkeyup="stop(event)">
+<body onkeydown="move(event);" onkeyup="stop(event)">
     <div class="bodyDiv">
-      <div class="treesArea" id="treesArea">
-        <div class="groundArea1">
-          <div class="officeBuildingGround">
-            <div class="topWall" id="topWall"></div>
-            <div class="officeFloor"></div>
-            <div class="leftWall" id="leftWall"></div>
-            <div class="rightWall" id="rightWall"></div>
-          </div>
+        <div class="treesArea" id="treesArea">
+            <div class="groundArea1">
+                <div class="officeBuildingGround">
+                    <div class="topWall" id="topWall"></div>
+                    <div class="officeFloor"></div>
+                    <div class="computerTable1" id="computerTable1"></div>
+                    <div class="computerTable2" id="computerTable2"></div>
+                    <div class="techTable1" id="techTable1"></div>
+                    <div class="meetingTable" id="meetingTable"></div>
+                    <div class="techTable2" id="techTable2"></div>
+                    <div class="midYWall" id="midYWall"></div>
+                    <div class="midXWall" id="midXWall">
+                        <div class="midXWallLeft"></div>
+                        <div class="midXWallMid"></div>
+                        <div class="midXWallRight"></div>
+                    </div>
+                    <div class="leftWall" id="leftWall"></div>
+                    <div class="rightWall" id="rightWall"></div>
+                </div>
+            </div>
+
+            <div class="playerDiv" id="playerDiv"></div>
+
+            <div class="bottomWall" id="bottomWall">
+                <div class="bottomWallLeftSide" id="bottomWallLeftSide">
+                    <div class="wallSide"></div>
+                    <div class="wall"></div>
+                    <div class="frontdoorLeft"></div>
+                </div>
+
+                <div class="bottomWallMiddle">
+                    <div class="frontdoor"></div>
+                </div>
+
+                <div class="bottomWallRightSide" id="bottomWallRightSide">
+                    <div class="frontdoorRight"></div>
+                    <div class="wall"></div>
+                    <div class="wallSide"></div>
+                </div>
+            </div>
+
+            <div class="topFence" id="topFence"></div>
+            <div class="leftFence" id="leftFence"></div>
+            <div class="rightFence" id="rightFence"></div>
+            <div class="bottomFence" id="bottomFence"></div>
         </div>
-
-        <div class="playerDiv" id="playerDiv"></div>
-
-        <div class="bottomWall" id="bottomWall">
-          <div class="bottomWallLeftSide" id="bottomWallLeftSide">
-            <div class="wallSide"></div>
-            <div class="wall"></div>
-            <div class="frontdoorLeft"></div>
-          </div>
-
-          <div class="bottomWallMiddle">
-            <div class="frontdoor"></div>
-          </div>
-
-          <div class="bottomWallRightSide" id="bottomWallRightSide">
-            <div class="frontdoorRight"></div>
-            <div class="wall"></div>
-            <div class="wallSide"></div>
-          </div>
-        </div>
-
-        <div class="topFence" id="topFence"></div>
-        <div class="leftFence" id="leftFence"></div>
-        <div class="rightFence" id="rightFence"></div>
-        <div class="bottomFence" id="bottomFence"></div>
-      </div>
     </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>

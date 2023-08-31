@@ -170,6 +170,96 @@ body::-webkit-scrollbar {
     background-image: url("./resources/frontdoorright.png");
 }
 
+.midYWall {
+    margin-left: 660px;
+    width: 60px;
+    height: 400px;
+    position: absolute;
+    background-image: url("./resources/wallsideline.png");
+}
+
+.computerTable1 {
+    margin-top: 150px;
+    margin-left: 110px;
+    width: 500px;
+    height: 223px;
+    position: absolute;
+    display: flex;
+    background-image: url("./resources/computertable.png");
+}
+
+.computerTable2 {
+    margin-top: 150px;
+    margin-left: 780px;
+    width: 500px;
+    height: 223px;
+    position: absolute;
+    display: flex;
+    background-image: url("./resources/computertable.png");
+}
+
+.techTable1 {
+    margin-top: 600px;
+    margin-left: 160px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    display: flex;
+    background-image: url("./resources/techTeable.png");
+}
+
+.meetingTable {
+    margin-top: 550px;
+    margin-left: 510px;
+    width: 357px;
+    height: 300px;
+    position: absolute;
+    display: flex;
+    background-image: url("./resources/meetingtable.png");
+}
+
+.techTable2 {
+    margin-top: 600px;
+    margin-left: 1050px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    display: flex;
+    background-image: url("./resources/techTeable.png");
+}
+
+.midXWall {
+    margin-top: 400px;
+    margin-left: 160px;
+    width: 1080px;
+    height: 100px;
+    position: absolute;
+    display: flex;
+}
+
+.midXWallLeft {
+    width: 510px;
+    height: 100px;
+    position: absolute;
+    background-image: url("./resources/insidewall.png");
+}
+
+.midXWallMid {
+    margin-left: 510px;
+    width: 45px;
+    height: 100px;
+    position: absolute;
+    background-image: url("./resources/insidemidwall.png");
+}
+
+.midXWallRight {
+    margin-left: 555px;
+    width: 525px;
+    height: 100px;
+    position: absolute;
+    background-image: url("./resources/insidewall.png");
+}
+
 .playerDiv {
     margin-left: 1135px;
     margin-top: 1427px;

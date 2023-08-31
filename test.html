@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .trapezoid-crop {
+            width: 200px;
+            /* Set the width of your div */
+            height: 0;
+            /* Set the initial height to 0 */
+            border-bottom: 100px solid transparent;
+            /* Half of the desired height */
+            border-left: 50px solid transparent;
+            /* Set the left slant */
+            border-right: 50px solid transparent;
+            /* Set the right slant */
+            background-color: blue;
+            /* Set the background color */
+            position: relative;
+        }
+        
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="trapezoid-crop">
+        <div class="content">
+            This is a trapezoid-shaped cropped div.
+        </div>
+    </div>
+
+</body>
+
+</html>
