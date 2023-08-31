@@ -171,6 +171,7 @@ body::-webkit-scrollbar {
 }
 
 .playerDiv {
+<<<<<<< Updated upstream
   margin-left: 1135px;
   margin-top: 1427px;
   height: 50px;
@@ -178,6 +179,15 @@ body::-webkit-scrollbar {
   background-image: url("./assets/player/player.png");
   position: absolute;
   background-color: black;
+=======
+    margin-left: 1135px;
+    margin-top: 1427px;
+    height: 50px;
+    width: 50px;
+    background-image: url("./assets/player/player.png");
+    position: absolute;
+    /* background-color: black; */
+>>>>>>> Stashed changes
 }
 
 /* index page */

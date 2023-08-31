@@ -67,7 +67,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -85,11 +85,13 @@ function focusPlayer() {
 
 }
 
+var playerDivComputedStyle = window.getComputedStyle(playerDiv);
+var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
+var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
+
+
 function walkRight() {
 
-    var playerDivComputedStyle = window.getComputedStyle(playerDiv);
-
-    var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
     var rightFenceComputedStyle = window.getComputedStyle(rightFence);
@@ -98,7 +100,15 @@ function walkRight() {
     var playerFenceTouchingPoint = playerDivMarginLeft + 50;
     var fanceTouchingPoint = rightFenceMarginLeft;
 
-    if (fanceTouchingPoint != playerFenceTouchingPoint) {
+
+
+    if (fanceTouchingPoint == playerFenceTouchingPoint) {
+
+    } else if (playerFenceTouchingPoint == 470 && playerDivMarginTop > 355 && playerDivMarginTop < 1405) {
+        // Right OutSide
+    } else if (playerFenceTouchingPoint == 1808 && playerDivMarginTop > 358 && playerDivMarginTop < 1404) {
+        // Right InSide
+    } else {
 
         playerDivMarginLeft += 1;
         playerImagePositionX -= 50;
@@ -113,11 +123,6 @@ function walkRight() {
 }
 
 function walkLeft() {
-
-    var playerDivComputedStyle = window.getComputedStyle(playerDiv);
-
-    var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
-    var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
     var leftFenceComputedStyle = window.getComputedStyle(leftFence);
@@ -127,23 +132,14 @@ function walkLeft() {
     var fanceTouchingPoint = leftFenceMarginLeft + 28;
 
     var playerLeftWallTouchingXPoint = playerDivMarginLeft;
-    var playerLeftWallTouchingYPoint = playerDivMarginTop;
-    var leftWallTouchingXPoint = 524;
-    var leftWallTouchingYStartPoint = 406;
-    var leftWallTouchingYEndPoint = 1406;
 
-    var playerRightWallTouchingXPoint = playerDivMarginLeft;
-    var playerRightWallTouchingYPoint = playerDivMarginTop;
-    var rightWallTouchingXPoint = 1864;
-    var rightWallTouchingYStartPoint = 360;
-    var rightWallTouchingYEndPoint = 1406;
 
     if (playerFenceTouchingPoint == fanceTouchingPoint) {
 
-    } else if (playerLeftWallTouchingXPoint == leftWallTouchingXPoint && playerLeftWallTouchingYPoint > leftWallTouchingYStartPoint && playerLeftWallTouchingYPoint < leftWallTouchingYEndPoint) {
-
-    } else if (playerRightWallTouchingXPoint == rightWallTouchingXPoint && playerRightWallTouchingYPoint > rightWallTouchingYStartPoint && playerRightWallTouchingYPoint < rightWallTouchingYEndPoint) {
-
+    } else if (playerLeftWallTouchingXPoint == 524 && playerDivMarginTop > 358 && playerDivMarginTop < 1404) {
+        // Left InSide
+    } else if (playerFenceTouchingPoint == 1862 && playerDivMarginTop > 355 && playerDivMarginTop < 1405) {
+        // Left OutSide
     } else {
 
         playerDivMarginLeft -= 1;
@@ -160,10 +156,6 @@ function walkLeft() {
 
 function walkUp() {
 
-    var playerDivComputedStyle = window.getComputedStyle(playerDiv);
-
-    var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
-    var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
     var topFenceComputedStyle = window.getComputedStyle(topFence);
@@ -172,41 +164,14 @@ function walkUp() {
     var playerFenceTouchingPoint = playerDivMarginTop;
     var fanceTouchingPoint = topFenceMarginTop + 110;
 
-
-    var bottomWallComputedStyle = window.getComputedStyle(bottomWall);
-    var bottomWallMarginTop = parseFloat(bottomWallComputedStyle.marginTop);
-    var bottomWallMarginLeft = parseFloat(bottomWallComputedStyle.marginLeft);
-
-    var playerWallTouchingYPoint = playerDivMarginTop + 100;
-    var playerWallTouchingXPoint = playerDivMarginLeft + 80;
-    var bottomWallTouchingYPoint = bottomWallMarginTop + 200;
-    var bottomWallTouchingXStartPoint = bottomWallMarginLeft;
-
-    var bottomWallLeftSideComputedStyle = window.getComputedStyle(bottomWallLeftSide);
-    var bottomWallLeftSideWidth = parseFloat(bottomWallLeftSideComputedStyle.width);
-
-    var bottomWallRightSideComputedStyle = window.getComputedStyle(bottomWallRightSide);
-    var bottomWallRightSideWidth = parseFloat(bottomWallRightSideComputedStyle.width);
-
-    var frontdoorLeftTouchingPoint = bottomWallMarginLeft + bottomWallLeftSideWidth + 85;
-
-    var frontdoorRightTouchingPoint = frontdoorLeftTouchingPoint + 99;
-
-    var bottomWallTouchingXEndPoint = frontdoorRightTouchingPoint + bottomWallRightSideWidth;
-    var playerTopWallTouchingYPoint = playerDivMarginTop + 150;
-    var playerTopWallTouchingXPoint = playerDivMarginLeft;
-    var topWallTouchingYPoint = 606;
-    var topWallTouchingXStartPoint = 524;
-    var topWallTouchingXEndPoint = 1804;
-
     if (fanceTouchingPoint == playerFenceTouchingPoint) {
 
-    } else if (playerWallTouchingYPoint == bottomWallTouchingYPoint && playerWallTouchingXPoint > bottomWallTouchingXStartPoint && playerWallTouchingXPoint < frontdoorLeftTouchingPoint) {
-
-    } else if (playerWallTouchingYPoint == bottomWallTouchingYPoint && playerWallTouchingXPoint > frontdoorRightTouchingPoint && playerWallTouchingXPoint < bottomWallTouchingXEndPoint) {
-
-    } else if (playerTopWallTouchingYPoint == topWallTouchingYPoint && playerTopWallTouchingXPoint > topWallTouchingXStartPoint && playerTopWallTouchingXPoint < topWallTouchingXEndPoint) {
-
+    } else if (playerFenceTouchingPoint == 1406 && 419 < playerDivMarginLeft && playerDivMarginLeft < 1102) {
+        // Door Left Side OutSide
+    } else if (playerFenceTouchingPoint == 1406 && 1174 < playerDivMarginLeft && playerDivMarginLeft < 1862) {
+        // Door Right Side OutSide
+    } else if (playerFenceTouchingPoint == 456 && 523 < playerDivMarginLeft && playerDivMarginLeft < 1809) {
+        //  Top Inside
     } else {
 
         playerDivMarginTop -= 1;
@@ -222,10 +187,6 @@ function walkUp() {
 }
 
 function walkDown() {
-
-    var playerDivComputedStyle = window.getComputedStyle(playerDiv);
-
-    var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
     var bottomFenceComputedStyle = window.getComputedStyle(bottomFence);
@@ -234,7 +195,15 @@ function walkDown() {
     var playerFenceTouchingPoint = playerDivMarginTop;
     var fanceTouchingPoint = bottomFenceMarginTop;
 
-    if (fanceTouchingPoint != playerFenceTouchingPoint) {
+    if (fanceTouchingPoint == playerFenceTouchingPoint) {
+
+    } else if (playerFenceTouchingPoint == 1353 && 523 < playerDivMarginLeft && playerDivMarginLeft < 1102) {
+        // Door Left Side Inside
+    } else if (playerFenceTouchingPoint == 1353 && 1174 < playerDivMarginLeft && playerDivMarginLeft < 1809) {
+        // Door right Side Inside
+    } else if (playerFenceTouchingPoint == 356 && 420 < playerDivMarginLeft && playerDivMarginLeft < 1862) {
+        // Top OutSide 
+    } else {
 
         playerDivMarginTop += 1;
         playerImagePositionX -= 50;
@@ -287,11 +256,6 @@ function walkDownStop() {
 }
 
 function showPlayerLocation() {
-
-    var playerDivComputedStyle = window.getComputedStyle(playerDiv);
-
-    var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
-    var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
 
     var bottomWallLeftSideComputedStyle = window.getComputedStyle(bottomWall);
     var bottomWallLeftSideMarginTop = parseFloat(bottomWallLeftSideComputedStyle.marginTop);
