@@ -264,3 +264,11 @@ const startButton = document.getElementById('startButton');
 startButton.addEventListener('click', () => {
     alert('Game is starting!');
 });
+
+function onloadMoments() {
+    setInterval(genarateGifts, 100);
+}
+
+function genarateGifts() {
+
+}
