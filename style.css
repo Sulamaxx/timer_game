@@ -122,6 +122,24 @@ body::-webkit-scrollbar {
     position: absolute;
 }
 
+.bottomWallLeftSide {
+    display: flex;
+    height: 100px;
+    width: 650px;
+}
+
+.bottomWallMiddle {
+    display: flex;
+    height: 100px;
+    width: 99px;
+}
+
+.bottomWallRightSide {
+    display: flex;
+    height: 100px;
+    width: 650px;
+}
+
 .wallSide {
     height: 100px;
     width: 60px;
@@ -134,10 +152,22 @@ body::-webkit-scrollbar {
     background-image: url("./resources/wall.png");
 }
 
+.frontdoorLeft {
+    height: 100px;
+    width: 85px;
+    background-image: url("./resources/frontdoorleft.png");
+}
+
 .frontdoor {
     height: 100px;
-    width: 270px;
+    width: 99px;
     background-image: url("./resources/frontdoor.png");
+}
+
+.frontdoorRight {
+    height: 100px;
+    width: 85px;
+    background-image: url("./resources/frontdoorright.png");
 }
 
 .playerDiv {

@@ -95,10 +95,10 @@ function walkRight() {
     var rightFenceComputedStyle = window.getComputedStyle(rightFence);
     var rightFenceMarginLeft = parseFloat(rightFenceComputedStyle.marginLeft);
 
-    var playerTouchingPoint = playerDivMarginLeft + 50;
+    var playerFenceTouchingPoint = playerDivMarginLeft + 50;
     var fanceTouchingPoint = rightFenceMarginLeft;
 
-    if (fanceTouchingPoint != playerTouchingPoint) {
+    if (fanceTouchingPoint != playerFenceTouchingPoint) {
 
         playerDivMarginLeft += 1;
         playerImagePositionX -= 50;
@@ -123,10 +123,10 @@ function walkLeft() {
     var leftFenceComputedStyle = window.getComputedStyle(leftFence);
     var leftFenceMarginLeft = parseFloat(leftFenceComputedStyle.marginLeft);
 
-    var playerTouchingPoint = playerDivMarginLeft;
+    var playerFenceTouchingPoint = playerDivMarginLeft;
     var fanceTouchingPoint = leftFenceMarginLeft + 28;
 
-    if (fanceTouchingPoint != playerTouchingPoint) {
+    if (fanceTouchingPoint != playerFenceTouchingPoint) {
 
         playerDivMarginLeft -= 1;
         playerImagePositionX -= 50;
@@ -150,10 +150,18 @@ function walkUp() {
     var topFenceComputedStyle = window.getComputedStyle(topFence);
     var topFenceMarginTop = parseFloat(topFenceComputedStyle.marginTop);
 
-    var playerTouchingPoint = playerDivMarginTop;
+    var playerFenceTouchingPoint = playerDivMarginTop;
     var fanceTouchingPoint = topFenceMarginTop + 110;
 
-    if (fanceTouchingPoint != playerTouchingPoint) {
+
+    var bottomWallComputedStyle = window.getComputedStyle(bottomWall);
+    var bottomWallMarginTop = parseFloat(bottomWallComputedStyle.marginTop);
+
+    var playerWallTouchingPoint = playerDivMarginTop + 100;
+    var bottomWallTouchingPoint = bottomWallMarginTop + 100;
+
+    if (fanceTouchingPoint == playerFenceTouchingPoint) {} else if (playerWallTouchingPoint == bottomWallTouchingPoint) {} else {
+
 
         playerDivMarginTop -= 1;
         playerImagePositionX -= 50;
@@ -177,10 +185,10 @@ function walkDown() {
     var bottomFenceComputedStyle = window.getComputedStyle(bottomFence);
     var bottomFenceMarginTop = parseFloat(bottomFenceComputedStyle.marginTop);
 
-    var playerTouchingPoint = playerDivMarginTop;
+    var playerFenceTouchingPoint = playerDivMarginTop;
     var fanceTouchingPoint = bottomFenceMarginTop;
 
-    if (fanceTouchingPoint != playerTouchingPoint) {
+    if (fanceTouchingPoint != playerFenceTouchingPoint) {
 
         playerDivMarginTop += 1;
         playerImagePositionX -= 50;
@@ -240,6 +248,11 @@ function showPlayerLocation() {
     var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
     var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
 
-    alert("MarginLeft" + playerDivMarginLeft + "MarginTop" + playerDivMarginTop);
+    var bottomWallLeftSideComputedStyle = window.getComputedStyle(bottomWall);
+    var bottomWallLeftSideMarginTop = parseFloat(bottomWallLeftSideComputedStyle.marginTop);
+    var bottomWallRightSideComputedStyle = window.getComputedStyle(bottomWallRightSide);
+    var bottomWallRightSideMarginTop = parseFloat(bottomWallRightSideComputedStyle.marginTop);
+
+    alert("bottomWallLeftSideMarginTop:" + bottomWallLeftSideMarginTop + "bottomWallRightSideMarginTop:" + bottomWallRightSideMarginTop);
 
 }
