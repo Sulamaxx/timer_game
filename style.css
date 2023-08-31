@@ -177,19 +177,8 @@ body::-webkit-scrollbar {
     width: 50px;
     background-image: url("./assets/player/player.png");
     position: absolute;
+    background-color: black;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* index page */
@@ -239,6 +228,3 @@ button {
 button:hover {
     background-color: #2980b9;
 }
-
-
-

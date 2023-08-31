@@ -110,7 +110,6 @@ function walkRight() {
 
     }
 
-
 }
 
 function walkLeft() {
@@ -118,6 +117,7 @@ function walkLeft() {
     var playerDivComputedStyle = window.getComputedStyle(playerDiv);
 
     var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
+    var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
     var leftFenceComputedStyle = window.getComputedStyle(leftFence);
@@ -126,7 +126,25 @@ function walkLeft() {
     var playerFenceTouchingPoint = playerDivMarginLeft;
     var fanceTouchingPoint = leftFenceMarginLeft + 28;
 
-    if (fanceTouchingPoint != playerFenceTouchingPoint) {
+    var playerLeftWallTouchingXPoint = playerDivMarginLeft;
+    var playerLeftWallTouchingYPoint = playerDivMarginTop;
+    var leftWallTouchingXPoint = 524;
+    var leftWallTouchingYStartPoint = 406;
+    var leftWallTouchingYEndPoint = 1406;
+
+    var playerRightWallTouchingXPoint = playerDivMarginLeft;
+    var playerRightWallTouchingYPoint = playerDivMarginTop;
+    var rightWallTouchingXPoint = 1864;
+    var rightWallTouchingYStartPoint = 360;
+    var rightWallTouchingYEndPoint = 1406;
+
+    if (playerFenceTouchingPoint == fanceTouchingPoint) {
+
+    } else if (playerLeftWallTouchingXPoint == leftWallTouchingXPoint && playerLeftWallTouchingYPoint > leftWallTouchingYStartPoint && playerLeftWallTouchingYPoint < leftWallTouchingYEndPoint) {
+
+    } else if (playerRightWallTouchingXPoint == rightWallTouchingXPoint && playerRightWallTouchingYPoint > rightWallTouchingYStartPoint && playerRightWallTouchingYPoint < rightWallTouchingYEndPoint) {
+
+    } else {
 
         playerDivMarginLeft -= 1;
         playerImagePositionX -= 50;
@@ -145,6 +163,7 @@ function walkUp() {
     var playerDivComputedStyle = window.getComputedStyle(playerDiv);
 
     var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
+    var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
     var topFenceComputedStyle = window.getComputedStyle(topFence);
@@ -156,12 +175,39 @@ function walkUp() {
 
     var bottomWallComputedStyle = window.getComputedStyle(bottomWall);
     var bottomWallMarginTop = parseFloat(bottomWallComputedStyle.marginTop);
+    var bottomWallMarginLeft = parseFloat(bottomWallComputedStyle.marginLeft);
 
-    var playerWallTouchingPoint = playerDivMarginTop + 100;
-    var bottomWallTouchingPoint = bottomWallMarginTop + 100;
+    var playerWallTouchingYPoint = playerDivMarginTop + 100;
+    var playerWallTouchingXPoint = playerDivMarginLeft + 80;
+    var bottomWallTouchingYPoint = bottomWallMarginTop + 200;
+    var bottomWallTouchingXStartPoint = bottomWallMarginLeft;
 
-    if (fanceTouchingPoint == playerFenceTouchingPoint) {} else if (playerWallTouchingPoint == bottomWallTouchingPoint) {} else {
+    var bottomWallLeftSideComputedStyle = window.getComputedStyle(bottomWallLeftSide);
+    var bottomWallLeftSideWidth = parseFloat(bottomWallLeftSideComputedStyle.width);
 
+    var bottomWallRightSideComputedStyle = window.getComputedStyle(bottomWallRightSide);
+    var bottomWallRightSideWidth = parseFloat(bottomWallRightSideComputedStyle.width);
+
+    var frontdoorLeftTouchingPoint = bottomWallMarginLeft + bottomWallLeftSideWidth + 85;
+
+    var frontdoorRightTouchingPoint = frontdoorLeftTouchingPoint + 99;
+
+    var bottomWallTouchingXEndPoint = frontdoorRightTouchingPoint + bottomWallRightSideWidth;
+    var playerTopWallTouchingYPoint = playerDivMarginTop + 150;
+    var playerTopWallTouchingXPoint = playerDivMarginLeft;
+    var topWallTouchingYPoint = 606;
+    var topWallTouchingXStartPoint = 524;
+    var topWallTouchingXEndPoint = 1804;
+
+    if (fanceTouchingPoint == playerFenceTouchingPoint) {
+
+    } else if (playerWallTouchingYPoint == bottomWallTouchingYPoint && playerWallTouchingXPoint > bottomWallTouchingXStartPoint && playerWallTouchingXPoint < frontdoorLeftTouchingPoint) {
+
+    } else if (playerWallTouchingYPoint == bottomWallTouchingYPoint && playerWallTouchingXPoint > frontdoorRightTouchingPoint && playerWallTouchingXPoint < bottomWallTouchingXEndPoint) {
+
+    } else if (playerTopWallTouchingYPoint == topWallTouchingYPoint && playerTopWallTouchingXPoint > topWallTouchingXStartPoint && playerTopWallTouchingXPoint < topWallTouchingXEndPoint) {
+
+    } else {
 
         playerDivMarginTop -= 1;
         playerImagePositionX -= 50;
@@ -198,7 +244,6 @@ function walkDown() {
         playerDiv.style.backgroundPositionY = "-150px";
         playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
     }
-
 
 }
 
@@ -253,29 +298,13 @@ function showPlayerLocation() {
     var bottomWallRightSideComputedStyle = window.getComputedStyle(bottomWallRightSide);
     var bottomWallRightSideMarginTop = parseFloat(bottomWallRightSideComputedStyle.marginTop);
 
-    alert("bottomWallLeftSideMarginTop:" + bottomWallLeftSideMarginTop + "bottomWallRightSideMarginTop:" + bottomWallRightSideMarginTop);
+    alert("bottomWallLeftSideMarginTop:" + playerDivMarginLeft + "playerDivMarginLeft:" + playerDivMarginTop);
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // index Page
 const startButton = document.getElementById('startButton');
 
 startButton.addEventListener('click', () => {
-       alert('Game is starting!');
+    alert('Game is starting!');
 });
-
-
-
-
-
