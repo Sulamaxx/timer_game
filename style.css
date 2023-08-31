@@ -1,13 +1,3 @@
-<<<<<<< Updated upstream
-=======
-.playerDiv {
-    margin: 0px;
-    height: 80px;
-    width: 80px;
-    background-image: url("./assets/player/player.png");
-}
-
->>>>>>> Stashed changes
 body {
     margin: 0;
     display: flex;
@@ -304,7 +294,6 @@ body::-webkit-scrollbar {
     position: absolute;
 }
 
-<<<<<<< Updated upstream
 .homePageHeadingDiv {
     text-align: center;
     padding: 30px;
@@ -353,170 +342,12 @@ button:hover {
 @media (max-width: 1000px) {
     .homePageImg {
         height: 100vh;
-=======
-.north-wall,
-.south-wall {
-    width: 100%;
-    height: 15px;
-    background-image: url("resources/wall0.png");
-    width: 100%;
-    height: 15px;
-    background-image: url("resources/wall0.png");
-}
-
-.east-wall,
-.west-wall,
-.middle-wall {
-    height: 100%;
-    width: 15px;
-}
-
-.west-wall {
-    left: 0;
-}
-
-.middle-wall {
-    left: 50%;
-    height: 85%;
-    bottom: 0;
-}
-
-.east-wall {
-    right: 0;
-}
-
-.north-wall {
-    top: 0;
-}
-
-.south-wall {
-    bottom: 0;
-    width: 90%;
-}
-
-
-/* ... Rest of the .wall styles ... */
-
-.door {
-    position: absolute;
-    width: 105px;
-    height: 15px;
-    background-color: brown;
-    bottom: 0;
-    left: 94.4%;
-    transform: translateX(-50%);
-}
-
-.desk {
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background-color: #333;
-    bottom: 20px;
-    left: 20px;
-}
-
-.chair {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: #666;
-    bottom: 20px;
-    left: 180px;
-}
-
-.computer {
-    position: absolute;
-    width: 80px;
-    height: 60px;
-    background-color: #0008ff;
-    bottom: 40px;
-    left: 40px;
-}
-
-.second-item {
-    bottom: 660px;
-    left: -5%;
-    transform: rotate(-90deg);
-}
-
-.third-item {
-    top: 15px;
-    left: 82.1%;
-    transform: rotate(0deg);
-}
-
-.forth-item {
-    bottom: 500px;
-    left: 45%;
-    transform: rotate(-90deg);
-}
-
-
-/* Conference Room */
-
-.conference-room .conference-table {
-    position: absolute;
-    width: 250px;
-    height: 150px;
-    background-color: #bbb;
-    bottom: 25px;
-    left: 25px;
-}
-
-.conference-room .chairs {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: #666;
-    bottom: 20px;
-    left: 100px;
-}
-
-.conference-room .projector {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-color: #222;
-    bottom: 130px;
-    left: 220px;
-}
-
-
-/* Break Room */
-
-.break-room .tables {
-    position: absolute;
-    width: 200px;
-    height: 100px;
-    background-color: #ddd;
-    bottom: 20px;
-    left: 40px;
-}
-
-.break-room .vending-machine {
-    position: absolute;
-    width: 80px;
-    height: 120px;
-    background-color: #ccc;
-    bottom: 20px;
-    left: 260px;
-}
-
-
-/* Additional responsive styles */
-
-@media (max-width: 1200px) {
-    .room {
-        width: 700px;
->>>>>>> Stashed changes
     }
     .container {
         width: 80%;
     }
 }
 
-<<<<<<< Updated upstream
 .coin {
     margin-left: 1135px;
     margin-top: 1427px;
@@ -588,78 +419,5 @@ button:hover {
     }
     100% {
         background-image: url("./assets/coin/coin9.png");
-=======
-@media (max-width: 768px) {
-    .room {
-        width: 400px;
-    }
-    .south-wall {
-        width: 85%;
-    }
-    .door {
-        width: 50px;
-        left: 90%;
-    }
-}
-
-.room {
-    width: 700px;
-}
-
-.south-wall {
-    width: 88%;
-}
-
-.door {
-    width: 69px;
-    left: 93%;
-}
-
-.first-item {
-    left: 32.3%;
-}
-
-.second-item {
-    left: -8.7%;
-}
-
-.third-item {
-    left: 69.3%;
-}
-
-.forth-item {
-    left: 41.4%;
-}
-
-.desk {
-    left: 8%;
-}
-
-@media (max-width: 768px) {
-    .room {
-        width: 400px;
-    }
-    .south-wall {
-        width: 85%;
-    }
-    .door {
-        width: 50px;
-        left: 90%;
-    }
-    .first-item {
-        left: 18.9%;
-    }
-    .second-item {
-        left: -15.1%;
-    }
-    .third-item {
-        left: 46.2%;
-    }
-    .forth-item {
-        left: 34.9%;
-    }
-    .desk {
-        left: -0.1%;
->>>>>>> Stashed changes
     }
 }

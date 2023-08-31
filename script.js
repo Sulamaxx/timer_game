@@ -67,7 +67,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -112,9 +112,9 @@ function walkRight() {
         // Vertical InSide Wall
     } else if (playerDivMarginLeft == 536 && playerDivMarginTop > 560 && playerDivMarginTop < 735) {
         // Left Side Computer Tables
-    }else if (playerDivMarginLeft == 1200 && playerDivMarginTop < 735 && playerDivMarginTop > 560) {
+    } else if (playerDivMarginLeft == 1200 && playerDivMarginTop < 735 && playerDivMarginTop > 560) {
         // Left Side Computer Tables
-    }else if (playerDivMarginLeft == 580 && playerDivMarginTop < 862 && playerDivMarginTop > 756) {
+    } else if (playerDivMarginLeft == 580 && playerDivMarginTop < 862 && playerDivMarginTop > 756) {
         // Middle Horizontal Wall Side Left
     } else {
 
@@ -150,9 +150,9 @@ function walkLeft() {
         // Middle Horizontal Wall Side Right
     } else if (playerDivMarginLeft == 1067 && playerDivMarginTop < 735 && playerDivMarginTop > 560) {
         // Left Side Computer Tables
-    }else if (playerDivMarginLeft == 1176 && playerDivMarginTop > 455 && playerDivMarginTop < 757) {
+    } else if (playerDivMarginLeft == 1176 && playerDivMarginTop > 455 && playerDivMarginTop < 757) {
         // Vertical InSide Wall
-    }else if (playerDivMarginLeft == 1738 && playerDivMarginTop < 735 && playerDivMarginTop > 560) {
+    } else if (playerDivMarginLeft == 1738 && playerDivMarginTop < 735 && playerDivMarginTop > 560) {
         // Right Side Computer Tables
     } else {
 
@@ -185,11 +185,11 @@ function walkUp() {
         // Door Right Side OutSide
     } else if (playerDivMarginTop == 456 && 523 < playerDivMarginLeft && playerDivMarginLeft < 1809) {
         //  Top Inside
-        } else if (playerDivMarginTop == 862 && playerDivMarginLeft > 580 && playerDivMarginLeft < 1695) {
+    } else if (playerDivMarginTop == 862 && playerDivMarginLeft > 580 && playerDivMarginLeft < 1695) {
         // Middle Horizontal Wall
     } else if (playerDivMarginTop == 735 && playerDivMarginLeft > 536 && playerDivMarginLeft < 1067) {
         // Left Side Computer Tables
-    }else if (playerDivMarginTop == 735 && playerDivMarginLeft > 1200 && playerDivMarginLeft < 1738) {
+    } else if (playerDivMarginTop == 735 && playerDivMarginLeft > 1200 && playerDivMarginLeft < 1738) {
         // right Side Computer Tables
     } else {
 
@@ -221,11 +221,11 @@ function walkDown() {
         // Door right Side Inside
     } else if (playerDivMarginTop == 356 && 420 < playerDivMarginLeft && playerDivMarginLeft < 1862) {
         // Top OutSide 
-        } else if (playerDivMarginTop == 756 && playerDivMarginLeft > 580 && playerDivMarginLeft < 1695) {
+    } else if (playerDivMarginTop == 756 && playerDivMarginLeft > 580 && playerDivMarginLeft < 1695) {
         // Middle Horizontal Wall
     } else if (playerDivMarginTop == 560 && playerDivMarginLeft > 536 && playerDivMarginLeft < 1067) {
         // Left Side Computer Tables
-    }else if (playerDivMarginTop == 560 && playerDivMarginLeft > 1200 && playerDivMarginLeft < 1738) {
+    } else if (playerDivMarginTop == 560 && playerDivMarginLeft > 1200 && playerDivMarginLeft < 1738) {
         // right Side Computer Tables
     } else {
 
