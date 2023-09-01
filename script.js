@@ -20,49 +20,15 @@ function move(event) {
 
     if (keycode == 39 || keycode == 68) {
 
-        clearInterval(walkLeftAnimationIdSprite);
-        clearInterval(walkDownAnimationIdSprite);
-        clearInterval(walkUpAnimationIdSprite);
-        walkLeftAnimationIdSprite = 0;
-        walkDownAnimationIdSprite = 0;
-        walkUpAnimationIdSprite = 0;
-
-        clearInterval(walkLeftAnimationId);
-        clearInterval(walkDownAnimationId);
-        clearInterval(walkUpAnimationId);
-        walkLeftAnimationId = 0;
-        walkDownAnimationId = 0;
-        walkUpAnimationId = 0;
-
         if (walkRightAnimationId == 0) {
-<<<<<<< Updated upstream
-            walkRightAnimationIdSprite = setInterval(walkRightSprite, 100);
-            walkRightAnimationId = setInterval(walkRight, 10);
-=======
             walkLeftAnimationId = "None";
             walkUpAnimationId = "None";
             walkDownAnimationId = "None";
             walkRightAnimationId = setInterval(walkRight, 1);
->>>>>>> Stashed changes
         }
 
     } else if (keycode == 37 || keycode == 65) {
 
-<<<<<<< Updated upstream
-        clearInterval(walkRightAnimationIdSprite);
-        clearInterval(walkDownAnimationIdSprite);
-        clearInterval(walkUpAnimationIdSprite);
-        walkRightAnimationIdSprite = 0;
-        walkDownAnimationIdSprite = 0;
-        walkUpAnimationIdSprite = 0;
-        
-        clearInterval(walkRightAnimationId);
-        clearInterval(walkDownAnimationId);
-        clearInterval(walkUpAnimationId);
-        walkRightAnimationId = 0;
-        walkDownAnimationId = 0;
-        walkUpAnimationId = 0;
-=======
         if (walkLeftAnimationId == 0) {
 
             walkRightAnimationId = "None";
@@ -70,70 +36,28 @@ function move(event) {
             walkDownAnimationId = "None";
 
             walkLeftAnimationId = setInterval(walkLeft, 1);
->>>>>>> Stashed changes
 
-        if (walkLeftAnimationId == 0) {
-            walkLeftAnimationIdSprite = setInterval(walkLeftSprite, 100);
-            walkLeftAnimationId = setInterval(walkLeft, 10);
         }
 
     } else if (keycode == 38 || keycode == 87) {
-        
-        clearInterval(walkRightAnimationIdSprite);
-        clearInterval(walkDownAnimationIdSprite);
-        clearInterval(walkLeftAnimationIdSprite);
-        walkRightAnimationIdSprite = 0;
-        walkDownAnimationIdSprite = 0;
-        walkLeftAnimationIdSprite = 0;
 
-        clearInterval(walkRightAnimationId);
-        clearInterval(walkDownAnimationId);
-        clearInterval(walkLeftAnimationId);
-        walkRightAnimationId = 0;
-        walkDownAnimationId = 0;
-        walkLeftAnimationId = 0;
-        
         if (walkUpAnimationId == 0) {
-<<<<<<< Updated upstream
-            walkUpAnimationIdSprite = setInterval(walkUpSprite, 100);
-            walkUpAnimationId = setInterval(walkUp, 10);
-=======
 
             walkRightAnimationId = "None";
             walkLeftAnimationId = "None";
             walkDownAnimationId = "None";
 
             walkUpAnimationId = setInterval(walkUp, 1);
->>>>>>> Stashed changes
         }
 
     } else if (keycode == 40 || keycode == 83) {
-       
-        clearInterval(walkRightAnimationIdSprite);
-        clearInterval(walkLeftAnimationIdSprite);
-        clearInterval(walkUpAnimationIdSprite);
-        walkRightAnimationIdSprite = 0;
-        walkLeftAnimationIdSprite = 0;
-        walkUpAnimationIdSprite = 0;
-       
-        clearInterval(walkRightAnimationId);
-        clearInterval(walkLeftAnimationId);
-        clearInterval(walkUpAnimationId);
-        walkRightAnimationId = 0;
-        walkLeftAnimationId = 0;
-        walkUpAnimationId = 0;
-               
+
         if (walkDownAnimationId == 0) {
-<<<<<<< Updated upstream
-            walkDownAnimationIdSprite = setInterval(walkDownSprite, 100);
-            walkDownAnimationId = setInterval(walkDown, 10);
-=======
             walkRightAnimationId = "None";
             walkLeftAnimationId = "None";
             walkUpAnimationId = "None";
 
             walkDownAnimationId = setInterval(walkDown, 1);
->>>>>>> Stashed changes
         }
 
     } else if (keycode == 13) {
@@ -433,6 +357,7 @@ function walkDown() {
 
             }
         }
+
     }
 
 }
@@ -540,7 +465,7 @@ function genarateCoins() {
         coinNumber = coinNumber + 1;
 
         coin.style.marginLeft = "1035px";
-        coin.style.marginTop = "1250px";
+        coin.style.marginTop = "1300px";
     }
 
 }
