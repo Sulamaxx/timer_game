@@ -617,5 +617,33 @@ button:hover {
 }
 
 .soundOnOffIndicateIconChange {
+
     display: none;
+}
+
+
+
+/* timer */
+.timeDiv {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 0;
+}
+
+.time {
+  font-size: 56px;
+  font-family: calibri;
+  color: white;
+}
+
+.time-segment {
+  background-color: #ffcc00;
+  color: #222;
+  padding: 5px 10px;
+  border-radius: 5px;
 }

@@ -503,4 +503,74 @@ function genarateCoins() {
         coin.style.marginTop = y3 + "px";
     }
 
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+// Timer
+
+var hoursTag = document.getElementById("hours");
+var minutesTag;
+var secondsTag;
+
+var hoursText = document.getElementById("hours").innerHTML;
+var minutesText;
+var secondsText;
+
+var updatedSeconds;
+
+var startBtnStatus = false;
+var startBtnAnimationNumber = 0;
+
+function startBtn() {
+    secondsTag = document.getElementById("seconds");
+    secondsText = document.getElementById("seconds").innerHTML;
+
+    minutesTag = document.getElementById("minutes");
+    minutesText = document.getElementById("minutes").innerHTML;
+
+    if (secondsText == "00") {
+
+        if (parseInt(minutesText) == 0) {
+            clearInterval(startBtnAnimationNumber);
+        } else {
+            var minutes = parseInt(minutesText);
+            minutes = minutes - 1;
+
+            minutesTag.innerHTML = "0" + minutes.toString();
+
+            secondsTag.innerHTML = "59";
+            updatedSeconds = 59;
+        }
+
+    } else {
+        updatedSeconds = updatedSeconds - 1;
+
+        if (updatedSeconds < 10) {
+            secondsTag.innerHTML = "0" + updatedSeconds.toString();
+        } else {
+            secondsTag.innerHTML = updatedSeconds.toString();
+        }
+
+    }
+}
+
+function startBtnStart() {
+
+    if (startBtnStatus == false) {
+
+        startBtnAnimationNumber = setInterval(startBtn, 1000);
+        startBtnStatus = true;
+    }
+
+}
+

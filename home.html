@@ -9,12 +9,14 @@
 </head>
 
 <body onload="onloadMoments();" onkeydown="move(event);" onkeyup="stop(event)">
+
     <!-- Image Loading -->
     <div class="coin"></div>
     <div class="bomb"></div>
     <!-- Image Loading -->
 
     <div class="bodyDiv">
+
         <div class="treesArea" id="treesArea">
             <div class="groundArea1" id="groundArea1">
                 <div class="officeBuildingGround">
@@ -35,7 +37,7 @@
                     <div class="rightWall" id="rightWall"></div>
                 </div>
             </div>
-
+            
             <div class="playerDiv" id="playerDiv"></div>
 
             <div class="bottomWall" id="bottomWall">
@@ -44,25 +46,32 @@
                     <div class="wall"></div>
                     <div class="frontdoorLeft"></div>
                 </div>
-
+                
                 <div class="bottomWallMiddle">
                     <div class="frontdoor"></div>
                 </div>
-
+                
                 <div class="bottomWallRightSide" id="bottomWallRightSide">
                     <div class="frontdoorRight"></div>
                     <div class="wall"></div>
                     <div class="wallSide"></div>
                 </div>
             </div>
-
+            
             <div class="topFence" id="topFence"></div>
             <div class="leftFence" id="leftFence"></div>
             <div class="rightFence" id="rightFence"></div>
             <div class="bottomFence" id="bottomFence"></div>
         </div>
+        <div class="timeDiv">
+            <p class="time">
+                <span id="hours" class="time-segment">00</span> :
+                <span id="minutes" class="time-segment">02</span> :
+                <span id="seconds" class="time-segment">00</span>
+            </p>
+        </div>
     </div>
-
+    
     <script src="script.js"></script>
 </body>
 
