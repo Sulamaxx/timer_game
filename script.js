@@ -72,7 +72,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -93,7 +93,6 @@ function focusPlayer() {
 var playerDivComputedStyle = window.getComputedStyle(playerDiv);
 var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
 var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
-
 
 function walkRight() {
 
@@ -123,9 +122,9 @@ function walkRight() {
         // Middle Horizontal Wall Side Left
     } else if (playerDivMarginLeft == 628 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
         // Bellow Right Table
-    }else if (playerDivMarginLeft == 975 && playerDivMarginTop > 953 && playerDivMarginTop < 1182) {
+    } else if (playerDivMarginLeft == 975 && playerDivMarginTop > 953 && playerDivMarginTop < 1182) {
         // Bellow Middle Table
-    }else if (playerDivMarginLeft == 1516 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
+    } else if (playerDivMarginLeft == 1516 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
         // Bellow Left Table
     } else {
 
@@ -136,6 +135,30 @@ function walkRight() {
 
         playerDiv.style.backgroundPositionY = "-50px";
         playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+
+        var numOfCoins = coins.length;
+
+        if (numOfCoins >= 1) {
+
+            for (c = 0; c < numOfCoins; c++) {
+
+                var coin = document.getElementById("coin" + coins[c]);
+
+                var playerRightPoint = playerDivMarginLeft + 50;
+
+                var coinComputedStyle = window.getComputedStyle(coin);
+                var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 285;
+
+                if (playerRightPoint == coinLeftPoint) {
+
+                    alert("   playerRightPoint:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint);
+
+                }
+
+            }
+
+        }
 
     }
 
@@ -167,9 +190,9 @@ function walkLeft() {
         // Right Side Computer Tables
     } else if (playerDivMarginLeft == 775 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
         // Bellow Right Table
-    }else if (playerDivMarginLeft == 1279 && playerDivMarginTop > 953 && playerDivMarginTop < 1182) {
+    } else if (playerDivMarginLeft == 1279 && playerDivMarginTop > 953 && playerDivMarginTop < 1182) {
         // Bellow Middle Table
-    }else if (playerDivMarginLeft == 1666 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
+    } else if (playerDivMarginLeft == 1666 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
         // Bellow Left Table
     } else {
 
@@ -180,6 +203,28 @@ function walkLeft() {
 
         playerDiv.style.backgroundPositionY = "-100px";
         playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+        var numOfCoins = coins.length;
+
+        if (numOfCoins >= 1) {
+
+            for (c = 0; c < numOfCoins; c++) {
+
+                var coin = document.getElementById("coin" + coins[c]);
+
+                var playerRightPoint = playerDivMarginLeft;
+
+                var coinComputedStyle = window.getComputedStyle(coin);
+                var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 285;
+
+                if (playerRightPoint == coinLeftPoint) {
+                    alert("   playerRightPoint:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint);
+
+                }
+
+            }
+
+        }
 
     }
 
@@ -208,11 +253,11 @@ function walkUp() {
         // Left Side Computer Tables
     } else if (playerDivMarginTop == 735 && playerDivMarginLeft > 1200 && playerDivMarginLeft < 1738) {
         // right Side Computer Tables
-    }else if (playerDivMarginTop == 1113 && playerDivMarginLeft > 628 && playerDivMarginLeft < 775) {
+    } else if (playerDivMarginTop == 1113 && playerDivMarginLeft > 628 && playerDivMarginLeft < 775) {
         // Bellow Right Table
-    }else if (playerDivMarginTop == 1182 && playerDivMarginLeft > 975 && playerDivMarginLeft < 1279) {
+    } else if (playerDivMarginTop == 1182 && playerDivMarginLeft > 975 && playerDivMarginLeft < 1279) {
         // Bellow Middle Table
-    }else if (playerDivMarginTop == 1113 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
+    } else if (playerDivMarginTop == 1113 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
         // Bellow Left Table
     } else {
 
@@ -223,6 +268,8 @@ function walkUp() {
 
         playerDiv.style.backgroundPositionY = "-200px";
         playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+        checkCoins();
 
     }
 
@@ -250,11 +297,11 @@ function walkDown() {
         // Left Side Computer Tables
     } else if (playerDivMarginTop == 560 && playerDivMarginLeft > 1200 && playerDivMarginLeft < 1738) {
         // right Side Computer Tables
-    }else if (playerDivMarginTop == 995 && playerDivMarginLeft > 628 && playerDivMarginLeft < 775) {
+    } else if (playerDivMarginTop == 995 && playerDivMarginLeft > 628 && playerDivMarginLeft < 775) {
         // Bellow Right Table
-    }else if (playerDivMarginTop == 953 && playerDivMarginLeft > 975 && playerDivMarginLeft < 1279) {
+    } else if (playerDivMarginTop == 953 && playerDivMarginLeft > 975 && playerDivMarginLeft < 1279) {
         // Bellow Middle Table
-    }else if (playerDivMarginTop == 995 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
+    } else if (playerDivMarginTop == 995 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
         // Bellow Left Table
     } else {
 
@@ -265,6 +312,9 @@ function walkDown() {
 
         playerDiv.style.backgroundPositionY = "-150px";
         playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+        checkCoins();
+
     }
 
 }
@@ -309,11 +359,33 @@ function walkDownStop() {
 }
 
 function showPlayerLocation() {
-    alert("playerDivMarginLeft: " + playerDivMarginLeft + "-playerDivMarginTop: " + playerDivMarginTop);
+    // alert("playerDivMarginLeft: " + playerDivMarginLeft + "-playerDivMarginTop: " + playerDivMarginTop);
+
+    var numOfCoins = coins.length;
+
+    for (c = 0; c < numOfCoins; c++) {
+
+        var coin = document.getElementById("coin" + coins[c]);
+
+        var playerLeftPoint = playerDivMarginLeft;
+        var playerTopPoint = playerDivMarginTop;
+        var playerRightPoint = playerDivMarginLeft + 50;
+        var playerBottopPoint = playerDivMarginLeft + 50;
+
+        var coinComputedStyle = window.getComputedStyle(coin);
+        var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft);
+        var coinTopPoint = parseFloat(coinComputedStyle.marginTop);
+        var coinRightPoint = parseFloat(coinComputedStyle.marginLeft) + 20;
+        var coinBottomPoint = parseFloat(coinComputedStyle.marginTop) + 20;
+
+
+        alert("     playerLeftPoint:" + playerLeftPoint + "     playerTopPoint:" + playerTopPoint + "     playerRightPoint:" + playerRightPoint + "     playerBottopPoint:" + playerBottopPoint + "     coinLeftPoint:" + coinLeftPoint + "     coinTopPoint:" + coinTopPoint + "     coinRightPoint:" + coinRightPoint + "     coinBottomPoint:" + coinBottomPoint);
+
+    }
 }
 
 function onloadMoments() {
-    // setInterval(genarateCoins, 100);
+    setInterval(genarateCoins, 100);
 }
 
 
@@ -343,6 +415,7 @@ function genarateCoins() {
         var coin = document.createElement("div");
         coin.className = "coin";
         coin.id = "coin" + coinId;
+        coins.push(coinId);
         coinId = coinId + 1;
         groundArea1.appendChild(coin);
 
