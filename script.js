@@ -198,8 +198,19 @@ function walkRight() {
 
                                 if (lives > 1) {
 
-                                    decreaseLives(coin, c);
+                                    playerDiv.style.animation = "";
 
+                                    setTimeout(function() {
+                                        playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
+                                    }, 0.1);
+
+                                    groundArea1.removeChild(coin);
+                                    coins.splice(c, 1);
+                                    bombStatus.splice(c, 1);
+
+                                    lives -= 1;
+
+                                    document.getElementById("life").innerHTML = lives;
                                 } else {
 
                                     gameOver();
@@ -311,8 +322,19 @@ function walkLeft() {
 
                                 if (lives > 1) {
 
-                                    decreaseLives(coin, c);
+                                    playerDiv.style.animation = "";
 
+                                    setTimeout(function() {
+                                        playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
+                                    }, 0.1);
+
+                                    groundArea1.removeChild(coin);
+                                    coins.splice(c, 1);
+                                    bombStatus.splice(c, 1);
+
+                                    lives -= 1;
+
+                                    document.getElementById("life").innerHTML = lives;
                                 } else {
 
                                     gameOver();
@@ -424,8 +446,19 @@ function walkUp() {
 
                                 if (lives > 1) {
 
-                                    decreaseLives(coin, c);
+                                    playerDiv.style.animation = "";
 
+                                    setTimeout(function() {
+                                        playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
+                                    }, 0.1);
+
+                                    groundArea1.removeChild(coin);
+                                    coins.splice(c, 1);
+                                    bombStatus.splice(c, 1);
+
+                                    lives -= 1;
+
+                                    document.getElementById("life").innerHTML = lives;
                                 } else {
 
                                     gameOver();
@@ -541,8 +574,19 @@ function walkDown() {
 
                                 if (lives > 1) {
 
-                                    decreaseLives(coin, c);
+                                    playerDiv.style.animation = "";
 
+                                    setTimeout(function() {
+                                        playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
+                                    }, 0.1);
+
+                                    groundArea1.removeChild(coin);
+                                    coins.splice(c, 1);
+                                    bombStatus.splice(c, 1);
+
+                                    lives -= 1;
+
+                                    document.getElementById("life").innerHTML = lives;
                                 } else {
 
                                     gameOver();
@@ -740,23 +784,6 @@ function updateScore() {
 
 }
 
-function decreaseLives(coin, c) {
-
-    playerDiv.style.animation = "";
-
-    setTimeout(function() {
-        playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
-    }, 0.1);
-
-    groundArea1.removeChild(coin);
-    coins.splice(c, 1);
-    bombStatus.splice(c, 1);
-
-    lives -= 1;
-
-    document.getElementById("life").innerHTML = lives;
-
-}
 
 function gameOver() {
 
