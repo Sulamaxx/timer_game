@@ -1,3 +1,5 @@
+var score = 0;
+
 var playerDiv = document.getElementById("playerDiv");
 var plantsArea = document.getElementById("plantsArea");
 var groundArea1 = document.getElementById("groundArea1");
@@ -80,7 +82,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -636,29 +638,9 @@ function showManual() {
 }
 
 
-// Score
+function updateScore() {
+    score += 10;
+    const scoreValue = document.getElementById('score').innerHTML=score;
+   
+}
 
-   // Initialize the score
-   let score = 0;
-
-   // Function to update the score
-   function updateScore() {
-       const scoreValue = document.querySelector('.score-value');
-       scoreValue.textContent = score;
-   }
-   
-   // Example function to increase the score
-   function increaseScore() {
-       score += 10; // You can change this as needed
-       updateScore();
-   }
-   
-   // Example: Increase the score when a coin is collected
-   function collectCoin() {
-       // Your coin collection logic here
-       // For example, when a coin is collected:
-       increaseScore();
-   }
-   
-   // Call the initial score update
-   updateScore();
