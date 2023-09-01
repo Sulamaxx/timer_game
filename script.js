@@ -472,3 +472,11 @@ function genarateCoins() {
     }
 
 }
+
+function soundOnOff() {
+    alert("done");
+
+    var state = on;
+
+    document.getElementById("soundOnOffIndicateIcon").classList.remove("soundOnOffIndicateIconChange");
+}
