@@ -26,6 +26,7 @@ function move(event) {
             walkLeftAnimationId = "None";
             walkUpAnimationId = "None";
             walkDownAnimationId = "None";
+            animationNumber = 0;
             walkRightAnimationId = setInterval(walkRight, 1);
         }
 
@@ -36,7 +37,7 @@ function move(event) {
             walkRightAnimationId = "None";
             walkUpAnimationId = "None";
             walkDownAnimationId = "None";
-animationNumber=0;
+            animationNumber = 0;
             walkLeftAnimationId = setInterval(walkLeft, 1);
 
         }
@@ -48,7 +49,7 @@ animationNumber=0;
             walkRightAnimationId = "None";
             walkLeftAnimationId = "None";
             walkDownAnimationId = "None";
-
+            animationNumber = 0;
             walkUpAnimationId = setInterval(walkUp, 1);
         }
 
@@ -58,7 +59,7 @@ animationNumber=0;
             walkRightAnimationId = "None";
             walkLeftAnimationId = "None";
             walkUpAnimationId = "None";
-
+            animationNumber = 0;
             walkDownAnimationId = setInterval(walkDown, 1);
         }
 
@@ -139,8 +140,6 @@ function walkRight() {
 
         if (animationNumber == 0) {
             playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
-
-
         }
 
         animationNumber = animationNumber + 1;
@@ -215,7 +214,16 @@ function walkLeft() {
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
 
         playerDiv.style.backgroundPositionY = "-100px";
-        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+        if (animationNumber == 0) {
+            playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+        }
+
+        animationNumber = animationNumber + 1;
+
+        if (animationNumber >= 50) {
+            animationNumber = 0;
+        }
 
         var numOfCoins = coins.length;
 
@@ -276,13 +284,23 @@ function walkUp() {
         // Bellow Left Table
     } else {
 
-        playerDivMarginTop -= 1;
+        playerDivMarginTop -= 0.5;
         playerImagePositionX -= 50;
 
         playerDiv.style.marginTop = playerDivMarginTop + "px";
 
         playerDiv.style.backgroundPositionY = "-200px";
-        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+        if (animationNumber == 0) {
+            playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+        }
+
+        animationNumber = animationNumber + 1;
+
+        if (animationNumber >= 50) {
+            animationNumber = 0;
+        }
+
         var numOfCoins = coins.length;
 
         if (numOfCoins >= 1) {
@@ -340,13 +358,22 @@ function walkDown() {
         // Bellow Left Table
     } else {
 
-        playerDivMarginTop += 1;
+        playerDivMarginTop += 0.5;
         playerImagePositionX -= 50;
 
         playerDiv.style.marginTop = playerDivMarginTop + "px";
 
         playerDiv.style.backgroundPositionY = "-150px";
-        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+       if (animationNumber == 0) {
+            playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+        }
+
+        animationNumber = animationNumber + 1;
+
+        if (animationNumber >= 50) {
+            animationNumber = 0;
+        }
 
         var numOfCoins = coins.length;
 
@@ -385,6 +412,7 @@ function stop() {
         walkLeftStop();
         walkUpStop();
         walkDownStop();
+        animationNumber = 0;
 
     }
 
