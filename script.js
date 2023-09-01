@@ -72,7 +72,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -148,11 +148,13 @@ function walkRight() {
                 var playerRightPoint = playerDivMarginLeft + 50;
 
                 var coinComputedStyle = window.getComputedStyle(coin);
-                var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 285;
+                // var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 285;
+                var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
+                var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
 
-                if (playerRightPoint == coinLeftPoint) {
+                if (playerRightPoint == coinLeftPoint && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
 
-                    alert("   playerRightPoint:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint);
+                    alert("playerRightPointR:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint + " coinTopPoint :" + coinTopPoint + "playerDivMarginBottom :" + (playerDivMarginTop + 50));
 
                 }
 
@@ -204,6 +206,7 @@ function walkLeft() {
         playerDiv.style.backgroundPositionY = "-100px";
         playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
 
+       
         var numOfCoins = coins.length;
 
         if (numOfCoins >= 1) {
@@ -215,10 +218,12 @@ function walkLeft() {
                 var playerRightPoint = playerDivMarginLeft;
 
                 var coinComputedStyle = window.getComputedStyle(coin);
-                var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 285;
+                var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 270;
+                var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
 
-                if (playerRightPoint == coinLeftPoint) {
-                    alert("   playerRightPoint:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint);
+                if (playerDivMarginLeft == (coinLeftPoint) && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
+
+                    alert("playerRightPointR:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint + " coinTopPoint :" + coinTopPoint + "playerDivMarginBottom :" + (playerDivMarginTop + 50));
 
                 }
 
