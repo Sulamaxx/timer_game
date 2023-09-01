@@ -269,7 +269,19 @@ body::-webkit-scrollbar {
     position: absolute;
 }
 
-@keyframes playerDivDecreasingLivesAnimation {
+@keyframes playerDivDecreasingLivesAnimation1 {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes playerDivDecreasingLivesAnimation2 {
     0% {
         opacity: 0.1;
     }
