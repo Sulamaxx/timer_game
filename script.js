@@ -167,7 +167,7 @@ function walkRight() {
 
                     // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
                     // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
-                    // coin.className = "bomb";
+                    coin.className = "bomb";
 
                 }
 
@@ -245,7 +245,7 @@ function walkLeft() {
 
                     // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
                     // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
-                    // coin.className = "bomb";
+                    coin.className = "bomb";
 
                 }
 
@@ -323,7 +323,7 @@ function walkUp() {
 
                     // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
                     // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
-                    // coin.className = "bomb";
+                    coin.className = "bomb";
 
                 }
 
@@ -399,7 +399,7 @@ function walkDown() {
 
                     // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
                     // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
-                    // coin.className = "bomb";
+                    coin.className = "bomb";
 
                 }
 
