@@ -1,5 +1,6 @@
 var playerDiv = document.getElementById("playerDiv");
 var plantsArea = document.getElementById("plantsArea");
+var groundArea1 = document.getElementById("groundArea1");
 var topFence = document.getElementById("topFence");
 var leftFence = document.getElementById("leftFence");
 var rightFence = document.getElementById("rightFence");
@@ -294,9 +295,28 @@ startButton.addEventListener('click', () => {
 });
 
 function onloadMoments() {
-    setInterval(genarateGifts, 100);
+    setInterval(genarateCoins, 100);
 }
 
-function genarateGifts() {
+var coinId = 1;
+
+function genarateCoins() {
+
+    for (var i = 0; i < 50; i++) {
+        var coin = document.createElement("div");
+        coin.className = "coin";
+        coin.id = "coin" + coinId;
+        coinId = coinId + 1;
+        groundArea1.appendChild(coin);
+
+
+        var x1 = Math.random();
+        var x2 = x1 * 1000;
+        var x3 = Math.floor(x2);
+
+        coin.style.marginLeft = x3 + "px";
+        coin.style.marginTop = "1427px";
+    }
+
 
 }
