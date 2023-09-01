@@ -561,7 +561,7 @@ function startBtn() {
     }
 }
 
-function startBtnStart() {
+function timerStar() {
 
     if (startBtnStatus == false) {
 
