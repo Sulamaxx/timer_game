@@ -148,7 +148,6 @@ function walkRight() {
                 var playerRightPoint = playerDivMarginLeft + 50;
 
                 var coinComputedStyle = window.getComputedStyle(coin);
-                // var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 285;
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
 
@@ -206,7 +205,7 @@ function walkLeft() {
         playerDiv.style.backgroundPositionY = "-100px";
         playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
 
-       
+
         var numOfCoins = coins.length;
 
         if (numOfCoins >= 1) {
@@ -274,7 +273,28 @@ function walkUp() {
         playerDiv.style.backgroundPositionY = "-200px";
         playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
 
-        checkCoins();
+        var numOfCoins = coins.length;
+        
+        if (numOfCoins >= 1) {
+
+            for (c = 0; c < numOfCoins; c++) {
+
+                var coin = document.getElementById("coin" + coins[c]);
+
+                var playerRightPoint = playerDivMarginTop;
+
+                var coinComputedStyle = window.getComputedStyle(coin);
+                var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
+                var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
+
+                if (playerRightPoint == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
+
+                    alert("playerRightPointR:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint + " coinTopPoint :" + coinTopPoint + "playerDivMarginBottom :" + (playerDivMarginTop + 50));
+
+                }
+
+            }
+        }
 
     }
 
@@ -318,8 +338,28 @@ function walkDown() {
         playerDiv.style.backgroundPositionY = "-150px";
         playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
 
-        checkCoins();
+        var numOfCoins = coins.length;
 
+        if (numOfCoins >= 1) {
+
+            for (c = 0; c < numOfCoins; c++) {
+
+                var coin = document.getElementById("coin" + coins[c]);
+
+                var playerRightPoint = playerDivMarginTop+50;
+
+                var coinComputedStyle = window.getComputedStyle(coin);
+                var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
+                var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
+
+                if (playerRightPoint == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
+
+                    alert("playerRightPointR:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint + " coinTopPoint :" + coinTopPoint + "playerDivMarginBottom :" + (playerDivMarginTop + 50));
+
+                }
+
+            }
+        }
     }
 
 }
@@ -426,8 +466,8 @@ function genarateCoins() {
 
         coinNumber = coinNumber + 1;
 
-        coin.style.marginLeft = "1035px";
-        coin.style.marginTop = "1250px";
+        coin.style.marginLeft = "1135px";
+        coin.style.marginTop = "800px";
     }
 
 }
