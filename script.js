@@ -6,6 +6,8 @@ var leftFence = document.getElementById("leftFence");
 var rightFence = document.getElementById("rightFence");
 var bottomFence = document.getElementById("bottomFence");
 
+var animationNumber = 0;
+
 var walkRightAnimationId = 0;
 var walkLeftAnimationId = 0;
 var walkUpAnimationId = 0;
@@ -34,7 +36,7 @@ function move(event) {
             walkRightAnimationId = "None";
             walkUpAnimationId = "None";
             walkDownAnimationId = "None";
-
+animationNumber=0;
             walkLeftAnimationId = setInterval(walkLeft, 1);
 
         }
@@ -72,7 +74,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -134,7 +136,18 @@ function walkRight() {
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
 
         playerDiv.style.backgroundPositionY = "-50px";
-        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+        if (animationNumber == 0) {
+            playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
+
+        }
+
+        animationNumber = animationNumber + 1;
+
+        if (animationNumber >= 50) {
+            animationNumber = 0;
+        }
 
 
         var numOfCoins = coins.length;
