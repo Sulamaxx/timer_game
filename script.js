@@ -634,3 +634,31 @@ function showManual() {
     }
 
 }
+
+
+// Score
+
+   // Initialize the score
+   let score = 0;
+
+   // Function to update the score
+   function updateScore() {
+       const scoreValue = document.querySelector('.score-value');
+       scoreValue.textContent = score;
+   }
+   
+   // Example function to increase the score
+   function increaseScore() {
+       score += 10; // You can change this as needed
+       updateScore();
+   }
+   
+   // Example: Increase the score when a coin is collected
+   function collectCoin() {
+       // Your coin collection logic here
+       // For example, when a coin is collected:
+       increaseScore();
+   }
+   
+   // Call the initial score update
+   updateScore();

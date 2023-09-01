@@ -628,6 +628,35 @@ button:hover {
     border-radius: 5px;
 }
 
+/* Score */
+.score-bar {
+    background-color: #404040;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 70;
+    right: 10px;
+    width: 20%;
+    border-radius: 10px;
+    top: 25px;
+    /* position: relative; */
+}
+
+.score-label {
+    font-size: 24px;
+    color: #f0f0f0;
+}
+
+.score-value {
+    font-size: 24px;
+    color: #ffcc00; /* Yellow */
+}
+/* Score */
+
+
 .manualShowHide {
     display: none;
 }
