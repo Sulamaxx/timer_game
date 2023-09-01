@@ -23,11 +23,13 @@ function move(event) {
     if (keycode == 39 || keycode == 68) {
 
         if (walkRightAnimationId == 0) {
+
             walkLeftAnimationId = "None";
             walkUpAnimationId = "None";
             walkDownAnimationId = "None";
             animationNumber = 0;
             walkRightAnimationId = setInterval(walkRight, 1);
+
         }
 
     } else if (keycode == 37 || keycode == 65) {
@@ -56,11 +58,13 @@ function move(event) {
     } else if (keycode == 40 || keycode == 83) {
 
         if (walkDownAnimationId == 0) {
+
             walkRightAnimationId = "None";
             walkLeftAnimationId = "None";
             walkUpAnimationId = "None";
             animationNumber = 0;
             walkDownAnimationId = setInterval(walkDown, 1);
+
         }
 
     } else if (keycode == 13) {
@@ -179,7 +183,9 @@ function walkRight() {
 }
 
 function walkLeft() {
+
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
 
     var leftFenceComputedStyle = window.getComputedStyle(leftFence);
     var leftFenceMarginLeft = parseFloat(leftFenceComputedStyle.marginLeft);
@@ -500,6 +506,7 @@ function genarateCoins() {
         coin.style.marginTop = y3 + "px";
     }
 
+
   
 }
 
@@ -571,3 +578,30 @@ function timerStar() {
 
 }
 
+var state = "on";
+
+function soundOnOff() {
+
+    if (state == "on") {
+        document.getElementById("soundOnOffIndicateIcon").classList.remove("soundOnOffIndicateIconChange");
+        state = "off";
+    } else {
+        document.getElementById("soundOnOffIndicateIcon").classList.add("soundOnOffIndicateIconChange");
+        state = "on";
+    }
+}
+
+
+var manualState = "hidden";
+
+function showManual() {
+
+    if (manualState == "hidden") {
+        document.getElementById("manualDiv").classList.remove("manualShowHide");
+        manualState = "Visible";
+    } else {
+        document.getElementById("manualDiv").classList.add("manualShowHide");
+        manualState = "hidden";
+    }
+
+}
