@@ -235,8 +235,7 @@ function walkLeft() {
 
                 var coin = document.getElementById("coin" + coins[c]);
 
-                var playerRightPoint = playerDivMarginLeft;
-
+          
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 270;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
@@ -313,13 +312,11 @@ function walkUp() {
 
                 var coin = document.getElementById("coin" + coins[c]);
 
-                var playerRightPoint = playerDivMarginTop;
-
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
 
-                if (playerRightPoint == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
+                if (playerDivMarginTop == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
 
                     // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
                     // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
