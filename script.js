@@ -1,3 +1,4 @@
+var lives = 5;
 var score = 0;
 
 var playerDiv = document.getElementById("playerDiv");
@@ -16,7 +17,6 @@ var walkUpAnimationId = 0;
 var walkDownAnimationId = 0;
 
 var coinId = 1;
-var coinNumber = 1;
 var coins = [];
 var bombStatus = [];
 
@@ -176,7 +176,13 @@ function walkRight() {
 
                     if (Equality < 7) {
 
+                        groundArea1.removeChild(coin);
+                        coins.splice(c, 1);
+                        bombStatus.splice(c, 1);
+
                         updateScore();
+
+                        genarateCoins();
 
                     } else {
 
@@ -187,11 +193,24 @@ function walkRight() {
 
                             coin.className = "bomb";
 
-                            bombStatus[c] = false;
+                            setTimeout(function() {
+                                bombStatus[c] = false;
+
+                                if (lives > 1) {
+
+                                    decreaseLives(coin, c);
+
+                                } else {
+
+                                    gameOver();
+
+                                }
+                            }, 1000);
 
                         }
 
                     }
+
 
                 }
 
@@ -272,7 +291,11 @@ function walkLeft() {
 
                     if (Equality < 7) {
 
+                        groundArea1.removeChild(coin);
+                        coins.splice(c, 1);
                         updateScore();
+
+                        genarateCoins();
 
                     } else {
 
@@ -283,7 +306,22 @@ function walkLeft() {
 
                             coin.className = "bomb";
 
-                            bombStatus[c] = false;
+                            setTimeout(function() {
+                                bombStatus[c] = false;
+
+                                if (lives > 1) {
+
+                                    decreaseLives(coin, c);
+
+                                } else {
+
+                                    gameOver();
+
+                                }
+                            }, 1000);
+
+
+
 
                         }
 
@@ -366,7 +404,11 @@ function walkUp() {
 
                     if (Equality < 7) {
 
+                        groundArea1.removeChild(coin);
+                        coins.splice(c, 1);
                         updateScore();
+
+                        genarateCoins();
 
                     } else {
 
@@ -377,7 +419,22 @@ function walkUp() {
 
                             coin.className = "bomb";
 
-                            bombStatus[c] = false;
+                            setTimeout(function() {
+                                bombStatus[c] = false;
+
+                                if (lives > 1) {
+
+                                    decreaseLives(coin, c);
+
+                                } else {
+
+                                    gameOver();
+
+                                }
+                            }, 1000);
+
+
+
 
                         }
 
@@ -461,7 +518,13 @@ function walkDown() {
 
                     if (Equality < 7) {
 
+                        groundArea1.removeChild(coin);
+                        coins.splice(c, 1);
                         updateScore();
+
+                        genarateCoins();
+
+                        c = numOfCoins;
 
                     } else {
 
@@ -472,13 +535,25 @@ function walkDown() {
 
                             coin.className = "bomb";
 
-                            bombStatus[c] = false;
+                            setTimeout(function() {
+
+                                bombStatus[c] = false;
+
+                                if (lives > 1) {
+
+                                    decreaseLives(coin, c);
+
+                                } else {
+
+                                    gameOver();
+
+                                }
+
+                            }, 1000);
 
                         }
 
                     }
-
-
 
                 }
 
@@ -546,7 +621,7 @@ function onloadMoments() {
 
 function genarateCoins() {
 
-    if (coinNumber < 50) {
+    if (coins.length < 50) {
         var coin = document.createElement("div");
         coin.className = "coin";
         coin.id = "coin" + coinId;
@@ -554,8 +629,6 @@ function genarateCoins() {
         bombStatus.push(true);
         coinId = coinId + 1;
         groundArea1.appendChild(coin);
-
-        coinNumber = coinNumber + 1;
 
         var groundAreaWidth = groundArea1.offsetWidth;
         var groundAreaHeight = groundArea1.offsetHeight;
@@ -569,16 +642,6 @@ function genarateCoins() {
 
 
 }
-
-
-
-
-
-
-
-
-
-
 
 // Timer
 
@@ -615,6 +678,9 @@ function startBtn() {
             secondsTag.innerHTML = "59";
             updatedSeconds = 59;
         }
+        if (updatedSeconds == 0) {
+            gameEnd();
+        }
 
     } else {
         updatedSeconds = updatedSeconds - 1;
@@ -624,6 +690,7 @@ function startBtn() {
         } else {
             secondsTag.innerHTML = updatedSeconds.toString();
         }
+
 
     }
 }
@@ -670,5 +737,39 @@ function showManual() {
 function updateScore() {
     score += 10;
     document.getElementById('score').innerHTML = score;
+
+}
+
+function decreaseLives(coin, c) {
+
+    playerDiv.style.animation = "";
+
+    setTimeout(function() {
+        playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
+    }, 0.1);
+
+    groundArea1.removeChild(coin);
+    coins.splice(c, 1);
+    bombStatus.splice(c, 1);
+
+    lives -= 1;
+
+    document.getElementById("life").innerHTML = lives;
+
+}
+
+function gameOver() {
+
+    lives -= 1;
+
+    document.getElementById("life").innerHTML = lives;
+
+    alert("Game Over");
+
+}
+
+function gameEnd() {
+
+    alert("Game End - Score:" + score);
 
 }
