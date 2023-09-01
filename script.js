@@ -1,6 +1,8 @@
 var lives = 5;
 var score = 0;
 
+var playerDivDecreasingLivesAnimationStatus = false;
+
 var playerDiv = document.getElementById("playerDiv");
 var plantsArea = document.getElementById("plantsArea");
 var groundArea1 = document.getElementById("groundArea1");
@@ -11,10 +13,14 @@ var bottomFence = document.getElementById("bottomFence");
 
 var animationNumber = 0;
 
+var bombCheckPoint = 7;
+
 var walkRightAnimationId = 0;
 var walkLeftAnimationId = 0;
 var walkUpAnimationId = 0;
 var walkDownAnimationId = 0;
+
+var coinDestroyingID = 0;
 
 var coinId = 1;
 var coins = [];
@@ -159,18 +165,22 @@ function walkRight() {
         if (numOfCoins >= 1) {
             for (var c = 0; c < numOfCoins; c++) {
                 var coin = document.getElementById("coin" + coins[c]);
+
                 var playerRightPoint = playerDivMarginLeft + 50;
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
                 if (playerRightPoint == coinLeftPoint && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
                     const Equality = Math.floor(Math.random() * 10);
+
                     if (Equality < 7) {
                         groundArea1.removeChild(coin);
                         coins.splice(c, 1);
                         updateScore();
+
                         genarateCoins();
                     } else {
+
                         coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
                         coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
                         removalCoins.push(coin);
@@ -183,6 +193,7 @@ function walkRight() {
                         if (lives != 0) {
                             lives -= 1;
                             document.getElementById("life").innerHTML = lives;
+
                         }
                         setTimeout(function () {
                             var numOfCoinsRemoval = removalCoins.length;
@@ -245,10 +256,12 @@ function walkLeft() {
         if (animationNumber >= 50) {
             animationNumber = 0;
         }
+
         var numOfCoins = coins.length;
         if (numOfCoins >= 1) {
             for (var c = 0; c < numOfCoins; c++) {
                 var coin = document.getElementById("coin" + coins[c]);
+
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 270;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
@@ -258,8 +271,10 @@ function walkLeft() {
                         groundArea1.removeChild(coin);
                         coins.splice(c, 1);
                         updateScore();
+
                         genarateCoins();
                     } else {
+
                         coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
                         coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
                         removalCoins.push(coin);
@@ -337,17 +352,21 @@ function walkUp() {
         if (numOfCoins >= 1) {
             for (var c = 0; c < numOfCoins; c++) {
                 var coin = document.getElementById("coin" + coins[c]);
+
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
                 if (playerDivMarginTop == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
                     const Equality = Math.floor(Math.random() * 10);
+
                     if (Equality < 7) {
                         groundArea1.removeChild(coin);
                         coins.splice(c, 1);
                         updateScore();
+
                         genarateCoins();
                     } else {
+
                         coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
                         coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
                         removalCoins.push(coin);
@@ -360,6 +379,7 @@ function walkUp() {
                         if (lives != 0) {
                             lives -= 1;
                             document.getElementById("life").innerHTML = lives;
+
                         }
                         setTimeout(function () {
                             var numOfCoinsRemoval = removalCoins.length;
@@ -422,12 +442,14 @@ function walkDown() {
         if (numOfCoins >= 1) {
             for (var c = 0; c < numOfCoins; c++) {
                 var coin = document.getElementById("coin" + coins[c]);
+
                 var playerRightPoint = playerDivMarginTop + 50;
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
                 if (playerRightPoint == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
                     const Equality = Math.floor(Math.random() * 10);
+
                     if (Equality < 7) {
                         groundArea1.removeChild(coin);
                         coins.splice(c, 1);
@@ -447,6 +469,7 @@ function walkDown() {
                         if (lives != 0) {
                             lives -= 1;
                             document.getElementById("life").innerHTML = lives;
+
                         }
                         setTimeout(function () {
                             var numOfCoinsRemoval = removalCoins.length;
@@ -510,7 +533,9 @@ function showPlayerLocation() {
     var playerRightPoint = playerDivMarginLeft + 50;
     var playerBottopPoint = playerDivMarginLeft + 50;
 
-    alert("     playerLeftPoint:" + playerLeftPoint + "     playerTopPoint:" + playerTopPoint + "     playerRightPoint:" + playerRightPoint + "     playerBottopPoint:" + playerBottopPoint);
+    // alert("     playerLeftPoint:" + playerLeftPoint + "     playerTopPoint:" + playerTopPoint + "     playerRightPoint:" + playerRightPoint + "     playerBottopPoint:" + playerBottopPoint);
+
+    console.log(coins);
 
 }
 
@@ -633,20 +658,13 @@ function showManual() {
 }
 
 
-function updateScore() {
-    score += 10;
-    document.getElementById('score').innerHTML = score;
-
-}
-
-
 function gameOver() {
 
-    lives -= 1;
-
-    document.getElementById("life").innerHTML = lives;
-
     alert("Game Over");
+
+    window.location.reload();
+
+    document.getElementById("life").innerHTML("0");
 
 }
 
@@ -654,4 +672,33 @@ function gameEnd() {
 
     alert("Game End - Score:" + score);
 
+}
+
+var coinDestroyingCount = 0;
+
+function startCoinDestroying(coin, coinIndex) {
+    coinDestroyingID = setInterval(function() {
+        coinDestroyingCount += 1;
+
+        if (coinDestroyingCount == 1000) {
+
+
+            if (lives > 0) {
+
+                groundArea1.removeChild(coin);
+                coins.splice(coinIndex, 1);
+                bombStatus.splice(coinIndex, 1);
+
+            } else {
+
+                gameOver();
+
+            }
+
+            coinDestroyingCount = 0;
+
+            clearInterval(coinDestroyingID);
+
+        }
+    }, 1);
 }
