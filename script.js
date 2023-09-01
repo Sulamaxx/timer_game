@@ -1,6 +1,8 @@
 var playerDiv = document.getElementById("playerDiv");
+
 var plantsArea = document.getElementById("plantsArea");
 var groundArea1 = document.getElementById("groundArea1");
+
 var topFence = document.getElementById("topFence");
 var leftFence = document.getElementById("leftFence");
 var rightFence = document.getElementById("rightFence");
@@ -10,6 +12,11 @@ var walkRightAnimationId = 0;
 var walkLeftAnimationId = 0;
 var walkUpAnimationId = 0;
 var walkDownAnimationId = 0;
+
+var walkRightAnimationIdSprite = 0;
+var walkLeftAnimationIdSprite = 0;
+var walkUpAnimationIdSprite = 0;
+var walkDownAnimationIdSprite = 0;
 
 var coinId = 1;
 var coinNumber = 1;
@@ -21,43 +28,30 @@ function move(event) {
     if (keycode == 39 || keycode == 68) {
 
         if (walkRightAnimationId == 0) {
-            walkLeftAnimationId = "None";
-            walkUpAnimationId = "None";
-            walkDownAnimationId = "None";
-            walkRightAnimationId = setInterval(walkRight, 1);
+                       walkRightAnimationId = setInterval(walkRight, 10);
+            walkRightAnimationIdSprite = setInterval(walkRightSprite, 100);
         }
 
     } else if (keycode == 37 || keycode == 65) {
 
         if (walkLeftAnimationId == 0) {
-
-            walkRightAnimationId = "None";
-            walkUpAnimationId = "None";
-            walkDownAnimationId = "None";
-
-            walkLeftAnimationId = setInterval(walkLeft, 1);
+            walkLeftAnimationId = setInterval(walkLeft, 10);
+            walkLeftAnimationIdSprite = setInterval(walkLeftSprite, 100);
 
         }
 
     } else if (keycode == 38 || keycode == 87) {
 
         if (walkUpAnimationId == 0) {
-
-            walkRightAnimationId = "None";
-            walkLeftAnimationId = "None";
-            walkDownAnimationId = "None";
-
-            walkUpAnimationId = setInterval(walkUp, 1);
+            walkUpAnimationId = setInterval(walkUp, 10);
+            walkUpAnimationIdSprite = setInterval(walkUpSprite, 100);
         }
 
     } else if (keycode == 40 || keycode == 83) {
 
         if (walkDownAnimationId == 0) {
-            walkRightAnimationId = "None";
-            walkLeftAnimationId = "None";
-            walkUpAnimationId = "None";
-
-            walkDownAnimationId = setInterval(walkDown, 1);
+                       walkDownAnimationId = setInterval(walkDown, 10);
+            walkDownAnimationIdSprite = setInterval(walkDownSprite, 100);
         }
 
     } else if (keycode == 13) {
@@ -94,9 +88,17 @@ var playerDivComputedStyle = window.getComputedStyle(playerDiv);
 var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
 var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
 
+var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
+function walkRightSprite() {
+    playerImagePositionX -= 50;
+    playerDiv.style.backgroundPositionY = "-50px";
+    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+}
+
 function walkRight() {
 
-    var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
 
     var rightFenceComputedStyle = window.getComputedStyle(rightFence);
     var rightFenceMarginLeft = parseFloat(rightFenceComputedStyle.marginLeft);
@@ -129,12 +131,9 @@ function walkRight() {
     } else {
 
         playerDivMarginLeft += 1;
-        playerImagePositionX -= 50;
-
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
 
-        playerDiv.style.backgroundPositionY = "-50px";
-        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+
 
 
         var numOfCoins = coins.length;
@@ -164,11 +163,13 @@ function walkRight() {
     }
 
 }
-
+function walkLeftSprite() {
+    playerImagePositionX -= 50;
+    playerDiv.style.backgroundPositionY = "-100px";
+    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+}
 function walkLeft() {
-    var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
-
-    var leftFenceComputedStyle = window.getComputedStyle(leftFence);
+      var leftFenceComputedStyle = window.getComputedStyle(leftFence);
     var leftFenceMarginLeft = parseFloat(leftFenceComputedStyle.marginLeft);
 
     var fanceTouchingPoint = leftFenceMarginLeft + 28;
@@ -198,12 +199,8 @@ function walkLeft() {
     } else {
 
         playerDivMarginLeft -= 1;
-        playerImagePositionX -= 50;
-
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
 
-        playerDiv.style.backgroundPositionY = "-100px";
-        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
 
 
         var numOfCoins = coins.length;
@@ -233,11 +230,12 @@ function walkLeft() {
     }
 
 }
-
+function walkUpSprite() {
+    playerImagePositionX -= 50;
+    playerDiv.style.backgroundPositionY = "-200px";
+    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+}
 function walkUp() {
-
-    var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
-
     var topFenceComputedStyle = window.getComputedStyle(topFence);
     var topFenceMarginTop = parseFloat(topFenceComputedStyle.marginTop);
 
@@ -266,15 +264,10 @@ function walkUp() {
     } else {
 
         playerDivMarginTop -= 1;
-        playerImagePositionX -= 50;
-
         playerDiv.style.marginTop = playerDivMarginTop + "px";
 
-        playerDiv.style.backgroundPositionY = "-200px";
-        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
-
         var numOfCoins = coins.length;
-        
+
         if (numOfCoins >= 1) {
 
             for (c = 0; c < numOfCoins; c++) {
@@ -300,9 +293,13 @@ function walkUp() {
 
 }
 
-function walkDown() {
-    var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+function walkDownSprite() {
+    playerImagePositionX -= 50;
+    playerDiv.style.backgroundPositionY = "-150px";
+    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
+}
 
+function walkDown() {
     var bottomFenceComputedStyle = window.getComputedStyle(bottomFence);
     var bottomFenceMarginTop = parseFloat(bottomFenceComputedStyle.marginTop);
 
@@ -331,12 +328,8 @@ function walkDown() {
     } else {
 
         playerDivMarginTop += 1;
-        playerImagePositionX -= 50;
-
         playerDiv.style.marginTop = playerDivMarginTop + "px";
 
-        playerDiv.style.backgroundPositionY = "-150px";
-        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
 
         var numOfCoins = coins.length;
 
@@ -346,7 +339,7 @@ function walkDown() {
 
                 var coin = document.getElementById("coin" + coins[c]);
 
-                var playerRightPoint = playerDivMarginTop+50;
+                var playerRightPoint = playerDivMarginTop + 50;
 
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
@@ -381,25 +374,33 @@ function stop() {
 
 function walkRightStop() {
     clearInterval(walkRightAnimationId);
+    clearInterval(walkRightAnimationIdSprite);
     walkRightAnimationId = 0;
+    walkRightAnimationIdSprite = 0;
     playerDiv.style.backgroundPositionX = "50px";
 }
 
 function walkLeftStop() {
     clearInterval(walkLeftAnimationId);
+    clearInterval(walkLeftAnimationIdSprite);
     walkLeftAnimationId = 0;
+    walkLeftAnimationIdSprite = 0;
     playerDiv.style.backgroundPositionX = "50px";
 }
 
 function walkUpStop() {
     clearInterval(walkUpAnimationId);
+    clearInterval(walkUpAnimationIdSprite);
     walkUpAnimationId = 0;
+    walkUpAnimationIdSprite = 0;
     playerDiv.style.backgroundPositionX = "50px";
 }
 
 function walkDownStop() {
     clearInterval(walkDownAnimationId);
+    clearInterval(walkDownAnimationIdSprite);
     walkDownAnimationId = 0;
+    walkDownAnimationIdSprite = 0;
     playerDiv.style.backgroundPositionX = "50px";
 }
 
