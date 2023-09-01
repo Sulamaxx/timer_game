@@ -24,14 +24,10 @@ var coinDestroyingID = 0;
 
 var coinId = 1;
 var coins = [];
-var removalCoins = [];
+var bombStatus = [];
 
 function move(event) {
     var keycode = event.which;
-
-    if (lives > 0) {
-      
-   
 
     if (keycode == 39 || keycode == 68) {
 
@@ -85,17 +81,14 @@ function move(event) {
         showPlayerLocation();
 
     }
-}else{
-    gameOver();
 
-}
 
 }
 
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -118,15 +111,15 @@ var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
 var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
 
 function walkRight() {
-    if (lives == 0) {
-        gameOver();
 
-    }
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
-        var rightFenceComputedStyle = window.getComputedStyle(rightFence);
+
+    var rightFenceComputedStyle = window.getComputedStyle(rightFence);
     var rightFenceMarginLeft = parseFloat(rightFenceComputedStyle.marginLeft);
+
     var playerDivRightSideMargin = playerDivMarginLeft + 50;
     var fanceTouchingPoint = rightFenceMarginLeft;
+
     if (fanceTouchingPoint == playerDivRightSideMargin) {
 
     } else if (playerDivRightSideMargin == 465 && playerDivMarginTop > 355 && playerDivMarginTop < 1405) {
@@ -150,78 +143,109 @@ function walkRight() {
     } else if (playerDivMarginLeft == 1516 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
         // Bellow Left Table
     } else {
+
         playerDivMarginLeft += 0.5;
         playerImagePositionX -= 50;
+
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
+
         playerDiv.style.backgroundPositionY = "-50px";
+
         if (animationNumber == 0) {
             playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
         }
+
         animationNumber = animationNumber + 1;
+
         if (animationNumber >= 50) {
             animationNumber = 0;
         }
-        var numOfCoins = coins.length;
-        if (numOfCoins >= 1) {
-            for (var c = 0; c < numOfCoins; c++) {
-                var coin = document.getElementById("coin" + coins[c]);
+
+
+        if (coins.length >= 1) {
+
+            for (var c = 0; c < coins.length; c++) {
+
+                let coinIndex = c;
+
+                var coin = document.getElementById("coin" + coins[coinIndex]);
 
                 var playerRightPoint = playerDivMarginLeft + 50;
+
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
+
                 if (playerRightPoint == coinLeftPoint && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
+
                     const Equality = Math.floor(Math.random() * 10);
 
-                    if (Equality < 7) {
+                    if (Equality < bombCheckPoint) {
+
                         groundArea1.removeChild(coin);
-                        coins.splice(c, 1);
-                        updateScore();
+                        coins.splice(coinIndex, 1);
+                        bombStatus.splice(coinIndex, 1);
+
+                        score += 10;
+                        document.getElementById('score').innerHTML = score;
 
                         genarateCoins();
+
                     } else {
 
-                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
-                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
-                        removalCoins.push(coin);
-                        coins.splice(c, 1);
-                        playerDiv.style.animation = "";
-                        coin.className = "bomb";
-                        setTimeout(function () {
-                            playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
-                        }, 0.1);
-                        if (lives != 0) {
+                        if (bombStatus[coinIndex] == true) {
+
+                            coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                            coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                            coin.className = "bomb";
+                            bombStatus[coinIndex] = false;
+
                             lives -= 1;
+
                             document.getElementById("life").innerHTML = lives;
 
-                        }
-                        setTimeout(function () {
-                            var numOfCoinsRemoval = removalCoins.length;
-                            if (numOfCoinsRemoval >= 1) {
-                                for (var cr = 0; cr < numOfCoinsRemoval; cr++) {
-                                    var removalCoin = document.getElementById("coin" + removalCoins[cr]);
-                                    groundArea1.removeChild(removalCoin);
-                                }
+                            if (lives < 1) {
+                                gameOver();
                             }
-                        }, 1000);
+
+                            if (playerDivDecreasingLivesAnimationStatus == false) {
+
+                                playerDiv.style.animation = " playerDivDecreasingLivesAnimation1 0.5s 3";
+
+                                playerDivDecreasingLivesAnimationStatus = true;
+
+                            } else {
+                                playerDiv.style.animation = " playerDivDecreasingLivesAnimation2 0.5s 3";
+
+                                playerDivDecreasingLivesAnimationStatus = false;
+                            }
+
+                            startCoinDestroying(coin, coinIndex);
+
+                        }
+
                     }
+
                 }
+
             }
+
         }
     }
+
 }
 
-
-
 function walkLeft() {
-    if (lives == 0) {
-        gameOver();
-    
-    }
-        var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
+    var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
+
     var leftFenceComputedStyle = window.getComputedStyle(leftFence);
     var leftFenceMarginLeft = parseFloat(leftFenceComputedStyle.marginLeft);
+
     var fanceTouchingPoint = leftFenceMarginLeft + 28;
+
     if (playerDivMarginLeft == fanceTouchingPoint) {
 
     } else if (playerDivMarginLeft == 524 && playerDivMarginTop > 358 && playerDivMarginTop < 1404) {
@@ -245,77 +269,108 @@ function walkLeft() {
     } else if (playerDivMarginLeft == 1666 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
         // Bellow Left Table
     } else {
+
         playerDivMarginLeft -= 0.5;
         playerImagePositionX -= 50;
+
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
+
         playerDiv.style.backgroundPositionY = "-100px";
+
         if (animationNumber == 0) {
             playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
         }
+
         animationNumber = animationNumber + 1;
+
         if (animationNumber >= 50) {
             animationNumber = 0;
         }
 
-        var numOfCoins = coins.length;
-        if (numOfCoins >= 1) {
-            for (var c = 0; c < numOfCoins; c++) {
-                var coin = document.getElementById("coin" + coins[c]);
+        if (coins.length >= 1) {
+
+            for (var c = 0; c < coins.length; c++) {
+
+                let coinIndex = c;
+
+                var coin = document.getElementById("coin" + coins[coinIndex]);
+
 
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 270;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
+
                 if (playerDivMarginLeft == (coinLeftPoint) && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
+
+
                     const Equality = Math.floor(Math.random() * 10);
-                    if (Equality < 7) {
+
+                    if (Equality < bombCheckPoint) {
+
                         groundArea1.removeChild(coin);
-                        coins.splice(c, 1);
-                        updateScore();
+                        coins.splice(coinIndex, 1);
+                        bombStatus.splice(coinIndex, 1);
+
+                        score += 10;
+                        document.getElementById('score').innerHTML = score;
 
                         genarateCoins();
+
                     } else {
 
-                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
-                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
-                        removalCoins.push(coin);
-                        coins.splice(c, 1);
-                        playerDiv.style.animation = "";
-                        coin.className = "bomb";
-                        setTimeout(function () {
-                            playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
-                        }, 0.1);
-                        if (lives != 0) {
+                        if (bombStatus[coinIndex] == true) {
+
+                            coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                            coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                            coin.className = "bomb";
+                            bombStatus[coinIndex] = false;
+
                             lives -= 1;
+
                             document.getElementById("life").innerHTML = lives;
-                        }
-                        setTimeout(function () {
-                            var numOfCoinsRemoval = removalCoins.length;
-                            if (numOfCoinsRemoval >= 1) {
-                                for (var cr = 0; cr < numOfCoinsRemoval; cr++) {
-                                    var removalCoin = document.getElementById("coin" + removalCoins[cr]);
-                                    groundArea1.removeChild(removalCoin);
-                                }
+
+                            if (lives < 1) {
+                                gameOver();
                             }
-                        }, 1000);
+
+                            if (playerDivDecreasingLivesAnimationStatus == false) {
+
+                                playerDiv.style.animation = " playerDivDecreasingLivesAnimation1 0.5s 3";
+
+                                playerDivDecreasingLivesAnimationStatus = true;
+
+                            } else {
+                                playerDiv.style.animation = " playerDivDecreasingLivesAnimation2 0.5s 3";
+
+                                playerDivDecreasingLivesAnimationStatus = false;
+                            }
+
+                            startCoinDestroying(coin, coinIndex);
+
+                        }
+
                     }
+
                 }
+
             }
+
         }
+
     }
+
 }
 
-
-
-
 function walkUp() {
-    if (lives == 0) {
-        gameOver();
-    
-    }
+
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
     var topFenceComputedStyle = window.getComputedStyle(topFence);
     var topFenceMarginTop = parseFloat(topFenceComputedStyle.marginTop);
+
     var fanceTouchingPoint = topFenceMarginTop + 110;
+
     if (fanceTouchingPoint == playerDivMarginTop) {
 
     } else if (playerDivMarginTop == 1406 && 419 < playerDivMarginLeft && playerDivMarginLeft < 1106) {
@@ -337,75 +392,103 @@ function walkUp() {
     } else if (playerDivMarginTop == 1113 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
         // Bellow Left Table
     } else {
+
         playerDivMarginTop -= 0.5;
         playerImagePositionX -= 50;
+
         playerDiv.style.marginTop = playerDivMarginTop + "px";
+
         playerDiv.style.backgroundPositionY = "-200px";
+
         if (animationNumber == 0) {
             playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
         }
+
         animationNumber = animationNumber + 1;
+
         if (animationNumber >= 50) {
             animationNumber = 0;
         }
-        var numOfCoins = coins.length;
-        if (numOfCoins >= 1) {
-            for (var c = 0; c < numOfCoins; c++) {
-                var coin = document.getElementById("coin" + coins[c]);
+
+        if (coins.length >= 1) {
+
+            for (var c = 0; c < coins.length; c++) {
+
+                let coinIndex = c;
+
+                var coin = document.getElementById("coin" + coins[coinIndex]);
 
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
+
                 if (playerDivMarginTop == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
+
                     const Equality = Math.floor(Math.random() * 10);
 
-                    if (Equality < 7) {
+                    if (Equality < bombCheckPoint) {
+
                         groundArea1.removeChild(coin);
-                        coins.splice(c, 1);
-                        updateScore();
+                        coins.splice(coinIndex, 1);
+                        bombStatus.splice(coinIndex, 1);
+
+                        score += 10;
+                        document.getElementById('score').innerHTML = score;
 
                         genarateCoins();
+
                     } else {
 
-                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
-                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
-                        removalCoins.push(coin);
-                        coins.splice(c, 1);
-                        playerDiv.style.animation = "";
-                        coin.className = "bomb";
-                        setTimeout(function () {
-                            playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
-                        }, 0.1);
-                        if (lives != 0) {
+                        if (bombStatus[coinIndex] == true) {
+
+                            coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                            coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                            coin.className = "bomb";
+                            bombStatus[coinIndex] = false;
+
                             lives -= 1;
+
                             document.getElementById("life").innerHTML = lives;
 
-                        }
-                        setTimeout(function () {
-                            var numOfCoinsRemoval = removalCoins.length;
-                            if (numOfCoinsRemoval >= 1) {
-                                for (var cr = 0; cr < numOfCoinsRemoval; cr++) {
-                                    var removalCoin = document.getElementById("coin" + removalCoins[cr]);
-                                    groundArea1.removeChild(removalCoin);
-                                }
+                            if (lives < 1) {
+                                gameOver();
                             }
-                        }, 1000);
+
+                            if (playerDivDecreasingLivesAnimationStatus == false) {
+
+                                playerDiv.style.animation = " playerDivDecreasingLivesAnimation1 0.5s 3";
+
+                                playerDivDecreasingLivesAnimationStatus = true;
+
+                            } else {
+                                playerDiv.style.animation = " playerDivDecreasingLivesAnimation2 0.5s 3";
+
+                                playerDivDecreasingLivesAnimationStatus = false;
+                            }
+
+                            startCoinDestroying(coin, coinIndex);
+
+                        }
+
                     }
                 }
+
             }
         }
+
     }
+
 }
 
 function walkDown() {
-    if (lives == 0) {
-        gameOver();
-
-    }
     var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
     var bottomFenceComputedStyle = window.getComputedStyle(bottomFence);
     var bottomFenceMarginTop = parseFloat(bottomFenceComputedStyle.marginTop);
+
     var fanceTouchingPoint = bottomFenceMarginTop;
+
     if (fanceTouchingPoint == playerDivMarginTop) {
 
     } else if (playerDivMarginTop == 1353 && 523 < playerDivMarginLeft && playerDivMarginLeft < 1106) {
@@ -427,64 +510,97 @@ function walkDown() {
     } else if (playerDivMarginTop == 995 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
         // Bellow Left Table
     } else {
+
         playerDivMarginTop += 0.5;
         playerImagePositionX -= 50;
+
         playerDiv.style.marginTop = playerDivMarginTop + "px";
+
         playerDiv.style.backgroundPositionY = "-150px";
+
         if (animationNumber == 0) {
             playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
         }
+
         animationNumber = animationNumber + 1;
+
         if (animationNumber >= 50) {
             animationNumber = 0;
         }
-        var numOfCoins = coins.length;
-        if (numOfCoins >= 1) {
-            for (var c = 0; c < numOfCoins; c++) {
-                var coin = document.getElementById("coin" + coins[c]);
+
+        if (coins.length > 0) {
+
+            for (var c = 0; c < coins.length; c++) {
+
+                let coinIndex = c;
+
+
+                var coin = document.getElementById("coin" + coins[coinIndex]);
 
                 var playerRightPoint = playerDivMarginTop + 50;
+
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 280;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
+
                 if (playerRightPoint == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
+
                     const Equality = Math.floor(Math.random() * 10);
 
-                    if (Equality < 7) {
+                    if (Equality < bombCheckPoint) {
+
                         groundArea1.removeChild(coin);
-                        coins.splice(c, 1);
-                        updateScore();
+                        coins.splice(coinIndex, 1);
+                        bombStatus.splice(coinIndex, 1);
+
+                        score += 10;
+                        document.getElementById('score').innerHTML = score;
+
                         genarateCoins();
-                        c = numOfCoins;
+
                     } else {
-                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
-                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
-                        removalCoins.push(coin);
-                        coins.splice(c, 1);
-                        playerDiv.style.animation = "";
-                        coin.className = "bomb";
-                        setTimeout(function () {
-                            playerDiv.style.animation = " playerDivDecreasingLivesAnimation 0.5s 3";
-                        }, 0.1);
-                        if (lives != 0) {
+
+                        if (bombStatus[coinIndex] == true) {
+
+                            coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                            coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                            coin.className = "bomb";
+                            bombStatus[coinIndex] = false;
+
                             lives -= 1;
+
                             document.getElementById("life").innerHTML = lives;
 
-                        }
-                        setTimeout(function () {
-                            var numOfCoinsRemoval = removalCoins.length;
-                            if (numOfCoinsRemoval >= 1) {
-                                for (var cr = 0; cr < numOfCoinsRemoval; cr++) {
-                                    var removalCoin = document.getElementById("coin" + removalCoins[cr]);
-                                    groundArea1.removeChild(removalCoin);
-                                }
+                            if (lives < 1) {
+                                gameOver();
                             }
-                        }, 1000);
+
+                            if (playerDivDecreasingLivesAnimationStatus == false) {
+
+                                playerDiv.style.animation = " playerDivDecreasingLivesAnimation1 0.5s 3";
+
+                                playerDivDecreasingLivesAnimationStatus = true;
+
+                            } else {
+                                playerDiv.style.animation = " playerDivDecreasingLivesAnimation2 0.5s 3";
+
+                                playerDivDecreasingLivesAnimationStatus = false;
+                            }
+
+                            startCoinDestroying(coin, coinIndex);
+
+                        }
+
                     }
+
                 }
+
             }
         }
+
     }
+
 }
 
 function stop() {
@@ -551,6 +667,7 @@ function genarateCoins() {
         coin.className = "coin";
         coin.id = "coin" + coinId;
         coins.push(coinId);
+        bombStatus.push(true);
         coinId = coinId + 1;
         groundArea1.appendChild(coin);
 
@@ -602,7 +719,7 @@ function startBtn() {
             secondsTag.innerHTML = "59";
             updatedSeconds = 59;
         }
-        if (updatedSeconds == 0 && minutesText == "00") {
+        if (updatedSeconds == 0) {
             gameEnd();
         }
 
@@ -623,7 +740,7 @@ function timerStart() {
 
     if (startBtnStatus == false) {
 
-        startBtnAnimationNumber = setInterval(startBtn, 2000);
+        startBtnAnimationNumber = setInterval(startBtn, 1000);
         startBtnStatus = true;
     }
 
