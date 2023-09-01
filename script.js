@@ -82,7 +82,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -138,7 +138,7 @@ function walkRight() {
         // Bellow Left Table
     } else {
 
-        playerDivMarginLeft += 1;
+        playerDivMarginLeft += 0.5;
         playerImagePositionX -= 50;
 
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
@@ -172,14 +172,24 @@ function walkRight() {
 
                 if (playerRightPoint == coinLeftPoint && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
 
-                    if (bombStatus[c] == true) {
+                    const Equality = Math.floor(Math.random() * 10);
 
-                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
-                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+                    if (Equality < 7) {
 
-                        coin.className = "bomb";
+                        updateScore();
 
-                        bombStatus[c] = false;
+                    } else {
+
+                        if (bombStatus[c] == true) {
+
+                            coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                            coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                            coin.className = "bomb";
+
+                            bombStatus[c] = false;
+
+                        }
 
                     }
 
@@ -226,7 +236,7 @@ function walkLeft() {
         // Bellow Left Table
     } else {
 
-        playerDivMarginLeft -= 1;
+        playerDivMarginLeft -= 0.5;
         playerImagePositionX -= 50;
 
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
@@ -258,16 +268,27 @@ function walkLeft() {
 
                 if (playerDivMarginLeft == (coinLeftPoint) && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
 
-                    if (bombStatus[c] == true) {
+                    const Equality = Math.floor(Math.random() * 10);
 
-                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
-                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+                    if (Equality < 7) {
 
-                        coin.className = "bomb";
+                        updateScore();
 
-                        bombStatus[c] = false;
+                    } else {
+
+                        if (bombStatus[c] == true) {
+
+                            coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                            coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                            coin.className = "bomb";
+
+                            bombStatus[c] = false;
+
+                        }
 
                     }
+
 
                 }
 
@@ -341,16 +362,28 @@ function walkUp() {
 
                 if (playerDivMarginTop == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
 
-                    if (bombStatus[c] == true) {
+                    const Equality = Math.floor(Math.random() * 10);
 
-                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
-                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+                    if (Equality < 7) {
 
-                        coin.className = "bomb";
+                        updateScore();
 
-                        bombStatus[c] = false;
+                    } else {
+
+                        if (bombStatus[c] == true) {
+
+                            coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                            coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                            coin.className = "bomb";
+
+                            bombStatus[c] = false;
+
+                        }
 
                     }
+
+
 
                 }
 
@@ -424,16 +457,28 @@ function walkDown() {
 
                 if (playerRightPoint == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
 
-                    if (bombStatus[c] == true) {
+                    const Equality = Math.floor(Math.random() * 10);
 
-                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
-                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+                    if (Equality < 7) {
 
-                        coin.className = "bomb";
+                        updateScore();
 
-                        bombStatus[c] = false;
+                    } else {
+
+                        if (bombStatus[c] == true) {
+
+                            coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                            coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                            coin.className = "bomb";
+
+                            bombStatus[c] = false;
+
+                        }
 
                     }
+
+
 
                 }
 
@@ -485,29 +530,13 @@ function walkDownStop() {
 }
 
 function showPlayerLocation() {
-    // alert("playerDivMarginLeft: " + playerDivMarginLeft + "-playerDivMarginTop: " + playerDivMarginTop);
+    var playerLeftPoint = playerDivMarginLeft;
+    var playerTopPoint = playerDivMarginTop;
+    var playerRightPoint = playerDivMarginLeft + 50;
+    var playerBottopPoint = playerDivMarginLeft + 50;
 
-    var numOfCoins = coins.length;
+    alert("     playerLeftPoint:" + playerLeftPoint + "     playerTopPoint:" + playerTopPoint + "     playerRightPoint:" + playerRightPoint + "     playerBottopPoint:" + playerBottopPoint);
 
-    for (c = 0; c < numOfCoins; c++) {
-
-        var coin = document.getElementById("coin" + coins[c]);
-
-        var playerLeftPoint = playerDivMarginLeft;
-        var playerTopPoint = playerDivMarginTop;
-        var playerRightPoint = playerDivMarginLeft + 50;
-        var playerBottopPoint = playerDivMarginLeft + 50;
-
-        var coinComputedStyle = window.getComputedStyle(coin);
-        var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft);
-        var coinTopPoint = parseFloat(coinComputedStyle.marginTop);
-        var coinRightPoint = parseFloat(coinComputedStyle.marginLeft) + 20;
-        var coinBottomPoint = parseFloat(coinComputedStyle.marginTop) + 20;
-
-
-        alert("     playerLeftPoint:" + playerLeftPoint + "     playerTopPoint:" + playerTopPoint + "     playerRightPoint:" + playerRightPoint + "     playerBottopPoint:" + playerBottopPoint + "     coinLeftPoint:" + coinLeftPoint + "     coinTopPoint:" + coinTopPoint + "     coinRightPoint:" + coinRightPoint + "     coinBottomPoint:" + coinBottomPoint);
-
-    }
 }
 
 function onloadMoments() {
@@ -640,7 +669,6 @@ function showManual() {
 
 function updateScore() {
     score += 10;
-    const scoreValue = document.getElementById('score').innerHTML=score;
-   
-}
+    document.getElementById('score').innerHTML = score;
 
+}
