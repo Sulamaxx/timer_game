@@ -72,7 +72,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -121,6 +121,12 @@ function walkRight() {
         // Left Side Computer Tables
     } else if (playerDivMarginLeft == 580 && playerDivMarginTop < 862 && playerDivMarginTop > 756) {
         // Middle Horizontal Wall Side Left
+    } else if (playerDivMarginLeft == 628 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
+        // Bellow Right Table
+    }else if (playerDivMarginLeft == 975 && playerDivMarginTop > 953 && playerDivMarginTop < 1182) {
+        // Bellow Middle Table
+    }else if (playerDivMarginLeft == 1516 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
+        // Bellow Left Table
     } else {
 
         playerDivMarginLeft += 1;
@@ -159,6 +165,12 @@ function walkLeft() {
         // Vertical InSide Wall
     } else if (playerDivMarginLeft == 1738 && playerDivMarginTop < 735 && playerDivMarginTop > 560) {
         // Right Side Computer Tables
+    } else if (playerDivMarginLeft == 775 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
+        // Bellow Right Table
+    }else if (playerDivMarginLeft == 1279 && playerDivMarginTop > 953 && playerDivMarginTop < 1182) {
+        // Bellow Middle Table
+    }else if (playerDivMarginLeft == 1666 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
+        // Bellow Left Table
     } else {
 
         playerDivMarginLeft -= 1;
@@ -196,6 +208,12 @@ function walkUp() {
         // Left Side Computer Tables
     } else if (playerDivMarginTop == 735 && playerDivMarginLeft > 1200 && playerDivMarginLeft < 1738) {
         // right Side Computer Tables
+    }else if (playerDivMarginTop == 1113 && playerDivMarginLeft > 628 && playerDivMarginLeft < 775) {
+        // Bellow Right Table
+    }else if (playerDivMarginTop == 1182 && playerDivMarginLeft > 975 && playerDivMarginLeft < 1279) {
+        // Bellow Middle Table
+    }else if (playerDivMarginTop == 1113 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
+        // Bellow Left Table
     } else {
 
         playerDivMarginTop -= 1;
@@ -221,17 +239,23 @@ function walkDown() {
     if (fanceTouchingPoint == playerDivMarginTop) {
 
     } else if (playerDivMarginTop == 1353 && 523 < playerDivMarginLeft && playerDivMarginLeft < 1106) {
-        // Door Left Side Inside
+        // Door Left Side InsideF
     } else if (playerDivMarginTop == 1353 && 1172 < playerDivMarginLeft && playerDivMarginLeft < 1809) {
         // Door right Side Inside
     } else if (playerDivMarginTop == 356 && 420 < playerDivMarginLeft && playerDivMarginLeft < 1862) {
         // Top OutSide 
     } else if (playerDivMarginTop == 756 && playerDivMarginLeft > 580 && playerDivMarginLeft < 1695) {
-        // Middle Horizontal Wall
+        // Middle Horizontal Wall 
     } else if (playerDivMarginTop == 560 && playerDivMarginLeft > 536 && playerDivMarginLeft < 1067) {
         // Left Side Computer Tables
     } else if (playerDivMarginTop == 560 && playerDivMarginLeft > 1200 && playerDivMarginLeft < 1738) {
         // right Side Computer Tables
+    }else if (playerDivMarginTop == 995 && playerDivMarginLeft > 628 && playerDivMarginLeft < 775) {
+        // Bellow Right Table
+    }else if (playerDivMarginTop == 953 && playerDivMarginLeft > 975 && playerDivMarginLeft < 1279) {
+        // Bellow Middle Table
+    }else if (playerDivMarginTop == 995 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
+        // Bellow Left Table
     } else {
 
         playerDivMarginTop += 1;
@@ -289,7 +313,7 @@ function showPlayerLocation() {
 }
 
 function onloadMoments() {
-    setInterval(genarateCoins, 100);
+    // setInterval(genarateCoins, 100);
 }
 
 
