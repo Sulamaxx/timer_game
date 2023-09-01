@@ -365,7 +365,7 @@ function walkDown() {
 
         playerDiv.style.backgroundPositionY = "-150px";
 
-       if (animationNumber == 0) {
+        if (animationNumber == 0) {
             playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
         }
 
@@ -475,27 +475,7 @@ function onloadMoments() {
 
 function genarateCoins() {
 
-    // if (coinNumber < 50) {
-
-    //     var coin = document.createElement("div");
-    //     coin.className = "coin";
-    //     coin.id = "coin" + coinId;
-    //     coinId = coinId + 1;
-    //     groundArea1.appendChild(coin);
-
-    //     coinNumber = coinNumber + 1;
-
-
-    //     var x1 = Math.random();
-    //     var x2 = x1 * 1000;
-    //     var x3 = Math.floor(x2);
-
-    //     coin.style.marginLeft = x3 + "px";
-    //     coin.style.marginTop = "1427px";
-    // }
-
-    if (coinNumber < 2) {
-
+    if (coinNumber < 50) {
         var coin = document.createElement("div");
         coin.className = "coin";
         coin.id = "coin" + coinId;
@@ -504,9 +484,15 @@ function genarateCoins() {
         groundArea1.appendChild(coin);
 
         coinNumber = coinNumber + 1;
+        
+        var groundAreaWidth = groundArea1.offsetWidth;
+        var groundAreaHeight = groundArea1.offsetHeight;
+        
+        var x3 = Math.floor(Math.random() * (groundAreaWidth - 40)); 
+        var y3 = Math.floor(Math.random() * (groundAreaHeight - 40)); 
 
-        coin.style.marginLeft = "1035px";
-        coin.style.marginTop = "1300px";
+        coin.style.marginLeft = x3 + "px";
+        coin.style.marginTop = y3 + "px";
     }
-
+  
 }
