@@ -75,7 +75,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -165,7 +165,9 @@ function walkRight() {
 
                 if (playerRightPoint == coinLeftPoint && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
 
-                    alert("playerRightPointR:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint + " coinTopPoint :" + coinTopPoint + "playerDivMarginBottom :" + (playerDivMarginTop + 50));
+                    // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
+                    // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
+                    // coin.className = "bomb";
 
                 }
 
@@ -241,7 +243,9 @@ function walkLeft() {
 
                 if (playerDivMarginLeft == (coinLeftPoint) && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
 
-                    alert("playerRightPointR:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint + " coinTopPoint :" + coinTopPoint + "playerDivMarginBottom :" + (playerDivMarginTop + 50));
+                    // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
+                    // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
+                    // coin.className = "bomb";
 
                 }
 
@@ -317,7 +321,9 @@ function walkUp() {
 
                 if (playerRightPoint == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
 
-                    alert("playerRightPointR:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint + " coinTopPoint :" + coinTopPoint + "playerDivMarginBottom :" + (playerDivMarginTop + 50));
+                    // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
+                    // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
+                    // coin.className = "bomb";
 
                 }
 
@@ -391,7 +397,9 @@ function walkDown() {
 
                 if (playerRightPoint == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
 
-                    alert("playerRightPointR:" + playerRightPoint + "   coinLeftPoint:" + coinLeftPoint + " coinTopPoint :" + coinTopPoint + "playerDivMarginBottom :" + (playerDivMarginTop + 50));
+                    // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
+                    // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
+                    // coin.className = "bomb";
 
                 }
 
@@ -484,15 +492,15 @@ function genarateCoins() {
         groundArea1.appendChild(coin);
 
         coinNumber = coinNumber + 1;
-        
+
         var groundAreaWidth = groundArea1.offsetWidth;
         var groundAreaHeight = groundArea1.offsetHeight;
-        
-        var x3 = Math.floor(Math.random() * (groundAreaWidth - 40)); 
-        var y3 = Math.floor(Math.random() * (groundAreaHeight - 40)); 
+
+        var x3 = Math.floor(Math.random() * (groundAreaWidth - 40));
+        var y3 = Math.floor(Math.random() * (groundAreaHeight - 40));
 
         coin.style.marginLeft = x3 + "px";
         coin.style.marginTop = y3 + "px";
     }
-  
+
 }
