@@ -171,93 +171,93 @@ body::-webkit-scrollbar {
 }
 
 .midYWall {
-    margin-left: 660px;
-    width: 60px;
-    height: 400px;
-    position: absolute;
-    background-image: url("./resources/wallsideline.png");
+  margin-left: 660px;
+  width: 60px;
+  height: 400px;
+  position: absolute;
+  background-image: url("./resources/wallsideline.png");
 }
 
 .computerTable1 {
-    margin-top: 150px;
-    margin-left: 110px;
-    width: 500px;
-    height: 223px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/computertable.png");
+  margin-top: 150px;
+  margin-left: 110px;
+  width: 500px;
+  height: 223px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/computertable.png");
 }
 
 .computerTable2 {
-    margin-top: 150px;
-    margin-left: 780px;
-    width: 500px;
-    height: 223px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/computertable.png");
+  margin-top: 150px;
+  margin-left: 780px;
+  width: 500px;
+  height: 223px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/computertable.png");
 }
 
 .techTable1 {
-    margin-top: 600px;
-    margin-left: 160px;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/techTeable.png");
+  margin-top: 600px;
+  margin-left: 160px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/techTeable.png");
 }
 
 .meetingTable {
-    margin-top: 550px;
-    margin-left: 510px;
-    width: 357px;
-    height: 300px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/meetingtable.png");
+  margin-top: 550px;
+  margin-left: 510px;
+  width: 357px;
+  height: 300px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/meetingtable.png");
 }
 
 .techTable2 {
-    margin-top: 600px;
-    margin-left: 1050px;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/techTeable.png");
+  margin-top: 600px;
+  margin-left: 1050px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/techTeable.png");
 }
 
 .midXWall {
-    margin-top: 400px;
-    margin-left: 160px;
-    width: 1080px;
-    height: 100px;
-    position: absolute;
-    display: flex;
+  margin-top: 400px;
+  margin-left: 160px;
+  width: 1080px;
+  height: 100px;
+  position: absolute;
+  display: flex;
 }
 
 .midXWallLeft {
-    width: 510px;
-    height: 100px;
-    position: absolute;
-    background-image: url("./resources/insidewall.png");
+  width: 510px;
+  height: 100px;
+  position: absolute;
+  background-image: url("./resources/insidewall.png");
 }
 
 .midXWallMid {
-    margin-left: 510px;
-    width: 45px;
-    height: 100px;
-    position: absolute;
-    background-image: url("./resources/insidemidwall.png");
+  margin-left: 510px;
+  width: 45px;
+  height: 100px;
+  position: absolute;
+  background-image: url("./resources/insidemidwall.png");
 }
 
 .midXWallRight {
-    margin-left: 555px;
-    width: 525px;
-    height: 100px;
-    position: absolute;
-    background-image: url("./resources/insidewall.png");
+  margin-left: 555px;
+  width: 525px;
+  height: 100px;
+  position: absolute;
+  background-image: url("./resources/insidewall.png");
 }
 
 .playerDiv {
@@ -339,14 +339,13 @@ button:hover {
 }
 
 @media (max-width: 1000px) {
-    .homePageImg {
-        height: 100vh;
-    }
-    .container {
-        width: 80%;
-    }
+  .homePageImg {
+    height: 100vh;
+  }
+  .container {
+    width: 80%;
+  }
 }
-
 
 .homePagePlayerDiv {
   position: absolute;
@@ -386,77 +385,83 @@ button:hover {
 }
 
 .coin {
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    background-repeat: no-repeat;
-    animation: rotateCoin 2s infinite;
-    background-position: center;
-    background-color: #3d3b3b;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background-repeat: no-repeat;
+  animation: rotateCoin 2s infinite;
+  background-position: center;
+  background-color: #3d3b3b;
 }
 
 @keyframes rotateCoin {
-    5% {
-        background-image: url("./assets/coin/coin0.png");
-    }
-    10% {
-        background-image: url("./assets/coin/coin1.png");
-    }
-    15% {
-        background-image: url("./assets/coin/coin2.png");
-    }
-    20% {
-        background-image: url("./assets/coin/coin3.png");
-    }
-    25% {
-        background-image: url("./assets/coin/coin4.png");
-    }
-    30% {
-        background-image: url("./assets/coin/coin5.png");
-    }
-    35% {
-        background-image: url("./assets/coin/coin6.png");
-    }
-    40% {
-        background-image: url("./assets/coin/coin7.png");
-    }
-    45% {
-        background-image: url("./assets/coin/coin8.png");
-    }
-    50% {
-        background-image: url("./assets/coin/coin9.png");
-    }
-    55% {
-        background-image: url("./assets/coin/coin0.png");
-    }
-    60% {
-        background-image: url("./assets/coin/coin1.png");
-    }
-    65% {
-        background-image: url("./assets/coin/coin2.png");
-    }
-    70% {
-        background-image: url("./assets/coin/coin3.png");
-    }
-    75% {
-        background-image: url("./assets/coin/coin4.png");
-    }
-    80% {
-        background-image: url("./assets/coin/coin5.png");
-    }
-    85% {
-        background-image: url("./assets/coin/coin6.png");
-    }
-    90% {
-        background-image: url("./assets/coin/coin7.png");
-    }
-    95% {
-        background-image: url("./assets/coin/coin8.png");
-    }
-    100% {
-        background-image: url("./assets/coin/coin9.png");
-    }
+  5% {
+    background-image: url("./assets/coin/coin0.png");
+  }
+  10% {
+    background-image: url("./assets/coin/coin1.png");
+  }
+  15% {
+    background-image: url("./assets/coin/coin2.png");
+  }
+  20% {
+    background-image: url("./assets/coin/coin3.png");
+  }
+  25% {
+    background-image: url("./assets/coin/coin4.png");
+  }
+  30% {
+    background-image: url("./assets/coin/coin5.png");
+  }
+  35% {
+    background-image: url("./assets/coin/coin6.png");
+  }
+  40% {
+    background-image: url("./assets/coin/coin7.png");
+  }
+  45% {
+    background-image: url("./assets/coin/coin8.png");
+  }
+  50% {
+    background-image: url("./assets/coin/coin9.png");
+  }
+  55% {
+    background-image: url("./assets/coin/coin0.png");
+  }
+  60% {
+    background-image: url("./assets/coin/coin1.png");
+  }
+  65% {
+    background-image: url("./assets/coin/coin2.png");
+  }
+  70% {
+    background-image: url("./assets/coin/coin3.png");
+  }
+  75% {
+    background-image: url("./assets/coin/coin4.png");
+  }
+  80% {
+    background-image: url("./assets/coin/coin5.png");
+  }
+  85% {
+    background-image: url("./assets/coin/coin6.png");
+  }
+  90% {
+    background-image: url("./assets/coin/coin7.png");
+  }
+  95% {
+    background-image: url("./assets/coin/coin8.png");
+  }
+  100% {
+    background-image: url("./assets/coin/coin9.png");
+  }
 }
 
+.iconDiv {
+  position: absolute;
+}
 
-
+.iconImg {
+  width: 600px;
+  height: 250px;
+}
