@@ -1,8 +1,6 @@
 var playerDiv = document.getElementById("playerDiv");
-
 var plantsArea = document.getElementById("plantsArea");
 var groundArea1 = document.getElementById("groundArea1");
-
 var topFence = document.getElementById("topFence");
 var leftFence = document.getElementById("leftFence");
 var rightFence = document.getElementById("rightFence");
@@ -12,11 +10,6 @@ var walkRightAnimationId = 0;
 var walkLeftAnimationId = 0;
 var walkUpAnimationId = 0;
 var walkDownAnimationId = 0;
-
-var walkRightAnimationIdSprite = 0;
-var walkLeftAnimationIdSprite = 0;
-var walkUpAnimationIdSprite = 0;
-var walkDownAnimationIdSprite = 0;
 
 var coinId = 1;
 var coinNumber = 1;
@@ -42,12 +35,20 @@ function move(event) {
         walkUpAnimationId = 0;
 
         if (walkRightAnimationId == 0) {
+<<<<<<< Updated upstream
             walkRightAnimationIdSprite = setInterval(walkRightSprite, 100);
             walkRightAnimationId = setInterval(walkRight, 10);
+=======
+            walkLeftAnimationId = "None";
+            walkUpAnimationId = "None";
+            walkDownAnimationId = "None";
+            walkRightAnimationId = setInterval(walkRight, 1);
+>>>>>>> Stashed changes
         }
 
     } else if (keycode == 37 || keycode == 65) {
 
+<<<<<<< Updated upstream
         clearInterval(walkRightAnimationIdSprite);
         clearInterval(walkDownAnimationIdSprite);
         clearInterval(walkUpAnimationIdSprite);
@@ -61,6 +62,15 @@ function move(event) {
         walkRightAnimationId = 0;
         walkDownAnimationId = 0;
         walkUpAnimationId = 0;
+=======
+        if (walkLeftAnimationId == 0) {
+
+            walkRightAnimationId = "None";
+            walkUpAnimationId = "None";
+            walkDownAnimationId = "None";
+
+            walkLeftAnimationId = setInterval(walkLeft, 1);
+>>>>>>> Stashed changes
 
         if (walkLeftAnimationId == 0) {
             walkLeftAnimationIdSprite = setInterval(walkLeftSprite, 100);
@@ -84,8 +94,17 @@ function move(event) {
         walkLeftAnimationId = 0;
         
         if (walkUpAnimationId == 0) {
+<<<<<<< Updated upstream
             walkUpAnimationIdSprite = setInterval(walkUpSprite, 100);
             walkUpAnimationId = setInterval(walkUp, 10);
+=======
+
+            walkRightAnimationId = "None";
+            walkLeftAnimationId = "None";
+            walkDownAnimationId = "None";
+
+            walkUpAnimationId = setInterval(walkUp, 1);
+>>>>>>> Stashed changes
         }
 
     } else if (keycode == 40 || keycode == 83) {
@@ -105,8 +124,16 @@ function move(event) {
         walkUpAnimationId = 0;
                
         if (walkDownAnimationId == 0) {
+<<<<<<< Updated upstream
             walkDownAnimationIdSprite = setInterval(walkDownSprite, 100);
             walkDownAnimationId = setInterval(walkDown, 10);
+=======
+            walkRightAnimationId = "None";
+            walkLeftAnimationId = "None";
+            walkUpAnimationId = "None";
+
+            walkDownAnimationId = setInterval(walkDown, 1);
+>>>>>>> Stashed changes
         }
 
     } else if (keycode == 13) {
@@ -143,17 +170,9 @@ var playerDivComputedStyle = window.getComputedStyle(playerDiv);
 var playerDivMarginLeft = parseFloat(playerDivComputedStyle.marginLeft);
 var playerDivMarginTop = parseFloat(playerDivComputedStyle.marginTop);
 
-var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
-
-function walkRightSprite() {
-    playerImagePositionX -= 50;
-    playerDiv.style.backgroundPositionY = "-50px";
-    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
-}
-
 function walkRight() {
 
-
+    var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
 
     var rightFenceComputedStyle = window.getComputedStyle(rightFence);
     var rightFenceMarginLeft = parseFloat(rightFenceComputedStyle.marginLeft);
@@ -186,9 +205,12 @@ function walkRight() {
     } else {
 
         playerDivMarginLeft += 1;
+        playerImagePositionX -= 50;
+
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
 
-
+        playerDiv.style.backgroundPositionY = "-50px";
+        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
 
 
         var numOfCoins = coins.length;
@@ -214,18 +236,13 @@ function walkRight() {
             }
 
         }
-
     }
 
 }
 
-function walkLeftSprite() {
-    playerImagePositionX -= 50;
-    playerDiv.style.backgroundPositionY = "-100px";
-    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
-}
-
 function walkLeft() {
+    var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
     var leftFenceComputedStyle = window.getComputedStyle(leftFence);
     var leftFenceMarginLeft = parseFloat(leftFenceComputedStyle.marginLeft);
 
@@ -256,9 +273,12 @@ function walkLeft() {
     } else {
 
         playerDivMarginLeft -= 1;
+        playerImagePositionX -= 50;
+
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
 
-
+        playerDiv.style.backgroundPositionY = "-100px";
+        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
 
         var numOfCoins = coins.length;
 
@@ -288,13 +308,10 @@ function walkLeft() {
 
 }
 
-function walkUpSprite() {
-    playerImagePositionX -= 50;
-    playerDiv.style.backgroundPositionY = "-200px";
-    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
-}
-
 function walkUp() {
+
+    var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
     var topFenceComputedStyle = window.getComputedStyle(topFence);
     var topFenceMarginTop = parseFloat(topFenceComputedStyle.marginTop);
 
@@ -323,8 +340,12 @@ function walkUp() {
     } else {
 
         playerDivMarginTop -= 1;
+        playerImagePositionX -= 50;
+
         playerDiv.style.marginTop = playerDivMarginTop + "px";
 
+        playerDiv.style.backgroundPositionY = "-200px";
+        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
         var numOfCoins = coins.length;
 
         if (numOfCoins >= 1) {
@@ -352,13 +373,9 @@ function walkUp() {
 
 }
 
-function walkDownSprite() {
-    playerImagePositionX -= 50;
-    playerDiv.style.backgroundPositionY = "-150px";
-    playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
-}
-
 function walkDown() {
+    var playerImagePositionX = parseFloat(playerDivComputedStyle.backgroundPositionX);
+
     var bottomFenceComputedStyle = window.getComputedStyle(bottomFence);
     var bottomFenceMarginTop = parseFloat(bottomFenceComputedStyle.marginTop);
 
@@ -387,8 +404,12 @@ function walkDown() {
     } else {
 
         playerDivMarginTop += 1;
+        playerImagePositionX -= 50;
+
         playerDiv.style.marginTop = playerDivMarginTop + "px";
 
+        playerDiv.style.backgroundPositionY = "-150px";
+        playerDiv.style.backgroundPositionX = playerImagePositionX + "px";
 
         var numOfCoins = coins.length;
 
@@ -433,33 +454,25 @@ function stop() {
 
 function walkRightStop() {
     clearInterval(walkRightAnimationId);
-    clearInterval(walkRightAnimationIdSprite);
     walkRightAnimationId = 0;
-    walkRightAnimationIdSprite = 0;
     playerDiv.style.backgroundPositionX = "50px";
 }
 
 function walkLeftStop() {
     clearInterval(walkLeftAnimationId);
-    clearInterval(walkLeftAnimationIdSprite);
     walkLeftAnimationId = 0;
-    walkLeftAnimationIdSprite = 0;
     playerDiv.style.backgroundPositionX = "50px";
 }
 
 function walkUpStop() {
     clearInterval(walkUpAnimationId);
-    clearInterval(walkUpAnimationIdSprite);
     walkUpAnimationId = 0;
-    walkUpAnimationIdSprite = 0;
     playerDiv.style.backgroundPositionX = "50px";
 }
 
 function walkDownStop() {
     clearInterval(walkDownAnimationId);
-    clearInterval(walkDownAnimationIdSprite);
     walkDownAnimationId = 0;
-    walkDownAnimationIdSprite = 0;
     playerDiv.style.backgroundPositionX = "50px";
 }
 
@@ -526,16 +539,8 @@ function genarateCoins() {
 
         coinNumber = coinNumber + 1;
 
-        coin.style.marginLeft = "1135px";
-        coin.style.marginTop = "800px";
+        coin.style.marginLeft = "1035px";
+        coin.style.marginTop = "1250px";
     }
 
-}
-
-function soundOnOff() {
-    alert("done");
-
-    var state = on;
-
-    document.getElementById("soundOnOffIndicateIcon").classList.remove("soundOnOffIndicateIconChange");
 }
