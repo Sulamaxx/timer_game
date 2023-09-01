@@ -389,6 +389,7 @@ button:hover {
     background-repeat: no-repeat;
     animation: rotateCoin 2s infinite;
     background-position: center;
+    background-color: #3d3b3b;
 }
 
 @keyframes rotateCoin {
