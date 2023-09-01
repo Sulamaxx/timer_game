@@ -16,6 +16,7 @@ var walkDownAnimationId = 0;
 var coinId = 1;
 var coinNumber = 1;
 var coins = [];
+var bombStatus = [];
 
 function move(event) {
     var keycode = event.which;
@@ -169,9 +170,16 @@ function walkRight() {
 
                 if (playerRightPoint == coinLeftPoint && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
 
-                    // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
-                    // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
-                    coin.className = "bomb";
+                    if (bombStatus[c] == true) {
+
+                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                        coin.className = "bomb";
+
+                        bombStatus[c] = false;
+
+                    }
 
                 }
 
@@ -241,16 +249,23 @@ function walkLeft() {
 
                 var coin = document.getElementById("coin" + coins[c]);
 
-          
+
                 var coinComputedStyle = window.getComputedStyle(coin);
                 var coinLeftPoint = parseFloat(coinComputedStyle.marginLeft) + 270;
                 var coinTopPoint = parseFloat(coinComputedStyle.marginTop) + 206;
 
                 if (playerDivMarginLeft == (coinLeftPoint) && (playerDivMarginTop + 50) > coinTopPoint && playerDivMarginTop < (coinTopPoint + 20)) {
 
-                    // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
-                    // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
-                    coin.className = "bomb";
+                    if (bombStatus[c] == true) {
+
+                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                        coin.className = "bomb";
+
+                        bombStatus[c] = false;
+
+                    }
 
                 }
 
@@ -324,9 +339,16 @@ function walkUp() {
 
                 if (playerDivMarginTop == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
 
-                    // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
-                    // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
-                    coin.className = "bomb";
+                    if (bombStatus[c] == true) {
+
+                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                        coin.className = "bomb";
+
+                        bombStatus[c] = false;
+
+                    }
 
                 }
 
@@ -400,9 +422,16 @@ function walkDown() {
 
                 if (playerRightPoint == coinTopPoint && (playerDivMarginLeft + 55) > coinLeftPoint && playerDivMarginLeft < (coinLeftPoint)) {
 
-                    // coin.style.marginLeft = (coinComputedStyle.marginLeft - 25) + "px";
-                    // coin.style.marginTop = (coinComputedStyle.marginTop - 25) + "px";
-                    coin.className = "bomb";
+                    if (bombStatus[c] == true) {
+
+                        coin.style.marginLeft = (parseFloat(coinComputedStyle.marginLeft) - 15) + "px";
+                        coin.style.marginTop = (parseFloat(coinComputedStyle.marginTop) - 15) + "px";
+
+                        coin.className = "bomb";
+
+                        bombStatus[c] = false;
+
+                    }
 
                 }
 
@@ -491,6 +520,7 @@ function genarateCoins() {
         coin.className = "coin";
         coin.id = "coin" + coinId;
         coins.push(coinId);
+        bombStatus.push(true);
         coinId = coinId + 1;
         groundArea1.appendChild(coin);
 
@@ -507,7 +537,6 @@ function genarateCoins() {
     }
 
 
-  
 }
 
 
@@ -568,7 +597,7 @@ function startBtn() {
     }
 }
 
-function timerStar() {
+function timerStart() {
 
     if (startBtnStatus == false) {
 
