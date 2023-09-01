@@ -11,6 +11,10 @@ var walkLeftAnimationId = 0;
 var walkUpAnimationId = 0;
 var walkDownAnimationId = 0;
 
+var coinId = 1;
+var coinNumber = 1;
+var coins = [];
+
 function move(event) {
     var keycode = event.which;
 
@@ -281,42 +285,47 @@ function walkDownStop() {
 }
 
 function showPlayerLocation() {
-
-
     alert("playerDivMarginLeft: " + playerDivMarginLeft + "-playerDivMarginTop: " + playerDivMarginTop);
-
 }
-
-// index Page
-const startButton = document.getElementById('startButton');
-
-startButton.addEventListener('click', () => {
-    alert('Game is starting!');
-});
 
 function onloadMoments() {
     setInterval(genarateCoins, 100);
 }
 
-var coinId = 1;
 
 function genarateCoins() {
 
-    for (var i = 0; i < 50; i++) {
+    // if (coinNumber < 50) {
+
+    //     var coin = document.createElement("div");
+    //     coin.className = "coin";
+    //     coin.id = "coin" + coinId;
+    //     coinId = coinId + 1;
+    //     groundArea1.appendChild(coin);
+
+    //     coinNumber = coinNumber + 1;
+
+
+    //     var x1 = Math.random();
+    //     var x2 = x1 * 1000;
+    //     var x3 = Math.floor(x2);
+
+    //     coin.style.marginLeft = x3 + "px";
+    //     coin.style.marginTop = "1427px";
+    // }
+
+    if (coinNumber < 2) {
+
         var coin = document.createElement("div");
         coin.className = "coin";
         coin.id = "coin" + coinId;
         coinId = coinId + 1;
         groundArea1.appendChild(coin);
 
+        coinNumber = coinNumber + 1;
 
-        var x1 = Math.random();
-        var x2 = x1 * 1000;
-        var x3 = Math.floor(x2);
-
-        coin.style.marginLeft = x3 + "px";
-        coin.style.marginTop = "1427px";
+        coin.style.marginLeft = "1035px";
+        coin.style.marginTop = "1250px";
     }
-
 
 }
