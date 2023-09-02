@@ -26,6 +26,17 @@ var coinId = 1;
 var coins = [];
 var bombStatus = [];
 
+
+//sounds
+var manualState = "hidden";
+var soundOnOffstate = "on";
+var runSound = new Audio("./resources/sounds/run.mp3");
+runSound.playbackRate = 0.9;
+runSound.loop;
+
+var coinCollectionSound = new Audio("./resources/sounds/coinCollection.mp3");
+
+
 function move(event) {
     var keycode = event.which;
 
@@ -746,21 +757,18 @@ function timerStart() {
 
 }
 
-var state = "on";
+//Home page icon changes
 
 function soundOnOff() {
-
-    if (state == "on") {
+        if (soundOnOffstate == "on") {
         document.getElementById("soundOnOffIndicateIcon").classList.remove("soundOnOffIndicateIconChange");
-        state = "off";
+        soundOnOffstate = "off";
     } else {
         document.getElementById("soundOnOffIndicateIcon").classList.add("soundOnOffIndicateIconChange");
-        state = "on";
+        soundOnOffstate = "on";
     }
+
 }
-
-
-var manualState = "hidden";
 
 function showManual() {
 
@@ -773,6 +781,7 @@ function showManual() {
     }
 
 }
+
 
 
 function gameOver() {

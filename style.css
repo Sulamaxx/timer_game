@@ -1,728 +1,747 @@
 body {
-    margin: 0;
-    display: flex;
-    min-height: 100vh;
-    background-color: #5f9234;
-    overflow: hidden;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  background-color: #5f9234;
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .bodyDiv {
-    margin: 0;
-    width: 100%;
-    display: flex;
-    min-height: 100vh;
-    background-color: #5f9234;
-    position: relative;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  background-color: #5f9234;
+  position: relative;
 }
 
 .treesArea {
-    margin: 0;
-    min-width: 2360px;
-    min-height: 1812px;
-    display: flex;
-    background-image: url("./assets/plants/tree.png");
-    position: absolute;
+  margin: 0;
+  min-width: 2360px;
+  min-height: 1812px;
+  display: flex;
+  background-image: url("./assets/plants/tree.png");
+  position: absolute;
 }
 
 .groundArea1 {
-    margin-left: 264px;
-    margin-top: 206px;
-    width: 1850px;
-    height: 1440px;
-    background-color: #5f9234;
-    position: absolute;
+  margin-left: 264px;
+  margin-top: 206px;
+  width: 1850px;
+  height: 1440px;
+  background-color: #5f9234;
+  position: absolute;
 }
 
 .topFence {
-    margin-left: 264px;
-    margin-top: 206px;
-    width: 1850px;
-    height: 113px;
-    position: absolute;
-    background-image: url("./resources/fenceface.png");
+  margin-left: 264px;
+  margin-top: 206px;
+  width: 1850px;
+  height: 113px;
+  position: absolute;
+  background-image: url("./resources/fenceface.png");
 }
 
 .leftFence {
-    margin-left: 264px;
-    margin-top: 206px;
-    width: 28px;
-    height: 1440px;
-    position: absolute;
-    background-image: url("./resources/fanceside.png");
+  margin-left: 264px;
+  margin-top: 206px;
+  width: 28px;
+  height: 1440px;
+  position: absolute;
+  background-image: url("./resources/fanceside.png");
 }
 
 .rightFence {
-    margin-left: 2086px;
-    margin-top: 206px;
-    width: 28px;
-    height: 1440px;
-    position: absolute;
-    background-image: url("./resources/fanceside.png");
+  margin-left: 2086px;
+  margin-top: 206px;
+  width: 28px;
+  height: 1440px;
+  position: absolute;
+  background-image: url("./resources/fanceside.png");
 }
 
 .bottomFence {
-    margin-left: 264px;
-    margin-top: 1532px;
-    width: 1850px;
-    height: 113px;
-    position: absolute;
-    background-image: url("./resources/fenceface.png");
+  margin-left: 264px;
+  margin-top: 1532px;
+  width: 1850px;
+  height: 113px;
+  position: absolute;
+  background-image: url("./resources/fenceface.png");
 }
 
 .officeBuildingGround {
-    margin-left: 200px;
-    margin-top: 200px;
-    width: 1400px;
-    height: 1000px;
-    position: absolute;
-    background-color: #586051;
+  margin-left: 200px;
+  margin-top: 200px;
+  width: 1400px;
+  height: 1000px;
+  position: absolute;
+  background-color: #586051;
 }
 
 .officeFloor {
-    margin-top: 100px;
-    width: 1400px;
-    height: 900px;
-    position: absolute;
-    background-image: url("./resources/tile.jpg");
+  margin-top: 100px;
+  width: 1400px;
+  height: 900px;
+  position: absolute;
+  background-image: url("./resources/tile.jpg");
 }
 
 .topWall {
-    margin-left: 60px;
-    width: 1280px;
-    height: 100px;
-    position: absolute;
-    background-image: url("./resources/wall.png");
+  margin-left: 60px;
+  width: 1280px;
+  height: 100px;
+  position: absolute;
+  background-image: url("./resources/wall.png");
 }
 
 .leftWall {
-    width: 60px;
-    height: 900px;
-    position: absolute;
-    background-image: url("./resources/wallsideline.png");
+  width: 60px;
+  height: 900px;
+  position: absolute;
+  background-image: url("./resources/wallsideline.png");
 }
 
 .rightWall {
-    margin-left: 1340px;
-    width: 60px;
-    height: 900px;
-    position: absolute;
-    background-image: url("./resources/wallsideline.png");
+  margin-left: 1340px;
+  width: 60px;
+  height: 900px;
+  position: absolute;
+  background-image: url("./resources/wallsideline.png");
 }
 
 .bottomWall {
-    margin-left: 464px;
-    margin-top: 1306px;
-    display: flex;
-    width: 1400px;
-    height: 100px;
-    position: absolute;
+  margin-left: 464px;
+  margin-top: 1306px;
+  display: flex;
+  width: 1400px;
+  height: 100px;
+  position: absolute;
 }
 
 .bottomWallLeftSide {
-    display: flex;
-    height: 100px;
-    width: 650px;
+  display: flex;
+  height: 100px;
+  width: 650px;
 }
 
 .bottomWallMiddle {
-    display: flex;
-    height: 100px;
-    width: 99px;
+  display: flex;
+  height: 100px;
+  width: 99px;
 }
 
 .bottomWallRightSide {
-    display: flex;
-    height: 100px;
-    width: 650px;
+  display: flex;
+  height: 100px;
+  width: 650px;
 }
 
 .wallSide {
-    height: 100px;
-    width: 60px;
-    background-image: url("./resources/wallside.png");
+  height: 100px;
+  width: 60px;
+  background-image: url("./resources/wallside.png");
 }
 
 .wall {
-    height: 100px;
-    width: 505px;
-    background-image: url("./resources/wall.png");
+  height: 100px;
+  width: 505px;
+  background-image: url("./resources/wall.png");
 }
 
 .frontdoorLeft {
-    height: 100px;
-    width: 85px;
-    background-image: url("./resources/frontdoorleft.png");
+  height: 100px;
+  width: 85px;
+  background-image: url("./resources/frontdoorleft.png");
 }
 
 .frontdoor {
-    height: 100px;
-    width: 99px;
-    background-image: url("./resources/frontdoor.png");
+  height: 100px;
+  width: 99px;
+  background-image: url("./resources/frontdoor.png");
 }
 
 .frontdoorRight {
-    height: 100px;
-    width: 85px;
-    background-image: url("./resources/frontdoorright.png");
+  height: 100px;
+  width: 85px;
+  background-image: url("./resources/frontdoorright.png");
 }
 
 .midYWall {
-    margin-left: 660px;
-    width: 60px;
-    height: 400px;
-    position: absolute;
-    background-image: url("./resources/wallsideline.png");
+  margin-left: 660px;
+  width: 60px;
+  height: 400px;
+  position: absolute;
+  background-image: url("./resources/wallsideline.png");
 }
 
 .computerTable1 {
-    margin-top: 150px;
-    margin-left: 110px;
-    width: 500px;
-    height: 223px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/computertable.png");
+  margin-top: 150px;
+  margin-left: 110px;
+  width: 500px;
+  height: 223px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/computertable.png");
 }
 
 .computerTable2 {
-    margin-top: 150px;
-    margin-left: 780px;
-    width: 500px;
-    height: 223px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/computertable.png");
+  margin-top: 150px;
+  margin-left: 780px;
+  width: 500px;
+  height: 223px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/computertable.png");
 }
 
 .techTable1 {
-    margin-top: 600px;
-    margin-left: 160px;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/techTeable.png");
+  margin-top: 600px;
+  margin-left: 160px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/techTeable.png");
 }
 
 .meetingTable {
-    margin-top: 550px;
-    margin-left: 510px;
-    width: 357px;
-    height: 300px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/meetingtable.png");
+  margin-top: 550px;
+  margin-left: 510px;
+  width: 357px;
+  height: 300px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/meetingtable.png");
 }
 
 .techTable2 {
-    margin-top: 600px;
-    margin-left: 1050px;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    display: flex;
-    background-image: url("./resources/techTeable.png");
+  margin-top: 600px;
+  margin-left: 1050px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  display: flex;
+  background-image: url("./resources/techTeable.png");
 }
 
 .midXWall {
-    margin-top: 400px;
-    margin-left: 160px;
-    width: 1080px;
-    height: 100px;
-    position: absolute;
-    display: flex;
+  margin-top: 400px;
+  margin-left: 160px;
+  width: 1080px;
+  height: 100px;
+  position: absolute;
+  display: flex;
 }
 
 .midXWallLeft {
-    width: 510px;
-    height: 100px;
-    position: absolute;
-    background-image: url("./resources/insidewall.png");
+  width: 510px;
+  height: 100px;
+  position: absolute;
+  background-image: url("./resources/insidewall.png");
 }
 
 .midXWallMid {
-    margin-left: 510px;
-    width: 45px;
-    height: 100px;
-    position: absolute;
-    background-image: url("./resources/insidemidwall.png");
+  margin-left: 510px;
+  width: 45px;
+  height: 100px;
+  position: absolute;
+  background-image: url("./resources/insidemidwall.png");
 }
 
 .midXWallRight {
-    margin-left: 555px;
-    width: 525px;
-    height: 100px;
-    position: absolute;
-    background-image: url("./resources/insidewall.png");
+  margin-left: 555px;
+  width: 525px;
+  height: 100px;
+  position: absolute;
+  background-image: url("./resources/insidewall.png");
 }
 
 .playerDiv {
-    margin-left: 1135px;
-    margin-top: 1427px;
-    height: 50px;
-    width: 50px;
-    background-image: url("./assets/player/player.png");
-    position: absolute;
+  margin-left: 1135px;
+  margin-top: 1427px;
+  height: 50px;
+  width: 50px;
+  background-image: url("./assets/player/player.png");
+  position: absolute;
 }
 
 @keyframes playerDivDecreasingLivesAnimation1 {
-    0% {
-        opacity: 0.1;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.1;
-    }
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
 }
 
 @keyframes playerDivDecreasingLivesAnimation2 {
-    0% {
-        opacity: 0.1;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.1;
-    }
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
 }
 
-
 /* index page */
-
 .indexBody {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    user-select: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  user-select: none;
 }
 
 .container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    position: absolute;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
 }
 
 .homePageHeadingDiv {
-    text-align: center;
-    padding: 30px;
-    position: absolute;
-    top: 110px;
+  text-align: center;
+  padding: 30px;
+  position: absolute;
+  top: 110px;
 }
 
 .startButton {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 h1 {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-size: 2.5em;
-    margin: 0;
-    color: #3d3b3b;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 2.5em;
+  margin: 0;
+  color: #3d3b3b;
 }
 
 p {
-    font-size: 1.2em;
-    color: #666;
-    margin-top: 10px;
-    font-style: italic;
+  font-size: 1.2em;
+  color: #666;
+  margin-top: 10px;
+  font-style: italic;
 }
 
 button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #2980b9;
+  background-color: #2980b9;
 }
 
 .homePageImgDiv {
-    height: 100vh;
-    width: 100%;
+  height: 100vh;
+  width: 100%;
 }
 
 @media (max-width: 1000px) {
-    .homePageImg {
-        height: 100vh;
-    }
-    .container {
-        width: 80%;
-    }
+  .homePageImg {
+    height: 100vh;
+  }
+  .container {
+    width: 80%;
+  }
 }
 
 .homePagePlayerDiv {
-    position: absolute;
-    left: 30%;
-    width: 55px;
-    height: 50px;
-    overflow: hidden;
-    animation: homePagePlayerDivAnimation;
-    animation-duration: 8s;
-    animation-fill-mode: forwards;
+  position: absolute;
+  left: 30%;
+  width: 55px;
+  height: 50px;
+  overflow: hidden;
+  animation: homePagePlayerDivAnimation;
+  animation-duration: 8s;
+  animation-fill-mode: forwards;
 }
 
 .homePagePlayerImg {
-    margin-top: -50px;
-    animation: homePagePlayer 1s steps(4) infinite;
+  margin-top: -50px;
+  animation: homePagePlayer 1s steps(4) infinite;
+}
+
+@media (min-width: 569px) {
+  .homePagePlayerDiv {
+    top: 280px;
+  }
+}
+
+@media (min-width: 1459px) {
+  .homePagePlayerDiv {
+    top: 335px;
+  }
 }
 
 @keyframes homePagePlayer {
-    from {
-        transform: translate3d(0px, 0, 0);
-    }
-    to {
-        transform: translate3d(-100%, 0, 0);
-    }
+  from {
+    transform: translate3d(0px, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
 @keyframes homePagePlayerDivAnimation {
-    from {
-        margin-left: 0px;
-    }
-    to {
-        margin-left: 180px;
-    }
+  from {
+    margin-left: 0px;
+  }
+  to {
+    margin-left: 180px;
+  }
 }
 
 .coin {
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    background-repeat: no-repeat;
-    animation: rotateCoinAnimation 2s infinite;
-    background-position: center;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  background-repeat: no-repeat;
+  animation: rotateCoinAnimation 2s infinite;
+  background-position: center;
 }
 
 @keyframes rotateCoinAnimation {
-    0% {
-        background-image: url("./assets/coin/coin0.png");
-    }
-    5% {
-        background-image: url("./assets/coin/coin0.png");
-    }
-    10% {
-        background-image: url("./assets/coin/coin1.png");
-    }
-    15% {
-        background-image: url("./assets/coin/coin2.png");
-    }
-    20% {
-        background-image: url("./assets/coin/coin3.png");
-    }
-    25% {
-        background-image: url("./assets/coin/coin4.png");
-    }
-    30% {
-        background-image: url("./assets/coin/coin5.png");
-    }
-    35% {
-        background-image: url("./assets/coin/coin6.png");
-    }
-    40% {
-        background-image: url("./assets/coin/coin7.png");
-    }
-    45% {
-        background-image: url("./assets/coin/coin8.png");
-    }
-    50% {
-        background-image: url("./assets/coin/coin9.png");
-    }
-    55% {
-        background-image: url("./assets/coin/coin0.png");
-    }
-    60% {
-        background-image: url("./assets/coin/coin1.png");
-    }
-    65% {
-        background-image: url("./assets/coin/coin2.png");
-    }
-    70% {
-        background-image: url("./assets/coin/coin3.png");
-    }
-    75% {
-        background-image: url("./assets/coin/coin4.png");
-    }
-    80% {
-        background-image: url("./assets/coin/coin5.png");
-    }
-    85% {
-        background-image: url("./assets/coin/coin6.png");
-    }
-    90% {
-        background-image: url("./assets/coin/coin7.png");
-    }
-    95% {
-        background-image: url("./assets/coin/coin8.png");
-    }
-    100% {
-        background-image: url("./assets/coin/coin9.png");
-    }
+  0% {
+    background-image: url("./assets/coin/coin0.png");
+  }
+  5% {
+    background-image: url("./assets/coin/coin0.png");
+  }
+  10% {
+    background-image: url("./assets/coin/coin1.png");
+  }
+  15% {
+    background-image: url("./assets/coin/coin2.png");
+  }
+  20% {
+    background-image: url("./assets/coin/coin3.png");
+  }
+  25% {
+    background-image: url("./assets/coin/coin4.png");
+  }
+  30% {
+    background-image: url("./assets/coin/coin5.png");
+  }
+  35% {
+    background-image: url("./assets/coin/coin6.png");
+  }
+  40% {
+    background-image: url("./assets/coin/coin7.png");
+  }
+  45% {
+    background-image: url("./assets/coin/coin8.png");
+  }
+  50% {
+    background-image: url("./assets/coin/coin9.png");
+  }
+  55% {
+    background-image: url("./assets/coin/coin0.png");
+  }
+  60% {
+    background-image: url("./assets/coin/coin1.png");
+  }
+  65% {
+    background-image: url("./assets/coin/coin2.png");
+  }
+  70% {
+    background-image: url("./assets/coin/coin3.png");
+  }
+  75% {
+    background-image: url("./assets/coin/coin4.png");
+  }
+  80% {
+    background-image: url("./assets/coin/coin5.png");
+  }
+  85% {
+    background-image: url("./assets/coin/coin6.png");
+  }
+  90% {
+    background-image: url("./assets/coin/coin7.png");
+  }
+  95% {
+    background-image: url("./assets/coin/coin8.png");
+  }
+  100% {
+    background-image: url("./assets/coin/coin9.png");
+  }
 }
 
 .bomb {
-    position: absolute;
-    background-repeat: no-repeat;
-    animation: bombAnimation 1s 1;
-    background-position: center;
-    height: 50px;
-    width: 50px;
+  position: absolute;
+  background-repeat: no-repeat;
+  animation: bombAnimation 1s 1;
+  background-position: center;
+  height: 50px;
+  width: 50px;
 }
 
 @keyframes bombAnimation {
-    0% {
-        background-image: url("./assets/bomb/bombIdle0.png");
-    }
-    5% {
-        background-image: url("./assets/bomb/bombIdle0.png");
-    }
-    10% {
-        background-image: url("./assets/bomb/bombIdle1.png");
-    }
-    15% {
-        background-image: url("./assets/bomb/bombIdle2.png");
-    }
-    20% {
-        background-image: url("./assets/bomb/bombIdle3.png");
-    }
-    25% {
-        background-image: url("./assets/bomb/bombIdle4.png");
-    }
-    30% {
-        background-image: url("./assets/bomb/bombIdle5.png");
-    }
-    35% {
-        background-image: url("./assets/bomb/bombIdle6.png");
-    }
-    40% {
-        background-image: url("./assets/bomb/bombIdle7.png");
-    }
-    45% {
-        background-image: url("./assets/bomb/bombIdle8.png");
-    }
-    50% {
-        background-image: url("./assets/bomb/bombIdle9.png");
-    }
-    55% {
-        background-image: url("./assets/bomb/bombExplosion0.png");
-    }
-    60% {
-        background-image: url("./assets/bomb/bombExplosion1.png");
-    }
-    65% {
-        background-image: url("./assets/bomb/bombExplosion2.png");
-    }
-    70% {
-        background-image: url("./assets/bomb/bombExplosion3.png");
-    }
-    75% {
-        background-image: url("./assets/bomb/bombExplosion4.png");
-    }
-    80% {
-        background-image: url("./assets/bomb/bombExplosion5.png");
-    }
-    85% {
-        background-image: url("./assets/bomb/bombExplosion6.png");
-    }
-    90% {
-        background-image: url("./assets/bomb/bombExplosion7.png");
-    }
-    95% {
-        background-image: url("./assets/bomb/bombExplosion8.png");
-    }
-    100% {
-        background-image: url("./assets/bomb/bombExplosion8.png");
-    }
+  0% {
+    background-image: url("./assets/bomb/bombIdle0.png");
+  }
+  5% {
+    background-image: url("./assets/bomb/bombIdle0.png");
+  }
+  10% {
+    background-image: url("./assets/bomb/bombIdle1.png");
+  }
+  15% {
+    background-image: url("./assets/bomb/bombIdle2.png");
+  }
+  20% {
+    background-image: url("./assets/bomb/bombIdle3.png");
+  }
+  25% {
+    background-image: url("./assets/bomb/bombIdle4.png");
+  }
+  30% {
+    background-image: url("./assets/bomb/bombIdle5.png");
+  }
+  35% {
+    background-image: url("./assets/bomb/bombIdle6.png");
+  }
+  40% {
+    background-image: url("./assets/bomb/bombIdle7.png");
+  }
+  45% {
+    background-image: url("./assets/bomb/bombIdle8.png");
+  }
+  50% {
+    background-image: url("./assets/bomb/bombIdle9.png");
+  }
+  55% {
+    background-image: url("./assets/bomb/bombExplosion0.png");
+  }
+  60% {
+    background-image: url("./assets/bomb/bombExplosion1.png");
+  }
+  65% {
+    background-image: url("./assets/bomb/bombExplosion2.png");
+  }
+  70% {
+    background-image: url("./assets/bomb/bombExplosion3.png");
+  }
+  75% {
+    background-image: url("./assets/bomb/bombExplosion4.png");
+  }
+  80% {
+    background-image: url("./assets/bomb/bombExplosion5.png");
+  }
+  85% {
+    background-image: url("./assets/bomb/bombExplosion6.png");
+  }
+  90% {
+    background-image: url("./assets/bomb/bombExplosion7.png");
+  }
+  95% {
+    background-image: url("./assets/bomb/bombExplosion8.png");
+  }
+  100% {
+    background-image: url("./assets/bomb/bombExplosion8.png");
+  }
 }
 
 .icon {
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    overflow: hidden;
-    border-radius: 19px;
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  border-radius: 19px;
 }
 
 .icon:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .iconImg {
-    height: 250px;
-    width: 600px;
+  height: 250px;
+  width: 600px;
 }
 
 .settingsIcon {
-    left: 30px;
-    top: 550px;
+  left: 30px;
+  top: 550px;
 }
 
 .settingsIconImg {
-    margin-left: -351px;
-    margin-top: -133px;
+  margin-left: -351px;
+  margin-top: -133px;
 }
 
 .soundIcon {
-    left: 30px;
-    top: 480px;
+  left: 30px;
+  top: 480px;
 }
 
 .soundIconImg {
-    margin-left: -304px;
-    margin-top: -133px;
+  margin-left: -304px;
+  margin-top: -133px;
 }
 
 .manualIcon {
-    left: 30px;
-    top: 410px;
+  left: 30px;
+  top: 410px;
 }
 
 .manualIconImg {
-    margin-left: -397px;
-    margin-top: -133px;
+  margin-left: -397px;
+  margin-top: -133px;
 }
 
 .soundOnOffIndicateIcon {
-    position: absolute;
-    width: 23px;
-    height: 23px;
-    overflow: hidden;
-    border-radius: 12px;
-    left: 55px;
-    top: 472px;
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  overflow: hidden;
+  border-radius: 12px;
+  left: 55px;
+  top: 472px;
 }
 
 .soundOnOffIndicateIconImg {
-    height: 190px;
-    width: 390px;
-    margin-left: -289px;
-    margin-top: -21px;
+  height: 190px;
+  width: 390px;
+  margin-left: -289px;
+  margin-top: -21px;
 }
 
 .soundOnOffIndicateIconChange {
-    display: none;
+  display: none;
 }
-
 
 /* timer */
 
 .timeDiv {
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 0;
-    height: 80px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 0;
+  height: 80px;
 }
 
 .time {
-    font-size: 56px;
-    font-family: calibri;
-    color: white;
+  font-size: 56px;
+  font-family: calibri;
+  color: white;
 }
 
 .time-segment {
-    background-color: #ffcc00;
-    color: #222;
-    padding: 5px 10px;
-    border-radius: 5px;
+  background-color: #ffcc00;
+  color: #222;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
-
 
 /* Score */
 
 .score-bar {
-    background-color: #404040;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 70;
-    right: 10px;
-    width: 15%;
-    border-radius: 10px;
-    top: 25px;
+  background-color: #404040;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 70;
+  right: 10px;
+  width: 15%;
+  border-radius: 10px;
+  top: 25px;
 }
 
 .score-label {
-    font-size: 25px;
-    color: #f0f0f0;
+  font-size: 25px;
+  color: #f0f0f0;
 }
 
 .score-value {
-    font-size: 25px;
-    color: #ffcc00;
-    /* Yellow */
+  font-size: 25px;
+  color: #ffcc00;
+  /* Yellow */
 }
-
 
 /* Life */
 
 .life-bar {
-    background-color: #404040;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 10px;
-    right: 0;
-    width: 10%;
-    border-radius: 10px;
-    top: 25px;
+  background-color: #404040;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 10px;
+  right: 0;
+  width: 10%;
+  border-radius: 10px;
+  top: 25px;
 }
 
 .life-label {
-    background-image: url("resources/life.png");
-    background-position: center;
-    background-size: cover;
-    width: 25px;
-    height: 25px;
-    margin-left: 10px;
+  background-image: url("resources/life.png");
+  background-position: center;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
 }
 
 .life-value {
-    font-size: 25px;
-    color: #ffcc00;
+  font-size: 25px;
+  color: #ffcc00;
 }
-
 
 /* Life */
 
 .manualShowHide {
-    display: none;
+  display: none;
 }
 
 .manualDiv {
-    width: 300px;
-    height: 500px;
-    background-color: white;
-    border-radius: 20px;
-    position: absolute;
+  height: 400px;
+  border-radius: 20px;
+  position: absolute;
+  background-color: #1e90ff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
 }
+
+.controlItem {
+  margin: 10px 0;
+  font-size: 18px;
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
