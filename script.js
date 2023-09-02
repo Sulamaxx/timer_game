@@ -655,14 +655,8 @@ function walkDownStop() {
 }
 
 function showPlayerLocation() {
-    var playerLeftPoint = playerDivMarginLeft;
-    var playerTopPoint = playerDivMarginTop;
-    var playerRightPoint = playerDivMarginLeft + 50;
-    var playerBottopPoint = playerDivMarginLeft + 50;
 
-    // alert("     playerLeftPoint:" + playerLeftPoint + "     playerTopPoint:" + playerTopPoint + "     playerRightPoint:" + playerRightPoint + "     playerBottopPoint:" + playerBottopPoint);
-
-    console.log(coins);
+    loadGameOverPage();
 
 }
 
@@ -751,7 +745,7 @@ function timerStart() {
 
     if (startBtnStatus == false) {
 
-        startBtnAnimationNumber = setInterval(startBtn, 1000);
+        startBtnAnimationNumber = setInterval(startBtn, 10);
         startBtnStatus = true;
     }
 
@@ -786,18 +780,16 @@ function showManual() {
 
 function gameOver() {
 
-    alert("Game Over");
+    clearInterval(startBtnAnimationNumber);
 
-    window.location.reload();
+    document.getElementById("life").innerHTML = "0";
 
-    document.getElementById("life").innerHTML("0");
-
+    loadGameOverPage();
 }
 
 function gameEnd() {
 
-    alert("Game End - Score:" + score);
-
+    loadGameOverPage();
 }
 
 var coinDestroyingCount = 0;
@@ -827,4 +819,11 @@ function startCoinDestroying(coin, coinIndex) {
 
         }
     }, 1);
+}
+
+function loadGameOverPage() {
+
+    document.getElementById("finalScore").innerHTML = score;
+    document.getElementById("gameOverDiv").classList = "gameOverDiv diplayBlock";
+
 }
