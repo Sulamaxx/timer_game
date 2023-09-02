@@ -94,7 +94,7 @@ var playerFocusNumber = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
 
- 
+
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -794,7 +794,7 @@ function startCoinDestroying(coin, coinIndex) {
 }
 
 function loadGameOverPage() {
-OverSound.play();
+    OverSound.play();
     document.getElementById("finalScore").innerHTML = score;
     document.getElementById("gameOverDiv").classList = "gameOverDiv diplayBlock";
 
@@ -802,19 +802,17 @@ OverSound.play();
 
 
 
- //sounds
- var runSound = new Audio("./resources/sounds/run.mp3");
- runSound.playbackRate = 0.9;
- runSound.loop = true;
+//sounds
+var runSound = new Audio("./resources/sounds/run.mp3");
+runSound.playbackRate = 0.9;
+runSound.loop = true;
 
- var coinCollectionSound = new Audio(
-   "./resources/sounds/coinCollection.mp3"
- );
- coinCollectionSound.playbackRate = 0.9;
- coinCollectionSound.loop = true;
+var coinCollectionSound = new Audio(
+    "./resources/sounds/coinCollection.mp3"
+);
+coinCollectionSound.playbackRate = 0.9;
+coinCollectionSound.loop = true;
 
- var OverSound = new Audio("./resources/sounds/over.mp3");
- OverSound.playbackRate = 0.9;
- OverSound.loop = true;
-
-
+var OverSound = new Audio("./resources/sounds/over.mp3");
+OverSound.playbackRate = 0.9;
+OverSound.loop = false;
