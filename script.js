@@ -27,14 +27,7 @@ var coins = [];
 var bombStatus = [];
 
 
-//sounds
-var manualState = "hidden";
-var soundOnOffstate = "on";
-var runSound = new Audio("./resources/sounds/run.mp3");
-runSound.playbackRate = 0.9;
-runSound.loop;
 
-var coinCollectionSound = new Audio("./resources/sounds/coinCollection.mp3");
 
 
 function move(event) {
@@ -100,6 +93,8 @@ var playerFocusId = 0;
 var playerFocusNumber = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
+
+ 
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -751,30 +746,7 @@ function timerStart() {
 
 }
 
-//Home page icon changes
 
-function soundOnOff() {
-        if (soundOnOffstate == "on") {
-        document.getElementById("soundOnOffIndicateIcon").classList.remove("soundOnOffIndicateIconChange");
-        soundOnOffstate = "off";
-    } else {
-        document.getElementById("soundOnOffIndicateIcon").classList.add("soundOnOffIndicateIconChange");
-        soundOnOffstate = "on";
-    }
-
-}
-
-function showManual() {
-
-    if (manualState == "hidden") {
-        document.getElementById("manualDiv").classList.remove("manualShowHide");
-        manualState = "Visible";
-    } else {
-        document.getElementById("manualDiv").classList.add("manualShowHide");
-        manualState = "hidden";
-    }
-
-}
 
 
 
@@ -822,8 +794,27 @@ function startCoinDestroying(coin, coinIndex) {
 }
 
 function loadGameOverPage() {
-
+OverSound.play();
     document.getElementById("finalScore").innerHTML = score;
     document.getElementById("gameOverDiv").classList = "gameOverDiv diplayBlock";
 
 }
+
+
+
+ //sounds
+ var runSound = new Audio("./resources/sounds/run.mp3");
+ runSound.playbackRate = 0.9;
+ runSound.loop = true;
+
+ var coinCollectionSound = new Audio(
+   "./resources/sounds/coinCollection.mp3"
+ );
+ coinCollectionSound.playbackRate = 0.9;
+ coinCollectionSound.loop = true;
+
+ var OverSound = new Audio("./resources/sounds/over.mp3");
+ OverSound.playbackRate = 0.9;
+ OverSound.loop = true;
+
+
