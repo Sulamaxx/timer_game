@@ -62,9 +62,9 @@
             <div class="leftFence" id="leftFence"></div>
             <div class="rightFence" id="rightFence"></div>
             <div class="bottomFence" id="bottomFence"></div>
-        
+
         </div>
-        
+
         <div class="timeDiv">
             <p class="time">
                 <span id="hours" class="time-segment">00</span> :
@@ -84,6 +84,20 @@
         </div>
 
     </div>
+
+    <div class="gameOverDiv diplayNone" id="gameOverDiv">
+
+        <div class="finalScoreDiv">
+
+            <h1 class="scoreTitels">HIGHEST SCORE:</h1>
+            <h1 class="scoreValues" id="highestScore">0</h1>
+            <h1 class="scoreTitels">YOUR SCORE:</h1>
+            <h1 class="scoreValues" id="finalScore">0</h1>
+            <button class="scoreButton" onclick="window.location.reload();">OK</button>
+        </div>
+
+    </div>
+
 
     <script src="script.js"></script>
 </body>
