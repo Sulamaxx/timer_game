@@ -107,8 +107,6 @@ var playerFocusNumber = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
 
-
-
     playerFocusId = setInterval(focusPlayer, 1);
 
 });

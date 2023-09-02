@@ -1,106 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Game Homepage</title>
-  </head>
+</head>
 
-  <body class="indexBody" >
+<body class="indexBody">
     <!-- index sound -->
     <audio id="myAudio" loop>
       <source src="resources/sounds/index.mp3" type="audio/mpeg" />
     </audio>
 
     <div class="homePageHeadingDiv">
-      <h1>Welcome to Awesome Game</h1>
-      <p>Get ready for an epic adventure!</p>
-      <button class="startButton" id="startButton">Start Game</button>
+        <h1>Welcome to Awesome Game</h1>
+        <p>Get ready for an epic adventure!</p>
+        <button class="startButton" id="startButton">Start Game</button>
     </div>
 
     <div class="homePageImgDiv">
-      <img src="./resources/home.svg" class="homePageImg" />
+        <img src="./resources/home.svg" class="homePageImg" />
     </div>
 
     <div class="homePagePlayerDiv">
-      <img src="./assets/player/player.png" class="homePagePlayerImg" />
+        <img src="./assets/player/player.png" class="homePagePlayerImg" />
     </div>
 
     <div class="manualIcon icon" onclick="showManual()">
-      <img src="./resources/icons.jpg" alt="" class="manualIconImg iconImg" />
+        <img src="./resources/icons.jpg" alt="" class="manualIconImg iconImg" />
     </div>
 
     <div class="manualDiv manualShowHide" id="manualDiv">
-      <h3>Controls of the Game</h3>
-      <p class="controlItem">Move Right : Right Arrow Key / D</p>
-      <p class="controlItem">Move Left : Left Arrow Key / A</p>
-      <p class="controlItem">Move Up : Up Arrow Key / W</p>
-      <p class="controlItem">Move Down : Down Arrow Key / S</p>
+        <h3>Controls of the Game</h3>
+        <p class="controlItem">Move Right : Right Arrow Key / D</p>
+        <p class="controlItem">Move Left : Left Arrow Key / A</p>
+        <p class="controlItem">Move Up : Up Arrow Key / W</p>
+        <p class="controlItem">Move Down : Down Arrow Key / S</p>
     </div>
 
     <div class="soundIcon icon" onclick="soundOnOff()">
-      <img src="./resources/icons.jpg" class="soundIconImg iconImg" />
+        <img src="./resources/icons.jpg" class="soundIconImg iconImg" />
     </div>
 
-    <div
-      class="soundOnOffIndicateIcon soundOnOffIndicateIconChange"
-      id="soundOnOffIndicateIcon"
-    >
-      <img src="./resources/icons.jpg" class="soundOnOffIndicateIconImg" />
+    <div class="soundOnOffIndicateIcon " id="soundOnOffIndicateIcon">
+        <img src="./resources/icons.jpg" class="soundOnOffIndicateIconImg" />
     </div>
 
     <div class="settingsIcon icon">
-      <img src="./resources/icons.jpg" class="settingsIconImg iconImg" />
+        <img src="./resources/icons.jpg" class="settingsIconImg iconImg" />
     </div>
 
     <script src="script.js"></script>
     <script>
-      document.getElementById("startButton").onclick = () => {
-        window.location.href = "home.html";
-      };
-     
-      var indexSound = new Audio("./resources/sounds/index.mp3");
-      indexSound.playbackRate = 0.9;
-      indexSound.loop = true;
-      indexSound.autoplay = true;
+        document.getElementById("startButton").onclick = () => {
+            window.location.href = "home.html";
+        };
 
-      function Play1() {
+        var indexSound = new Audio("./resources/sounds/index.mp3");
+        indexSound.playbackRate = 0.9;
+        indexSound.loop = true;
         indexSound.autoplay = true;
-        indexSound.play();
-      }
 
-      //Home page icon changes
-      var manualState = "hidden";
-      var soundOnOffstate = "on";
-
-      function soundOnOff() {
-        if (soundOnOffstate == "on") {
-          document
-            .getElementById("soundOnOffIndicateIcon")
-            .classList.remove("soundOnOffIndicateIconChange");
-          soundOnOffstate = "off";
-          indexSound.pause();
-        } else {
-          document
-            .getElementById("soundOnOffIndicateIcon")
-            .classList.add("soundOnOffIndicateIconChange");
-          soundOnOffstate = "on";
-          indexSound.play();
+        function play1() {
+            indexSound.autoplay = true;
+            indexSound.play();
         }
-      }
 
-      function showManual() {
-        if (manualState == "hidden") {
-          document
-            .getElementById("manualDiv")
-            .classList.remove("manualShowHide");
-          manualState = "Visible";
-        } else {
-          document.getElementById("manualDiv").classList.add("manualShowHide");
-          manualState = "hidden";
+        //Home page icon changes
+        var manualState = "hidden";
+        var soundOnOffstate = "off";
+
+        function soundOnOff() {
+            if (soundOnOffstate == "on") {
+                document
+                    .getElementById("soundOnOffIndicateIcon")
+                    .classList.remove("soundOnOffIndicateIconChange");
+                soundOnOffstate = "off";
+                indexSound.pause();
+            } else {
+                document
+                    .getElementById("soundOnOffIndicateIcon")
+                    .classList.add("soundOnOffIndicateIconChange");
+                soundOnOffstate = "on";
+                indexSound.play();
+            }
         }
-      }
+
+        function showManual() {
+            if (manualState == "hidden") {
+                document
+                    .getElementById("manualDiv")
+                    .classList.remove("manualShowHide");
+                manualState = "Visible";
+            } else {
+                document.getElementById("manualDiv").classList.add("manualShowHide");
+                manualState = "hidden";
+            }
+        }
     </script>
-  </body>
+</body>
+
 </html>
