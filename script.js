@@ -105,7 +105,7 @@ function move(event) {
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     playerFocusId = setInterval(focusPlayer, 1);
 
@@ -775,7 +775,7 @@ var coinDestroyingCount = 0;
 function startCoinDestroying(coin, coinIndex) {
     boomSound.play();
     manSound.play();
-    coinDestroyingID = setInterval(function () {
+    coinDestroyingID = setInterval(function() {
         coinDestroyingCount += 1;
 
         if (coinDestroyingCount == 1000) {

@@ -31,13 +31,14 @@
     <div class="manualIcon icon" onclick="showManual()">
         <img src="./resources/icons.jpg" alt="" class="manualIconImg iconImg" />
     </div>
-
     <div class="manualDiv manualShowHide" id="manualDiv">
-        <h3>Controls of the Game</h3>
-        <p class="controlItem">Move Right : Right Arrow Key / D</p>
-        <p class="controlItem">Move Left : Left Arrow Key / A</p>
-        <p class="controlItem">Move Up : Up Arrow Key / W</p>
-        <p class="controlItem">Move Down : Down Arrow Key / S</p>
+
+        <h2 class="controlTitles">Controls of the Game</h2>
+        <h3 class="controlItem">Move Right : Right Arrow Key / D</h3>
+        <h3 class="controlItem">Move Left : Left Arrow Key / A</h3>
+        <h3 class="controlItem">Move Up : Up Arrow Key / W</h3>
+        <h3 class="controlItem">Move Down : Down Arrow Key / S</h3>
+
     </div>
 
     <div class="soundIcon icon" onclick="soundOnOff()">
@@ -52,7 +53,6 @@
         <img src="./resources/icons.jpg" class="settingsIconImg iconImg" />
     </div>
 
-    <script src="script.js"></script>
     <script>
         document.getElementById("startButton").onclick = () => {
             window.location.href = "home.html";
