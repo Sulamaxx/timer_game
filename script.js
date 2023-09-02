@@ -1,3 +1,20 @@
+//sounds
+var runSound = new Audio("./resources/sounds/run.mp3");
+runSound.playbackRate = 0.9;
+runSound.loop = true;
+
+var coinCollectionSound = new Audio(
+    "./resources/sounds/coinCollection.mp3"
+);
+coinCollectionSound.playbackRate = 0.9;
+coinCollectionSound.loop = true;
+
+var OverSound = new Audio("./resources/sounds/over.mp3");
+OverSound.playbackRate = 0.9;
+OverSound.loop = true;
+
+var characterActivation = true;
+
 var lives = 5;
 var score = 0;
 
@@ -32,67 +49,63 @@ var bombStatus = [];
 
 function move(event) {
     var keycode = event.which;
+    if (characterActivation) {
+        if (keycode == 39 || keycode == 68) {
 
-    if (keycode == 39 || keycode == 68) {
+            if (walkRightAnimationId == 0) {
 
-        if (walkRightAnimationId == 0) {
+                walkLeftAnimationId = "None";
+                walkUpAnimationId = "None";
+                walkDownAnimationId = "None";
+                animationNumber = 0;
+                walkRightAnimationId = setInterval(walkRight, 1);
 
-            walkLeftAnimationId = "None";
-            walkUpAnimationId = "None";
-            walkDownAnimationId = "None";
-            animationNumber = 0;
-            walkRightAnimationId = setInterval(walkRight, 1);
+            }
+
+        } else if (keycode == 37 || keycode == 65) {
+
+            if (walkLeftAnimationId == 0) {
+
+                walkRightAnimationId = "None";
+                walkUpAnimationId = "None";
+                walkDownAnimationId = "None";
+                animationNumber = 0;
+                walkLeftAnimationId = setInterval(walkLeft, 1);
+
+            }
+
+        } else if (keycode == 38 || keycode == 87) {
+
+            if (walkUpAnimationId == 0) {
+
+                walkRightAnimationId = "None";
+                walkLeftAnimationId = "None";
+                walkDownAnimationId = "None";
+                animationNumber = 0;
+                walkUpAnimationId = setInterval(walkUp, 1);
+            }
+
+        } else if (keycode == 40 || keycode == 83) {
+
+            if (walkDownAnimationId == 0) {
+
+                walkRightAnimationId = "None";
+                walkLeftAnimationId = "None";
+                walkUpAnimationId = "None";
+                animationNumber = 0;
+                walkDownAnimationId = setInterval(walkDown, 1);
+
+            }
 
         }
-
-    } else if (keycode == 37 || keycode == 65) {
-
-        if (walkLeftAnimationId == 0) {
-
-            walkRightAnimationId = "None";
-            walkUpAnimationId = "None";
-            walkDownAnimationId = "None";
-            animationNumber = 0;
-            walkLeftAnimationId = setInterval(walkLeft, 1);
-
-        }
-
-    } else if (keycode == 38 || keycode == 87) {
-
-        if (walkUpAnimationId == 0) {
-
-            walkRightAnimationId = "None";
-            walkLeftAnimationId = "None";
-            walkDownAnimationId = "None";
-            animationNumber = 0;
-            walkUpAnimationId = setInterval(walkUp, 1);
-        }
-
-    } else if (keycode == 40 || keycode == 83) {
-
-        if (walkDownAnimationId == 0) {
-
-            walkRightAnimationId = "None";
-            walkLeftAnimationId = "None";
-            walkUpAnimationId = "None";
-            animationNumber = 0;
-            walkDownAnimationId = setInterval(walkDown, 1);
-
-        }
-
-    } else if (keycode == 13) {
-
-        showPlayerLocation();
-
     }
-
 
 }
 
 var playerFocusId = 0;
 var playerFocusNumber = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
 
 
@@ -149,9 +162,10 @@ function walkRight() {
     } else if (playerDivMarginLeft == 1516 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
         // Bellow Left Table
     } else {
-
+        runSound.play();
         playerDivMarginLeft += 0.5;
         playerImagePositionX -= 50;
+
 
         playerDiv.style.marginLeft = playerDivMarginLeft + "px";
 
@@ -187,7 +201,7 @@ function walkRight() {
                     const Equality = Math.floor(Math.random() * 10);
 
                     if (Equality < bombCheckPoint) {
-
+                        coinCollectionSound.play();
                         groundArea1.removeChild(coin);
                         coins.splice(coinIndex, 1);
                         bombStatus.splice(coinIndex, 1);
@@ -275,7 +289,7 @@ function walkLeft() {
     } else if (playerDivMarginLeft == 1666 && playerDivMarginTop > 995 && playerDivMarginTop < 1113) {
         // Bellow Left Table
     } else {
-
+        runSound.play();
         playerDivMarginLeft -= 0.5;
         playerImagePositionX -= 50;
 
@@ -312,7 +326,7 @@ function walkLeft() {
                     const Equality = Math.floor(Math.random() * 10);
 
                     if (Equality < bombCheckPoint) {
-
+                        coinCollectionSound.play();
                         groundArea1.removeChild(coin);
                         coins.splice(coinIndex, 1);
                         bombStatus.splice(coinIndex, 1);
@@ -398,7 +412,7 @@ function walkUp() {
     } else if (playerDivMarginTop == 1113 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
         // Bellow Left Table
     } else {
-
+        runSound.play();
         playerDivMarginTop -= 0.5;
         playerImagePositionX -= 50;
 
@@ -433,7 +447,7 @@ function walkUp() {
                     const Equality = Math.floor(Math.random() * 10);
 
                     if (Equality < bombCheckPoint) {
-
+                        coinCollectionSound.play();
                         groundArea1.removeChild(coin);
                         coins.splice(coinIndex, 1);
                         bombStatus.splice(coinIndex, 1);
@@ -516,7 +530,7 @@ function walkDown() {
     } else if (playerDivMarginTop == 995 && playerDivMarginLeft > 1516 && playerDivMarginLeft < 1666) {
         // Bellow Left Table
     } else {
-
+        runSound.play();
         playerDivMarginTop += 0.5;
         playerImagePositionX -= 50;
 
@@ -554,7 +568,7 @@ function walkDown() {
                     const Equality = Math.floor(Math.random() * 10);
 
                     if (Equality < bombCheckPoint) {
-
+                        coinCollectionSound.play();
                         groundArea1.removeChild(coin);
                         coins.splice(coinIndex, 1);
                         bombStatus.splice(coinIndex, 1);
@@ -614,7 +628,7 @@ function stop() {
     var keycode = event.which;
 
     if (keycode == 39 || keycode == 68 || keycode == 37 || keycode == 65 || keycode == 38 || keycode == 87 || keycode == 40 || keycode == 83) {
-
+        runSound.pause();
         walkRightStop();
         walkLeftStop();
         walkUpStop();
@@ -647,12 +661,6 @@ function walkDownStop() {
     clearInterval(walkDownAnimationId);
     walkDownAnimationId = 0;
     playerDiv.style.backgroundPositionX = "50px";
-}
-
-function showPlayerLocation() {
-
-    loadGameOverPage();
-
 }
 
 function onloadMoments() {
@@ -740,7 +748,7 @@ function timerStart() {
 
     if (startBtnStatus == false) {
 
-        startBtnAnimationNumber = setInterval(startBtn, 10);
+        startBtnAnimationNumber = setInterval(startBtn, 1000);
         startBtnStatus = true;
     }
 
@@ -751,7 +759,7 @@ function timerStart() {
 
 
 function gameOver() {
-
+    characterActivation = false;
     clearInterval(startBtnAnimationNumber);
 
     document.getElementById("life").innerHTML = "0";
@@ -767,7 +775,9 @@ function gameEnd() {
 var coinDestroyingCount = 0;
 
 function startCoinDestroying(coin, coinIndex) {
-    coinDestroyingID = setInterval(function() {
+    boomSound.play();
+    manSound.play();
+    coinDestroyingID = setInterval(function () {
         coinDestroyingCount += 1;
 
         if (coinDestroyingCount == 1000) {
@@ -794,7 +804,9 @@ function startCoinDestroying(coin, coinIndex) {
 }
 
 function loadGameOverPage() {
+
     OverSound.play();
+
     document.getElementById("finalScore").innerHTML = score;
     document.getElementById("gameOverDiv").classList = "gameOverDiv diplayBlock";
 
@@ -805,14 +817,20 @@ function loadGameOverPage() {
 //sounds
 var runSound = new Audio("./resources/sounds/run.mp3");
 runSound.playbackRate = 0.9;
-runSound.loop = true;
+
 
 var coinCollectionSound = new Audio(
     "./resources/sounds/coinCollection.mp3"
 );
 coinCollectionSound.playbackRate = 0.9;
-coinCollectionSound.loop = true;
+
 
 var OverSound = new Audio("./resources/sounds/over.mp3");
 OverSound.playbackRate = 0.9;
-OverSound.loop = false;
+
+
+var boomSound = new Audio("./resources/sounds/boom.mp3");
+boomSound.playbackRate = 0.9;
+
+var manSound = new Audio("./resources/sounds/hurt.mp3");
+manSound.playbackRate = 0.9;
