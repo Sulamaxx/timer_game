@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XML Data Storage and Retrieval</title>
+  </head>
+  <body>
+    <h1>XML Data Storage and Retrieval</h1>
+    <form id="dataForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" /><br /><br />
+      <button type="button" onclick="storeDataAsXML()">Store as XML</button>
+    </form>
+    <button onclick="readDataFromXML()">Read Data from XML</button>
+
+    <div id="output"></div>
+
+    <script>
+     function storeDataAsXML() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    // Retrieve existing XML data or initialize an empty string
+    let xmlString = localStorage.getItem("userData");
+
+    // Create an XML string for the current user
+    const userData = `
+        <user>
+            <name>${name}</name>
+            <email>${email}</email>
+        </user>
+    `;
+
+    // Append the new user data to the existing XML or create a new <users> element
+    if (xmlString === "") {
+        xmlString = `<users>${userData}</users>`;
+    } else {
+        xmlString = xmlString.replace("</users>", `${userData}</users>`);
+    }
+
+    // Store the updated XML data in localStorage
+    localStorage.setItem("userData", xmlString);
+
+    alert('Data stored as XML.');
+}
+
+function readDataFromXML() {
+    const xmlString = localStorage.getItem("userData");
+
+    if (!xmlString || xmlString === "") {
+        alert('No data found.');
+        return;
+    }
+
+    // Parse the XML string
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+
+    // Extract and display data for each user
+    const users = xmlDoc.querySelectorAll("user");
+    const output = document.getElementById("output");
+    output.innerHTML = "";
+
+    users.forEach((user, index) => {
+        const name = user.querySelector("name").textContent;
+        const email = user.querySelector("email").textContent;
+
+        output.innerHTML += `
+            <p>Data Set ${index + 1}:</p>
+            <p>Name: ${name}</p>
+            <p>Email: ${email}</p>
+            <hr>
+        `;
+    });
+}
+
+
+    </script>
+  </body>
+</html>
